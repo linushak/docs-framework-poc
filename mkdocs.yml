@@ -1,0 +1,224 @@
+site_name: Gravitee Platform Documentation
+theme:
+  name: material
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+      primary: teal
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+      primary: teal
+      accent: blue
+  language: en
+  logo: assets/logo-white.png
+  icon:
+    repo: fontawesome/brands/git-alt
+    admonition:
+      note: fontawesome/solid/note-sticky
+      abstract: fontawesome/solid/book
+      info: fontawesome/solid/circle-info
+      tip: fontawesome/solid/bullhorn
+      success: fontawesome/solid/check
+      question: fontawesome/solid/circle-question
+      warning: fontawesome/solid/triangle-exclamation
+      failure: fontawesome/solid/bomb
+      danger: fontawesome/solid/skull
+      bug: fontawesome/solid/robot
+      example: fontawesome/solid/flask
+      quote: fontawesome/solid/quote-left
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - content.code.annotate
+    - navigation.top
+    # - navigation.sections
+    - navigation.expand
+    - navigation.indexes
+    - toc.follow
+    - toc.integrate
+# custom_dir: overrides
+extra_css:
+  - stylesheets/extra.css
+  - assets/css/swagger-ui.css
+extra_javascript:
+  - javascripts/extra.js
+  - assets/js/swagger-ui-bundle.js
+extra:
+  version:
+    provider: mike
+  analytics:
+    feedback:
+      title: Was this page helpful?
+      ratings:
+        - icon: material/emoticon-happy-outline
+          name: This page was helpful
+          data: 1
+          note: >-
+            Thanks for your feedback!
+        - icon: material/emoticon-sad-outline
+          name: This page could be improved
+          data: 0
+          note: >-
+            Thanks for your feedback! Help us improve this page by
+            <a href="https://github.com/gravitee-io/gravitee-docs/" target="_blank" rel="noopener">contributing directly</a> or
+            sharing your thoughts in a new documentation
+            <a href="https://github.com/gravitee-io/gravitee-docs/issues/new" target="_blank" rel="noopener">GitHub issue</a>.
+    provider: google
+    property: UA-67690250-1
+  generator: false
+plugins:
+  # - awesome-pages
+  - search:
+      lang: en
+  - mike:
+      # These fields are all optional; the defaults are as below...
+      alias_type: symlink
+      redirect_template: null
+      deploy_prefix: ''
+      canonical_version: null
+      version_selector: true
+      css_dir: css
+      javascript_dir: js
+  - git-revision-date-localized:
+      enabled: true
+      fallback_to_build_date: true
+      type: date
+      enable_creation_date: false
+  # the following plugin requires installation: pip install mkdocs-render-swagger-plugin
+  # source: https://github.com/bharel/mkdocs-render-swagger-plugin
+  # currently we use the alternative plugin (swagger-ui-tag) below
+  # - render_swagger
+  # the following plugin requires installation: pip install mkdocs-swagger-ui-tag
+  # source: https://blueswen.github.io/mkdocs-swagger-ui-tag/
+  - swagger-ui-tag
+  - tags
+  - social
+markdown_extensions:
+  - attr_list
+  - md_in_html
+  - admonition
+  - pymdownx.details
+  - pymdownx.tabbed:
+      alternate_style: true
+  - tables
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+# repo_url: https://github.com/gravitee-io/gravitee-docs
+repo_url: https://github.com/ivan-gravitee/docs-framework-poc
+# repo_name: gravitee-io/gravitee-docs
+repo_name: docs-framework-poc
+strict: false
+copyright: Gravitee.io © 2023 All rights reserved. <a href="https://www.gravitee.io/privacy-policy" rel="noopener" target="_blank"> Privacy Policy</a>. <a href="https://www.gravitee.io/legal" rel="noopener" target="_blank"> Legal</a>.
+nav:
+  - Docs Home:
+    - index.html
+    - Platform overview: platform-overview/index.md
+    - Get started: apim/overview/introduction.md
+    - Key concepts: apim/overview/introduction/#concepts
+    - What's new: whats-new.md
+    - Browse by product: products.md
+    - Examples and best practices: best-practice/index.md
+    - I want to learn about...: user-journeys/index.md
+    - Glossary of terms: glossary.md
+    - How to contribute: contribute.md
+  - API Management:
+    - apim/index.md
+    - Overview:
+      - Introduction: apim/overview/introduction.md
+      - Architecture: apim/overview/architecture.md
+      - Components: apim/overview/components.md
+      - Plugins: apim/overview/plugins.md
+    - Installation Guide:
+      - Introduction: apim/installation-guide/installation-guide.md
+      - Install on Amazon:
+        - Introduction: apim/installation-guide/amazon-linux/installation-guide-amazon-introduction.md
+        - Prerequisite - Machine: apim/installation-guide/amazon-linux/installation-guide-amazon-prerequisite-machine.md
+        - Prerequisite - Setup Gravitee YUM repository: apim/installation-guide/amazon-linux/installation-guide-amazon-prerequisite-yum.md
+        - Prerequisite - Install Java 11: apim/installation-guide/amazon-linux/installation-guide-amazon-prerequisite-java.md
+        - Prerequisite - Install MongoDB: apim/installation-guide/amazon-linux/installation-guide-amazon-prerequisite-mongodb.md
+        - Prerequisite - Install Elasticsearch: apim/installation-guide/amazon-linux/installation-guide-amazon-prerequisite-elasticsearch.md
+        - Prerequisite - Install Nginx: apim/installation-guide/amazon-linux/installation-guide-amazon-prerequisite-nginx.md
+    - Upgrade and migrate: apim/installation-guide/installation-guide-migration.md
+    - Configure: apim/installation-guide/configuration/configuration-guide.md
+    - Get started: apim/quickstart/quickstart-overview.md
+    - Manage and configure APIs: apim/user-guide/publisher/manage-api.md
+    - Consume APIs: apim/user-guide/consumer/developer-portal.md
+    - Administration: apim/user-guide/admin/admin-guide-organizations-and-environments.md
+    - Developer reference: apim/dev-guide/dev-guide-boostrap.md
+    - Policy reference: apim/policy-reference/policies-overview.md
+    - Gravitee Kubernetes Operator (GKO):
+      - Introduction: apim/kubernetes/apim-kubernetes-operator-overview.md
+      - Architecture: apim/kubernetes/apim-kubernetes-operator-architecture.md
+      - Installation and deployment:
+        - Overview: apim/kubernetes/apim-kubernetes-operator-installation.md
+        - Deploying GKO on a Kubernetes cluster: apim/kubernetes/apim-kubernetes-operator-installation-cluster.md
+        - Setting up a local cluster for deployment: apim/kubernetes/apim-kubernetes-operator-installation-local.md
+      - User Guide:
+        - Introduction: apim/kubernetes/apim-kubernetes-operator-user-guide.md
+        - Custom Resource Definitions (CRDs) reference: apim/kubernetes/apim-kubernetes-operator-user-guide-api-definition.md
+        - How to use the Management Context custom resource: apim/kubernetes/apim-kubernetes-operator-user-guide-management-context.md
+        - How to use the API Definition custom resource: apim/kubernetes/apim-kubernetes-operator-user-guide-api-definition.md
+        - How to sync API CRDs with a Management API: apim/kubernetes/apim-kubernetes-operator-user-guide-sync-crds.md
+        - How to reuse API resources with the GKO: apim/kubernetes/apim-kubernetes-operator-user-guide-reusable-resources.md
+        - How to try out the GKO after deployment: apim/kubernetes/apim-kubernetes-operator-user-guide-play.md
+      - API reference: apim/kubernetes/apim-kubernetes-operator-api-reference.md
+      - Changelog: apim/kubernetes/apim-kubernetes-operator-changelog.md
+    - V4 policy execution engine (V4 BETA):
+      - Introduction: apim/v4-beta/v4-beta-new-policy-execution-engine-introduction.md
+      - V3 and V4 (BETA) policy execution engines compared: apim/v4-beta/v4-beta-new-policy-execution-engine-evolution.md
+    - Event-native API Management (V4 BETA):
+      - Introduction: apim/v4-beta/v4-beta-event-native-apim-introduction.md
+      - User Guide: apim/v4-beta/v4-beta-event-native-apim-user-guide.md
+      - Example Use Cases: apim/v4-beta/v4-beta-event-native-apim-example-use-cases.md
+    - API reference: apim/api-reference/apim-rest-api-reference-index.md
+    - Changelog:
+      - apim/changelog.md
+      - APIM 3.15.x changelog: apim/changelog/changelog-3.15.md
+      - APIM 3.18.x changelog: apim/changelog/changelog-3.18.md
+      - APIM 3.19.x changelog: apim/changelog/changelog-3.19.md
+      - APIM 3.20.x changelog: apim/changelog/changelog-3.20.md
+      - APIM EOS changelog: apim/changelog/changelog-eos.md
+  - Access Management:
+    - am/index.md
+    - API reference: am/api-reference/am-rest-api-reference-index.md
+  - Alert Engine:
+    - ae/index.md
+  - Cockpit:
+    - cockpit/index.md
+  - Enterprise Edition:
+    - Overview: ee/index.md
+    - Versioning: ee/version.md
+    - Installation: ee/installation.md
+    - Licensing: ee/license.md
+  - Releases:
+    - releases/index.md
+  - API Reference:
+    - api-reference-index.md
+  - Community Forum:
+    - dev-community/index.md
+  - Marketplace:
+    - marketplace.md

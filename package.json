@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@markdoc/markdoc": "^0.1.13",
+    "next": "^13.0.6"
+  }
+}
