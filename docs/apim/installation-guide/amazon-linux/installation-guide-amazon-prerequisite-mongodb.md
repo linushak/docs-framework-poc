@@ -58,6 +58,6 @@ sudo ss -lntp '( sport = 27017 )'
 
 You should see that there is a process listening on that port.
 
-## Next
+## Next steps
 
-Next is [installing Elasticsearch](installation-guide-amazon-prerequisite-elasticsearch.md).
+The next step is [installing Elasticsearch](installation-guide-amazon-prerequisite-elasticsearch.md).

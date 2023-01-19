@@ -61,6 +61,6 @@ sudo systemctl start elasticsearch.service
 
 You should see that there is a process listening on that port.
 
-## Next
+## Next steps
 
-Next is [installing Nginx](installation-guide-amazon-prerequisite-nginx.md).
+The next step is [installing Nginx](installation-guide-amazon-prerequisite-nginx.md).

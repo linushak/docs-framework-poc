@@ -1,19 +1,20 @@
-= Configure HTTP reverse proxy
-:page-sidebar: apim_3_x_sidebar
-:page-permalink: apim/3.x/apim_how_to_configure_reverse_proxy.html
-:page-folder: apim/how-tos
-:page-layout: apim3x
+---
+title: How to configure a HTTP reverse proxy
+tags:
+  - APIM
+  - How to
+  - HTTP reverse proxy
+---
 
+# How to configure a HTTP reverse proxy
 
+Here is a simple example of APIM components configuration with `docker-compose`.
 
-Here is a simple example of APIM components configuration with docker-compose
+## APIM configuration
 
-== APIM configuration
+For this example, we use a `docker-compose.yml` file to configure each APIM components, the needed to run modules
 
-For this example, we use a docker-compose.yml file to configure each APIM components, the needed to run modules
-
-[source]
-----
+```
 version: '3.5'
 
 networks:
@@ -125,21 +126,20 @@ services:
       - ./.logs/apim-portal-ui:/var/log/nginx
     networks:
       - frontend
-----
+```
 
-== NGINX
+## Nginx
 
-=== Nginx configuration
+### Nginx configuration
 
-Add the location for each gravitee components, define :
+Add the location for each Gravitee component - define:
 
-. Managment API under Console UI
-. Portal API under Portal UI
+1. Managment API under Console UI.
+2. Portal API under Portal UI.
 
-Don't forget to add the `sub_filter` directives according to the locations.
+Make sure to add the `sub_filter` directives according to the locations.
 
-[source]
-----
+```
 http {
         include /etc/nginx/mime.types;
 
@@ -200,12 +200,13 @@ http {
             }
         }
 }
-----
+```
 
-=== Nginx container
+### Nginx container
 
-Add Nginx container to `docker-compose.yml`
-----
+Add an Nginx container to `docker-compose.yml`:
+
+```
   nginx:
     image: nginx:latest
     container_name: nginx
@@ -219,9 +220,9 @@ Add Nginx container to `docker-compose.yml`
       - ./conf/nginx.conf:/etc/nginx/nginx.conf
     networks:
       - frontend
-----
+```
 
-After restart, you can access your components through nginx at the following addresses
+After restart, you can access your components through nginx at the following addresses:
 
 
 [cols="1,1"]

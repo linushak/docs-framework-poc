@@ -1,15 +1,30 @@
-# Upgrade Notes
+---
+title: Upgrade APIM
+tags:
+  - APIM
+  - Upgrade
+  - Migration
+---
+
+# Upgrade APIM
+
+!!! note
+
+    WORK IN PROGRESS (content incorporation and cleanup for individual versions)
+
+## Upgrade Notes
 
 If you plan to skip versions when you upgrade, ensure that you read the
 version-specific upgrade notes for each intermediate version. You may be
 required to perform manual actions as part of the upgrade.
 
-Be sure to run scripts on the correct database since `gravitee` is not
-always the default database! Check your db name by running `show dbs;`
+!!! warning
 
-# Breaking changes
+    Be sure to run scripts on the correct database since `gravitee` is not always the default database! Check your db name by running `show dbs;`.
 
-## API key and JWT plans
+## Breaking changes
+
+### API key and JWT plans
 
 The security chain (the internal process that selects the executable
 plan for the incoming request and applies the related security rules)
@@ -67,9 +82,9 @@ unauthorized</p></td>
 </tbody>
 </table>
 
-# Breaking changes
+## Breaking changes
 
-## Portal API
+### Portal API
 
 Endpoint: `[GET] portal/environments/{envId}/applications`.
 
@@ -83,9 +98,9 @@ the owner of each application will be:
 
 -   email
 
-# Breaking changes
+## Breaking changes
 
-## Environment Audits
+### Environment Audits
 
 Endpoint:
 `[GET] management/organizations/{orgId}/environments/{envId}/apis/{api}/audit`
@@ -107,7 +122,7 @@ params `referenceType:string` with `ENVIRONMENT` or `ORGANIZATION`. You
 can also filter by environment id with `environment:string` query
 params.
 
-## Platform alerts on multi-environments APIM
+### Platform alerts on multi-environments APIM
 
 Before this version, platform alerts were common to all environments.
 That led to inconsistencies while handling platform alerts on
@@ -122,7 +137,7 @@ the default environment. You will see them disappear from your others
 (non-default) environments, and will have to recreate them manually if
 relevant.
 
-## System Roles Edition
+### System Roles Edition
 
 To provide more flexibility in the way roles are managed, some system
 roles have been made editable. From now on, the permissions of the
@@ -148,7 +163,7 @@ This mode is deactivated by default, you can toggle it on via
 Updating permissions for system roles should be done carefully to avoid
 any unexpected behavior.
 
-## Plugin renaming
+### Plugin renaming
 
 From this version, and for the next 3.18.x versions and greater, the
 name of the Elasticsearch repository component changes.  
@@ -166,12 +181,12 @@ You can download directly the Elasticsearch repository using this
 link:  
 <https://download.gravitee.io/graviteeio-apim/plugins/repositories/gravitee-apim-repository-elasticsearch/gravitee-apim-repository-elasticsearch-3.18.0.zip>
 
-## MySQL
+### MySQL
 
 In 3.18.0, the MySQL Java driver has been updated to 8.0.29. As a
 consequence, TLS 1.0 and 1.1 are no longer supported.
 
-# Plans data
+## Plans data
 
 Since this version, APIM improves plans data storage, and uses the
 `plans` database collection as the unique source of plans data.
@@ -187,7 +202,7 @@ mode disabled : if relevant, it will fix plans data in your database as
 it’s explained in [this
 documentation](https://docs.gravitee.io/pages/apim/3.x/installation-guide/upgrades/3.10.8/README.html#plans_anomalies_in_database)
 
-# Breaking changes
+## Breaking changes
 
 From this version, and for the next 3.17.x versions, the name of the
 Elasticsearch repository component changes.  
@@ -207,9 +222,9 @@ You can download directly the Elasticsearch repository using this
 link:  
 <https://download.gravitee.io/graviteeio-apim/plugins/repositories/gravitee-apim-repository-elasticsearch/gravitee-apim-repository-elasticsearch-3.17.3.zip>
 
-# Breaking Changes
+## Breaking Changes
 
-## Management API Documentation
+### Management API Documentation
 
 From this version, APIM’s Management API documentation is now using
 OpenAPI v3 format, instead of the old Swagger v2 format.
@@ -224,7 +239,7 @@ To allow a smooth transition, the old URL
 (`{host:port}/management/swagger.json`) will remain available until
 3.18.0.
 
-## Docker Images - Enterprise Edition
+### Docker Images - Enterprise Edition
 
 To reduce the number of security vulnerabilities and ensure a better
 maintenance in the future, the base Docker images used for the
@@ -239,7 +254,7 @@ compatible with the Alpine distribution.
 *Notes*: Community Edition users will not be affected as the base images
 were already **Alpine** ones.
 
-# Upgrade Order
+## Upgrade Order
 
 In order to achieve a 0 downtime upgrade, APIM has to be upgraded before
 upgrading the gateways.
@@ -251,7 +266,7 @@ gateways have to be upgraded in this order :
 
 2.  The bridge client gateway
 
-# Deprecated Bridge Endpoints
+## Deprecated Bridge Endpoints
 
 Since bridge client rely on their own internals to fulfil API key
 requests, the \`\`/apis/{api.id}/keys/{api.key}\`\` endpoint has been
@@ -264,7 +279,7 @@ future version.
 More information on the gateway bridge feature can be found
 [here](https://docs.gravitee.io/apim/3.x/apim_installguide_hybrid_deployment.html#apim_gateway_http_bridge_server).
 
-# The mongodb upgrade scripts have been moved
+## The mongodb upgrade scripts have been moved
 
 For the sake of improving our documentation management process, we have
 started decommissioning our
@@ -276,7 +291,7 @@ inside the release repository anymore and have been moved to the
 [gravitee-api-management](https://github.com/gravitee-io/gravitee-api-management/tree/master/gravitee-apim-repository/gravitee-apim-repository-mongodb/src/main/resources/scripts)
 repository.
 
-## MongoDB
+### MongoDB
 
 Before running any script, please create a dump of your existing
 database.
@@ -285,7 +300,7 @@ database.
 This script performs some cleanup on the keys collection in order to
 avoid issues while moving to the new model.
 
-# Breaking changes
+## Breaking changes
 
 From this version, and for the next 3.17.x versions, the name of the
 Elasticsearch repository component changes.  
@@ -303,9 +318,9 @@ You can download directly the Elasticsearch repository using this
 link:  
 <https://download.gravitee.io/graviteeio-apim/plugins/repositories/gravitee-apim-repository-elasticsearch/gravitee-apim-repository-elasticsearch-3.16.5.zip>
 
-# Breaking Change
+## Breaking Change
 
-## Docker Images - Enterprise Edition
+### Docker Images - Enterprise Edition
 
 To reduce the number of security vulnerabilities and ensure a better
 maintenance in the future, the base Docker images used for the
@@ -320,7 +335,7 @@ compatible with the Alpine distribution.
 *Notes*: Community Edition users will not be affected as the base images
 were already **Alpine** ones.
 
-# API definition import process changes
+## API definition import process changes
 
 Gravitee 3.16.0 introduces a new **crossId** in API definition, which
 identifies entities across environments. This improves the API import
@@ -334,7 +349,7 @@ Otherwise, if you import an API definition which doesn’t contain
 **crossId**, Gravitee will do the best-effort to import your API
 definition without it.
 
-# Deprecations
+## Deprecations
 
 The Rest API endpoints listed below are deprecated since Gravitee
 v3.0.9, and will be removed in a future version.
@@ -362,9 +377,9 @@ v3.0.9, and will be removed in a future version.
 </tbody>
 </table>
 
-# Breaking changes
+## Breaking changes
 
-## API key and JWT plans
+### API key and JWT plans
 
 The security chain (the internal process that selects the executable
 plan for the incoming request and applies the related security rules)
@@ -440,9 +455,9 @@ You can download directly the Elasticsearch repository using this
 link:  
 <https://download.gravitee.io/graviteeio-apim/plugins/repositories/gravitee-apim-repository-elasticsearch/gravitee-apim-repository-elasticsearch-3.15.9.zip>
 
-# Breaking Change
+## Breaking Change
 
-## Docker Images - Enterprise Edition
+### Docker Images - Enterprise Edition
 
 To reduce the number of security vulnerabilities and ensure a better
 maintenance in the future, the base Docker images used for the
@@ -457,9 +472,9 @@ compatible with the Alpine distribution.
 *Notes*: Community Edition users will not be affected as the base images
 were already **Alpine** ones.
 
-# Breaking Change
+## Breaking Change
 
-## Management API
+### Management API
 
 Since they were deprecated since version 3.12.0, the Rest API endpoints
 listed below have been removed.
@@ -537,15 +552,15 @@ listed below have been removed.
 </tbody>
 </table>
 
-## Deprecation of path-based API creation
+### Deprecation of path-based API creation
 
 The path-based approach to create APIs will be removed in our next LTS
 and has been deprecated. From now on, this mode is disabled by default
 but can still be re-activated from your organization settings.
 
-## Gateway
+### Gateway
 
-### Custom policy breaking changes
+#### Custom policy breaking changes
 
 We’ve made huge improvements on the v3.15.0 in order to considerably
 decrease the memory and cpu resources required to serve the traffic on
@@ -575,7 +590,7 @@ they match one of the following cases:
 
 For each of these cases, please find the appropriate actions below.
 
-#### Http headers
+##### Http headers
 
 Starting from 3.15.0 we rework the way the request and response headers
 are manage to make them even performant than ever.
@@ -592,7 +607,7 @@ the few methods where name changed a bit:
 -   `headers.get("key")` → `headers.getAll("key")` (previous get
     returned a list)
 
-#### Policy class loading
+##### Policy class loading
 
 We’ve made huge improvements on the v3.15.0 by reworking the way
 policies are loaded when deploying an api on the APIM gateway. While
@@ -624,9 +639,9 @@ the following configuration:
 We highly recommend adopting the new class loading strategy as soon as
 possible as it may not be maintained in the future versions.
 
-# Breaking changes
+## Breaking changes
 
-## Gateway
+### Gateway
 
 From with this version, the name of the APIM Gateway component changes.
 As a consequence:
@@ -641,7 +656,7 @@ As a consequence:
     `graviteeio-*apim-gateway*-x.y.z` instead of
     `graviteeio-gateway-x.y.z`
 
-# Gateway bridge upgrade
+## Gateway bridge upgrade
 
 On hybrid architectures where gateway bridge feature is enabled,
 gateways have to be upgraded in this order :
@@ -653,7 +668,7 @@ gateways have to be upgraded in this order :
 More information on the gateway bridge feature can be found
 [here](https://docs.gravitee.io/apim/3.x/apim_installguide_hybrid_deployment.html#apim_gateway_http_bridge_server).
 
-# Elastic Search reporter plugins configuration
+## Elastic Search reporter plugins configuration
 
 Before Gravitee 3.14 :
 
@@ -678,9 +693,9 @@ And then, you have to override
 `reporters.elasticsearch.pipeline.plugins.ingest` default configuration,
 to remove unrelevant plugin.
 
-# Breaking changes
+## Breaking changes
 
-## Gateway
+### Gateway
 
 From with this version, the name of the APIM Gateway component changes.
 As a consequence:
@@ -695,9 +710,9 @@ As a consequence:
     `graviteeio-*apim-gateway*-x.y.z` instead of
     `graviteeio-gateway-x.y.z`
 
-# Breaking changes
+## Breaking changes
 
-## Gateway
+### Gateway
 
 HTTP Bridge Service is now disabled by default starting.
 
@@ -708,7 +723,7 @@ For more information, [click
 here](https://docs.gravitee.io/apim/3.x/apim_installguide_hybrid_deployment.html#apim_gateway_http_bridge_server)
 for documentation.
 
-## Management Web UI
+### Management Web UI
 
 From with this version, the name of the APIM Console component changes.
 As a consequence:
@@ -723,7 +738,7 @@ As a consequence:
     `graviteeio-*apim-console*-ui-x.y.z` instead of
     `graviteeio-management-ui-x.y.z`
 
-## Portal Web UI
+### Portal Web UI
 
 From with this version, the name of the APIM Portal component changes.
 As a consequence:
@@ -741,9 +756,9 @@ As a consequence:
 In future versions, others plugins & components might be renamed. Stay
 tuned!
 
-# Breaking changes
+## Breaking changes
 
-## Gateway
+### Gateway
 
 From with this version, the name of the APIM Gateway component changes.
 As a consequence:
@@ -758,9 +773,9 @@ As a consequence:
     `graviteeio-*apim-gateway*-x.y.z` instead of
     `graviteeio-gateway-x.y.z`
 
-# Breaking changes
+## Breaking changes
 
-## Management Web UI
+### Management Web UI
 
 From with this version, the name of the APIM Console component changes.
 As a consequence:
@@ -775,7 +790,7 @@ As a consequence:
     `graviteeio-*apim-console*-ui-x.y.z` instead of
     `graviteeio-management-ui-x.y.z`
 
-## Portal Web UI
+### Portal Web UI
 
 From with this version, the name of the APIM Portal component changes.
 As a consequence:
@@ -793,7 +808,7 @@ As a consequence:
 In future versions, others plugins & components might be renamed. Stay
 tuned!
 
-# Breaking Change
+## Breaking Change
 
 **Policy plugin `gravitee-policy-apikey` prior to version 2.3.0 is no
 longer compatible with APIM 3.12.0.**
@@ -801,7 +816,7 @@ longer compatible with APIM 3.12.0.**
 Starting in version 3.12.0, you must use `gravitee-policy-apikey` &gt;=
 2.3.0.
 
-# Default Settings Change Announcement
+## Default Settings Change Announcement
 
 HTTP Bridge Service will be disabled by default starting in version
 3.13.
@@ -813,9 +828,9 @@ For more information, [click
 here](https://docs.gravitee.io/apim/3.x/apim_installguide_hybrid_deployment.html#apim_gateway_http_bridge_server)
 for documentation.
 
-# API Keys
+## API Keys
 
-## Model Change
+### Model Change
 
 Before this version, API keys contained a **key** attribute, which is
 both the value of the key and also the database ID.
@@ -836,7 +851,7 @@ as ***ID***) :
 
 -   POST /subscriptions/{subscription.id}/\_renew
 
-## Deprecated Endpoints
+### Deprecated Endpoints
 
 The Rest API endpoints listed below are now deprecated, and will be
 removed in a future version.
@@ -914,9 +929,9 @@ removed in a future version.
 </tbody>
 </table>
 
-# Repository
+## Repository
 
-## MongoDB
+### MongoDB
 
 Before running any script, please create a dump of your existing
 database.
@@ -924,7 +939,7 @@ database.
 [/apim/3.x/mongodb/3.12.0/api-keys-migration.js](https://raw.githubusercontent.com/gravitee-io/gravitee-api-management/master/gravitee-apim-repository/gravitee-apim-repository-mongodb/src/main/resources/scripts/3.12.0/api-keys-migration.js)  
 This script adds **key** and **api** columns in api keys **keys** table.
 
-# Breaking changes
+## Breaking changes
 
 ## Management Web UI
 
@@ -941,7 +956,7 @@ As a consequence:
     `graviteeio-*apim-console*-ui-x.y.z` instead of
     `graviteeio-management-ui-x.y.z`
 
-## Portal Web UI
+### Portal Web UI
 
 From with this version, the name of the APIM Portal component changes.
 As a consequence:
@@ -959,9 +974,9 @@ As a consequence:
 In future versions, others plugins & components might be renamed. Stay
 tuned!
 
-# Repository
+## Repository
 
-## Mongodb
+### Mongodb
 
 Before running any script, please create a dump of your existing
 database.
@@ -969,7 +984,7 @@ database.
 [/apim/3.x/mongodb/3.11.1/1-event-debug-migration.js](https://raw.githubusercontent.com/gravitee-io/gravitee-api-management/master/gravitee-apim-repository/gravitee-apim-repository-mongodb/src/main/resources/scripts/3.11.1/1-event-debug-migration.js)  
 This script removes the `API_ID` property for events of type `DEBUG`.
 
-# Breaking changes
+## Breaking changes
 
 From with this version, the name of the APIM Rest APIs component
 changes. As a consequence:
@@ -987,7 +1002,7 @@ changes. As a consequence:
 In future versions, others plugins & components might be renamed. Stay
 tuned!
 
-# Security update
+## Security update
 
 From this version, API properties can be encrypted.
 
@@ -999,9 +1014,9 @@ length secret.
 \`\`\`ỳml \# Encrypt API properties using this secret api: properties:
 encryption: secret: vvLJ4Q8Khvv9tm2tIPdkGEdmgKUruAL6 \`\`\`
 
-# Breaking changes
+## Breaking changes
 
-## API key and JWT plans
+### API key and JWT plans
 
 The security chain (the internal process that selects the executable
 plan for the incoming request and applies the related security rules)
@@ -1059,7 +1074,7 @@ unauthorized</p></td>
 </tbody>
 </table>
 
-# Breaking changes
+## Breaking changes
 
 From this version, and for the next 3.10.x versions, the name of the
 Elasticsearch repository component changes.  
@@ -1077,9 +1092,9 @@ You can download directly the Elasticsearch repository using this
 link:  
 <https://download.gravitee.io/graviteeio-apim/plugins/repositories/gravitee-apim-repository-elasticsearch/gravitee-apim-repository-elasticsearch-3.10.15.zip>
 
-# Breaking Change
+## Breaking Change
 
-## Docker Images - Enterprise Edition
+### Docker Images - Enterprise Edition
 
 To reduce the number of security vulnerabilities and ensure a better
 maintenance in the future, the base Docker images used for the
@@ -1094,7 +1109,7 @@ compatible with the Alpine distribution.
 *Notes*: Community Edition users will not be affected as the base images
 were already **Alpine** ones.
 
-# Elastic Search reporter plugins configuration
+## Elastic Search reporter plugins configuration
 
 Before Gravitee 3.10.9 :
 
@@ -1119,9 +1134,9 @@ And then, you have to override
 `reporters.elasticsearch.pipeline.plugins.ingest` default configuration,
 to remove unrelevant plugin.
 
-# Breaking changes
+## Breaking changes
 
-## Gateway
+### Gateway
 
 From with this version, the name of the APIM Gateway component changes.
 As a consequence:
@@ -1136,9 +1151,9 @@ As a consequence:
     `graviteeio-*apim-gateway*-x.y.z` instead of
     `graviteeio-gateway-x.y.z`
 
-# Plans anomalies in database
+## Plans anomalies in database
 
-## TLDR
+### TLDR
 
 In Gravitee &lt; 3.10.8, some processes have caused database
 inconsistencies, regarding plans and flows.
@@ -1152,7 +1167,7 @@ your API is concerned, and how it will be fixed.
 
 After check, fix those database anomalies by disabling the dry mode.
 
-## What are those database anomalies ?
+### What are those database anomalies ?
 
 In Gravitee &lt; 3.10.8, some processes have caused inconsistencies in
 database, regarding plans and flows.
@@ -1170,7 +1185,7 @@ Concerned processes are :
 For concerned APIs, plans and flows displayed in console doesn’t reflect
 the ones runned by gateway.
 
-## How to fix it ?
+### How to fix it ?
 
 Gravitee 3.10.8, introduces an automated process to detect and fix those
 anomalies.
@@ -1182,7 +1197,7 @@ database.
 After you checked those anomalies have to be fixed, you can disable the
 *dry* mode, and restart your API to update your database.
 
-## My APIs are concerned ?
+### My APIs are concerned ?
 
 On management API startup, you will see this trace in the console, or
 the dedicated `gravitee-upgraders.log` log file.
@@ -1220,14 +1235,14 @@ If anomalies were detected :
     14:51:51.025 [main] INFO  i.g.r.a.s.i.u.PlansDataFixUpgrader - - Will create plan "Silver-Recreated" for API "Petstore" (121112-1211-1111-121121211), which is missing in plans table
     14:51:51.058 [main] INFO  i.g.r.a.s.i.u.PlansDataFixUpgrader - Finishing PlansDataFixUpgrader execution
 
-## How anomalies are fixed ?
+### How anomalies are fixed ?
 
 This process will fix your API plans data.
 
 But it won’t change the runtime behavior of your APIs in the gateway,
 until you redeploy them manually from console.
 
-### Some plans were considered by gateway, but were not visible in console :
+#### Some plans were considered by gateway, but were not visible in console :
 
 They will be recreated in console, and you will see new plans appear :
 
@@ -1240,18 +1255,18 @@ Those plans will be in `deprecated` state, without any subscription. It
 will allow you to check those plans and their flows, and close them if
 relevant.
 
-### Some plans visible in console were not considered by gateway :
+#### Some plans visible in console were not considered by gateway :
 
 Those plans will be closed, as they were not actually used during API
 runtime.
 
-## I’m ready. How to disable the dry mode and fix data ?
+### I’m ready. How to disable the dry mode and fix data ?
 
 To fix data in your database, turn off the dry-mode, setting the
 `services.plans-data-fix-upgrader.dryRun` parameter to false. Then,
 restart the management API.
 
-## Further configuration ?
+### Further configuration ?
 
 You can configure this process in gravitee.yml, for example :
 
@@ -1296,9 +1311,9 @@ will be send to the api owner for each fixed API.</p></td>
 </tbody>
 </table>
 
-# Breaking changes
+## Breaking changes
 
-## Management Web UI
+### Management Web UI
 
 From with this version, the name of the APIM Console component changes.
 As a consequence:
@@ -1313,7 +1328,7 @@ As a consequence:
     `graviteeio-*apim-console*-ui-x.y.z` instead of
     `graviteeio-management-ui-x.y.z`
 
-## Portal Web UI
+### Portal Web UI
 
 From with this version, the name of the APIM Portal component changes.
 As a consequence:
@@ -1331,7 +1346,7 @@ As a consequence:
 In future versions, others plugins & components might be renamed. Stay
 tuned!
 
-# Breaking changes
+## Breaking changes
 
 From this version, the name of the APIM Rest APIs component changes. As
 a consequence:
@@ -1349,9 +1364,9 @@ a consequence:
 In future versions, others plugins & components might be renamed. Stay
 tuned!
 
-# Repository
+## Repository
 
-## Mongodb
+### Mongodb
 
 Before running any script, please create a dump of your existing
 database.
@@ -1359,7 +1374,7 @@ database.
 [/apim/3.x/mongodb/3.10.1/1-upgrade-parameters-for-theme-console.js](https://raw.githubusercontent.com/gravitee-io/gravitee-api-management/master/gravitee-apim-repository/gravitee-apim-repository-mongodb/src/main/resources/scripts/3.10.1/1-upgrade-parameters-for-theme-console.js)  
 This script upgrade default value of `theme.logo` in parameters
 
-# Breaking changes
+## Breaking changes
 
 From with this version, the name of some components of Gravitee.io APIM
 changes. As a consequence, the following plugins are renamed :
@@ -1421,15 +1436,15 @@ available using this link:
 
 In future versions, others plugins will be renamed. Stay tuned!
 
-# Breaking changes
+## Breaking changes
 
-## Threat protection policies
+### Threat protection policies
 
 From this version, configuration form for JSON Threat Protection Policy
 and XML Threat Protection Policy changes: `null` is no longer
 authorized, only `-1` is accepted for a *no limit* setting.
 
-### Impacts
+#### Impacts
 
 -   If some fields are set to `null` in your db, and if you want to edit
     this policy configuration through **APIM Console**, then the form
@@ -1442,7 +1457,7 @@ authorized, only `-1` is accepted for a *no limit* setting.
     will appear if you do not set an explicit value for those fields in
     your request payload.
 
-## Management Rest API
+### Management Rest API
 
 From with this version, the name of the APIM Rest APIs component
 changes. As a consequence:
@@ -1460,7 +1475,7 @@ changes. As a consequence:
 In future versions, others plugins & components might be renamed. Stay
 tuned!
 
-# Breaking changes
+## Breaking changes
 
 From with this version, the name of some components of Gravitee.io APIM
 changes. As a consequence, the following plugins are renamed :
@@ -1522,7 +1537,7 @@ available using this link:
 
 In future versions, others plugins will be renamed. Stay tuned!
 
-# Important: Alert Engine
+## Important: Alert Engine
 
 For users of Gravitee Enterprise Edition with Alert Engine, please check
 your gravitee configuration to ensure that the alert engine feature is
@@ -1531,7 +1546,7 @@ is disabled by default if the option `alerts.alert-engine-enabled` is
 missing from the gravitee.yaml. (see
 <https://docs.gravitee.io/ae/apim_installation.html#configuration>)
 
-# Warning
+## Warning
 
 **For JDBC users only**, please don’t upgrade to 3.9.0 since we detected
 a critical bug in a liquibase script that could lead to data loss.  
@@ -1540,14 +1555,14 @@ We apologize for this inconvenience.
 
 GitHub issue: [5711](https://github.com/gravitee-io/issues/issues/5711)
 
-# Breaking changes
+## Breaking changes
 
 From this version, in order to propose a better swagger descriptor, all
 enum values **returned** by the APIM API are in uppercase.
 
 Lowercase and uppercase values are still accepted in incoming requests.
 
-# Memory management
+## Memory management
 
 Starting from this new version, the default Xms and Xmx parameters has
 been fixed to 256m. Previous value was too high and does not reflect
@@ -1558,7 +1573,7 @@ set the `GIO_MIN_MEM` and `GIO_MAX_MEM` environment variables in your
 scripts. Those variables are then "injected" into the JAVA\_OPTS during
 bootstrap.
 
-# APIM API - Tags and Tenants
+## APIM API - Tags and Tenants
 
 This version changes permissions' scope from `ENVIRONMENT` to
 `ORGANIZATION` for:
@@ -1573,9 +1588,9 @@ These permissions are now readonly for the scope `ENVIRONMENT`. They
 will be deleted on version 3.10. If you are using these permissions,
 please update them for the scope `ORGANIZATION`.
 
-# Repository
+## Repository
 
-## Mongodb
+### Mongodb
 
 Before running any script, please create a dump of your existing
 database.
@@ -1588,7 +1603,7 @@ This script adds referenceId set to *DEFAULT* and referenceType set to
 This script modifies events, so an event can be linked to more than one
 environment.
 
-# Breaking changes
+## Breaking changes
 
 From with this version, the name of some components of Gravitee.io APIM
 changes. As a consequence, the following plugins are renamed :
@@ -1650,9 +1665,9 @@ available using this link:
 
 In future versions, others plugins will be renamed. Stay tuned!
 
-# Repository
+## Repository
 
-## Mongodb
+### Mongodb
 
 Before running any script, please create a dump of your existing
 database.
@@ -1661,7 +1676,7 @@ database.
 This script replaces **excluded\_groups** by **visibility**,
 **excludedAccessControls** and **accessControls** collection.
 
-# Repository
+## Repository
 
 Since 3.7, you have the ability to configure a prefix for your tables or
 collections name.
@@ -1674,15 +1689,15 @@ of the gateway, if you do not want it to modify your dbms.
 
 If you choose to use prefix, follow these instructions.
 
-## Mongodb
+### Mongodb
 
-### New installation
+#### New installation
 
 You just have to modify the `gravitee.yml` files of gateway and console
 to configure `management.mongodb.prefix` and `ratelimit.mongodb.prefix`.
 Default value is empty.
 
-### Migrate an existing installation
+#### Migrate an existing installation
 
 Before running any script, please create a dump of your existing
 database.
@@ -1706,15 +1721,15 @@ For the following steps, we admit you choose this prefix: prefix\_
 
 3.  Run your instances!
 
-## JDBC
+### JDBC
 
-### New installation
+#### New installation
 
 You just have to modify the `gravitee.yml` files of gateway and console
 to configure `management.jdbc.prefix` and `ratelimit.jdbc.prefix`.
 Default value is empty.
 
-### Migrate an existing installation
+#### Migrate an existing installation
 
 Before running any script, please create a dump of your existing
 database.
@@ -1742,12 +1757,12 @@ For the following steps, we admit you choose this prefix: prefix\_
 
 7.  Run your instances!
 
-# Elasticsearch
+## Elasticsearch
 
 With Elasticsearch version above 7.x, `geoip` and `user_agent` plugins
 are automatically enabled.
 
-# APIM API
+## APIM API
 
 Two new configuration keys have been added to the `gravitee.yml` file,
 they should be set with the URLs of the UI console and the management
@@ -1758,9 +1773,9 @@ UPDATE WITH YOUR OWN URL \`\`\`
 NB: **For Gravitee Cockpit to work properly these URLs are mandatory**,
 they will be used by Cockpit to interact with your APIM installation.
 
-# Breaking changes
+## Breaking changes
 
-## Gateway
+### Gateway
 
 From with this version, the name of the APIM Gateway component changes.
 As a consequence:
@@ -1775,9 +1790,9 @@ As a consequence:
     `graviteeio-*apim-gateway*-x.y.z` instead of
     `graviteeio-gateway-x.y.z`
 
-# Breaking changes
+## Breaking changes
 
-## Management Web UI
+### Management Web UI
 
 From with this version, the name of the APIM Console component changes.
 As a consequence:
@@ -1792,7 +1807,7 @@ As a consequence:
     `graviteeio-*apim-console*-ui-x.y.z` instead of
     `graviteeio-management-ui-x.y.z`
 
-## Portal Web UI
+### Portal Web UI
 
 From with this version, the name of the APIM Portal component changes.
 As a consequence:
@@ -1810,15 +1825,15 @@ As a consequence:
 In future versions, others plugins & components might be renamed. Stay
 tuned!
 
-# Breaking changes
+## Breaking changes
 
-## Threat protection policies
+### Threat protection policies
 
 From this version, configuration form for JSON Threat Protection Policy
 and XML Threat Protection Policy changes: `null` is no longer
 authorized, only `-1` is accepted for a *no limit* setting.
 
-### Impacts
+#### Impacts
 
 -   If some fields are set to `null` in your db, and if you want to edit
     this policy configuration through **APIM Console**, then the form
@@ -1831,7 +1846,7 @@ authorized, only `-1` is accepted for a *no limit* setting.
     will appear if you do not set an explicit value for those fields in
     your request payload.
 
-## Management Rest API
+### Management Rest API
 
 From with this version, the name of the APIM Rest APIs component
 changes. As a consequence:
@@ -1849,14 +1864,14 @@ changes. As a consequence:
 In future versions, others plugins & components might be renamed. Stay
 tuned!
 
-# Improvements
+## Improvements
 
 Some performance improvements have been made
 ([\#6066](https://github.com/gravitee-io/issues/issues/6066)). As a
 consequence, the scheduled service used to automatically close expired
 subscriptions now runs every hour instead of every 5 seconds
 
-# Breaking changes
+## Breaking changes
 
 From with this version, the name of some components of Gravitee.io APIM
 changes. As a consequence, the following plugins are renamed :
@@ -1918,9 +1933,9 @@ available using this link:
 
 In future versions, others plugins will be renamed. Stay tuned!
 
-# Repository
+## Repository
 
-## Mongodb
+### Mongodb
 
 Before running any script, please create a dump of your existing
 database.
@@ -1929,9 +1944,9 @@ database.
 This script migrate CORS environment variables for portal and console.
 (See below).
 
-# Breaking Changes
+## Breaking Changes
 
-## Environment variables
+### Environment variables
 
 Some environment variables have been doubled for the portal and the
 console, see correspondence table:
@@ -2014,9 +2029,9 @@ style="text-align: left;"><p>http.api.management.cors.max-age</p></td>
 </tbody>
 </table>
 
-# Breaking Changes
+## Breaking Changes
 
-## Management API
+### Management API
 
 If you are using the REST API directly, please note that now these
 requests need authentication:
@@ -2030,9 +2045,9 @@ requests need authentication:
 -   
 -   
 
-# Repository
+## Repository
 
-## Mongodb
+### Mongodb
 
 Before running any script, please create a dump of your existing
 database.
@@ -2042,9 +2057,9 @@ This script add the "DEFAULT" `referenceId` for memberships with `null`
 one. This bug impacts users created when using social authentication
 since version 3.5.0.
 
-# Breaking Changes
+## Breaking Changes
 
-## Environment variables
+### Environment variables
 
 Some environment variables have been doubled for the portal and the
 console, see correspondence table:
@@ -2140,16 +2155,16 @@ style="text-align: left;"><p>console.http.cors.exposed-headers</p></td>
 </tbody>
 </table>
 
-# Distribution
+## Distribution
 
 From this version, Gravitee.IO APIM is distributed with MongoDB and JDBC
 plugins, as well as Hybrid HTTP plugin (gateway-bridge-http), in the
 `full` ZIP.  
 You no longer have to choose between the "full" or "full-jdbc" ZIP file.
 
-# Repository
+## Repository
 
-## Mongodb
+### Mongodb
 
 Before running any script, please create a dump of your existing
 database.
@@ -2159,9 +2174,9 @@ This script duplicates some parameters for the console to have different
 behaviors between portal and console. It also modifies the \_id of each
 mongo document to add referenceId and referenceType.
 
-# Repository
+## Repository
 
-## Mongodb
+### Mongodb
 
 Before running any script, please create a dump of your existing
 database.
@@ -2173,9 +2188,9 @@ audits regarding some conditions.
 [/apim/3.x/mongodb/3.4.0/2-update-default-role-REVIEWER.js](https://raw.githubusercontent.com/gravitee-io/gravitee-api-management/master/gravitee-apim-repository/gravitee-apim-repository-mongodb/src/main/resources/scripts/3.4.0/2-update-default-role-REVIEWER.js)  
 This script add new permissions to the default REVIEWER role.
 
-# Repository
+## Repository
 
-## Mongodb
+### Mongodb
 
 Before running any script, please create a dump of your existing
 database.
@@ -2189,9 +2204,9 @@ This script replaces **REQUEST** and **RESPONSE** with
 **REQUEST\_CONTENT** and **RESPONSE\_CONTENT** for json-validation
 policy configuration in `apis` collections.
 
-# Deprecation
+## Deprecation
 
-## Management API
+### Management API
 
 Starting with this version, `User` and `IdentityProvider` are now linked
 to an organization and not to an environment. As a consequence, the
@@ -2359,9 +2374,9 @@ style="text-align: left;"><p>/organizations/DEFAULT/users/registration/finalize<
 </tbody>
 </table>
 
-# Breaking Changes
+## Breaking Changes
 
-## Portal UI
+### Portal UI
 
 The variables css of `gv-link` component has been modified to improve
 the theme’s customization. Now the component uses :
@@ -2378,15 +2393,15 @@ the theme’s customization. Now the component uses :
 For example, if you has set `--gv-link-active--bdbw=3px`, now you should
 set `--gv-link-active--bdw=0 0 3px 0`
 
-# Docker images
+## Docker images
 
 All the UI based docker images (APIM Console, APIM Portal) are now using
 HTTP port 8080 and HTTPS port 8443 by default to avoid the need of a
 root account to use 80/443 to improve the security of our platform.
 
-# Breaking Changes
+## Breaking Changes
 
-## Management API
+### Management API
 
 Starting with this version, `Apis` resources require authentication even
 for the GET method.
@@ -2397,7 +2412,7 @@ adapt your application.
 `Apis` resources start with the path
 `/management/organizations/DEFAULT/environments/DEFAULT/apis/`
 
-## Portal API
+### Portal API
 
 Starting with this version, `Apis`, `Pages` and `Categories` resources
 that were public for GET method require authentication if the users have
@@ -2415,7 +2430,7 @@ adapt your application.
 -   `Categories` resources start with the path
     `/portal/environments/DEFAULT/categories`
 
-# Breaking changes
+## Breaking changes
 
 The `portalURL` parameter in the gravitee.yml file has been removed. It
 has become useless with this issue
@@ -2430,7 +2445,7 @@ is <http://localhost:3000>
 The `portal.url` parameter in the console settings will also have a
 default value : <http://localhost:4100>
 
-# *View* renamed to *Categories*
+## *View* renamed to *Categories*
 
 In the new portal, *views* are called *categories*. But in the
 management console, they are still called *views*. To be consistent, the
@@ -2439,7 +2454,7 @@ term *View* is replaced by *Category* in the whole platform.
 Linked to this issue:
 [\#3843](https://github.com/gravitee-io/issues/issues/3843)
 
-## Mongodb
+### Mongodb
 
 Before running any script, please create a dump of your existing
 database.
@@ -2449,7 +2464,7 @@ This script renames a field in *apis* collection, rename *views*
 collection, change 3 parameters, replace *view* by *category* in
 *audits* collection and convert documentation view LINK to ctagory LINK
 
-# Important
+## Important
 
 If you are using mongoDB, it is **strongly recommended** to run the
 scripts to upgrade your database **before** starting the new version of
@@ -2458,9 +2473,9 @@ issues.
 
 Mongo version **MUST** be at least **3.6**
 
-# General
+## General
 
-## Organization & Environment
+### Organization & Environment
 
 In this new version Gravitee comes with a new way of managing your
 environments. By default, Gravitee is configured with a first
@@ -2472,15 +2487,15 @@ organization: DEFAULT } \`\`\`
 It will allow you to manage more than one environment for each instance
 of Gravitee.
 
-# Breaking Changes
+## Breaking Changes
 
-## API-Key policy
+### API-Key policy
 
 In this new version, if api-keys used to call an API is invalid or has
 expired, the gateway will fail with a **401** (instead of 403 in
 previous versions of Gravitee).
 
-## Management API
+### Management API
 
 If you are using the REST API directly, please note that you will have
 to adapt the URL from `https://host/management/` to
@@ -2489,7 +2504,7 @@ to adapt the URL from `https://host/management/` to
 The resource `/views/default` has been deleted since a view does not
 have a **default** field anymore.
 
-## Management UI
+### Management UI
 
 The actual portal has been replaced by a brand new version, with its own
 location. As a consequence, the URL of the management UI has been
@@ -2499,7 +2514,7 @@ For instance, to access the *Platform Overview* page, you should use
 `https://host/\#!/platform` instead of
 `https://host/#!/management/platform`
 
-## Memberships, roles and role mappings
+### Memberships, roles and role mappings
 
 One major breaking change in this new version is the replacement of
 **MANAGEMENT** and **PORTAL** scopes by **ENVIRONNMENT** and
@@ -2671,9 +2686,9 @@ Here’s a correlation table of permissions before and after migration :
 </tbody>
 </table>
 
-# Repository
+## Repository
 
-## Mongodb
+### Mongodb
 
 Before running any script, please create a dump of your existing
 database.
@@ -2713,9 +2728,9 @@ This script removes the *All* **view**, since the legacy portal has been
 replaced and the new portal does not need this default view anymore. The
 script also updates existing views to remove **defaultView** field.
 
-# Upgrader
+## Upgrader
 
-## Identity providers
+### Identity providers
 
 Because of the evolution of the roles and their scope, role mappings in
 **Identity Providers** must be updated. To achieve this, a specific
@@ -2728,7 +2743,7 @@ disabled with some configuration.
       v3-upgrader:
         enabled: true
 
-# Docker
+## Docker
 
 Docker images for Gravitee.io APIM have been renamed to follow the same
 conventions as the others Gravitee.io modules.

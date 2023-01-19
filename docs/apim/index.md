@@ -1,3 +1,10 @@
+---
+title: Gravitee.io API Management (APIM)
+tags:
+  - APIM
+  - Introduction
+---
+
 # Gravitee.io API Management (APIM)
 
 Organizations need API management solutions to publish their APIs to

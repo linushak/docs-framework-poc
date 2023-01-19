@@ -8,6 +8,7 @@ theme:
         icon: material/weather-night
         name: Switch to dark mode
       primary: teal
+      accent: blue
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
       toggle:
@@ -39,8 +40,8 @@ theme:
     - navigation.tabs.sticky
     - content.code.annotate
     - navigation.top
-    # - navigation.sections
-    - navigation.expand
+    # - navigation.sections
+    # - navigation.expand
     - navigation.indexes
     - toc.follow
     - toc.integrate
@@ -157,19 +158,215 @@ nav:
       - Install on Amazon:
         - Introduction: apim/installation-guide/amazon-linux/installation-guide-amazon-introduction.md
         - Prerequisite - Machine: apim/installation-guide/amazon-linux/installation-guide-amazon-prerequisite-machine.md
-        - Prerequisite - Setup Gravitee YUM repository: apim/installation-guide/amazon-linux/installation-guide-amazon-prerequisite-yum.md
+        - Prerequisite - Set up Gravitee YUM repository: apim/installation-guide/amazon-linux/installation-guide-amazon-prerequisite-yum.md
         - Prerequisite - Install Java 11: apim/installation-guide/amazon-linux/installation-guide-amazon-prerequisite-java.md
         - Prerequisite - Install MongoDB: apim/installation-guide/amazon-linux/installation-guide-amazon-prerequisite-mongodb.md
         - Prerequisite - Install Elasticsearch: apim/installation-guide/amazon-linux/installation-guide-amazon-prerequisite-elasticsearch.md
         - Prerequisite - Install Nginx: apim/installation-guide/amazon-linux/installation-guide-amazon-prerequisite-nginx.md
-    - Upgrade and migrate: apim/installation-guide/installation-guide-migration.md
-    - Configure: apim/installation-guide/configuration/configuration-guide.md
-    - Get started: apim/quickstart/quickstart-overview.md
-    - Manage and configure APIs: apim/user-guide/publisher/manage-api.md
-    - Consume APIs: apim/user-guide/consumer/developer-portal.md
-    - Administration: apim/user-guide/admin/admin-guide-organizations-and-environments.md
-    - Developer reference: apim/dev-guide/dev-guide-boostrap.md
-    - Policy reference: apim/policy-reference/policies-overview.md
+        - Component - Install Gateway: apim/installation-guide/amazon-linux/installation-guide-amazon-gateway.md
+        - Component - Install REST API: apim/installation-guide/amazon-linux/installation-guide-amazon-rest-api.md
+        - Component - Install Management UI: apim/installation-guide/amazon-linux/installation-guide-amazon-management-ui.md
+        - Component - Install Portal UI: apim/installation-guide/amazon-linux/installation-guide-amazon-portal-ui.md
+        - Component - Install all: apim/installation-guide/amazon-linux/installation-guide-amazon-all.md
+        - Full stack installation: apim/installation-guide/amazon-linux/installation-guide-amazon-stack.md
+        - Fixing a known post-installation issue: apim/installation-guide/amazon-linux/installation-guide-amazon-issue.md
+      - Install on Docker:
+        - Introduction: apim/installation-guide/docker/installation-guide-docker-introduction.md
+        - Images: apim/installation-guide/docker/installation-guide-docker-images.md
+        - Images (EE): apim/installation-guide/docker/installation-guide-docker-images-ee.md
+        - Compose: apim/installation-guide/docker/installation-guide-docker-compose.md
+        - Compose (EE): apim/installation-guide/docker/installation-guide-docker-compose-ee.md
+        - Customize: apim/installation-guide/docker/installation-guide-docker-customize.md
+      - Installing APIM with Kubernetes: apim/installation-guide/installation-guide-kubernetes.md
+      - Install on RedHat and CentOS:
+        - Introduction: apim/installation-guide/red-hat/installation-guide-redhat-introduction.md
+        - Install full APIM stack: apim/installation-guide/red-hat/installation-guide-redhat-stack.md
+        - Install APIM Gateway: apim/installation-guide/red-hat/installation-guide-redhat-gateway.md
+        - Install APIM API: apim/installation-guide/red-hat/installation-guide-redhat-management-api.md
+        - Install APIM Console: apim/installation-guide/red-hat/installation-guide-redhat-management-ui.md
+        - Install APIM Portal: apim/installation-guide/red-hat/installation-guide-redhat-portal.md
+      - Hybrid Deployment:
+        - Hybrid Deployment Guide V1: apim/installation-guide/hybrid/installation-guide-hybrid-deployment-v1.md
+        - Hybrid Deployment Guide V2: apim/installation-guide/hybrid/installation-guide-hybrid-deployment-v2.md
+        - Deploy a Hybrid architecture with Kubernetes: apim/installation-guide/hybrid/installation-guide-hybrid-kubernetes.md
+      - Install with .ZIP:
+        - Install APIM Gateway: apim/installation-guide/with-zip/installation-guide-gateway-install-zip.md
+        - Install APIM API: apim/installation-guide/with-zip/installation-guide-rest-apis-install-zip.md
+        - Install APIM Console: apim/installation-guide/with-zip/installation-guide-management-ui-install-zip.md
+        - Install APIM Portal: apim/installation-guide/with-zip/installation-guide-portal-ui-install-zip.md
+      - Configure a production-ready APIM environment: apim/how-tos/how-to-general-configuration.md
+      - Configure HTTP reverse proxy: apim/how-tos/how-to-configure-reverse-proxy.md
+      - Installing and updating Plugins: apim/installation-guide/installation-guide-plugins.md
+      - Upgrade APIM: apim/installation-guide/installation-guide-migration.md
+    - Quick Start Guide:
+      - Introduction: apim/quickstart/quickstart-overview.md
+      - Get started:
+        - Log in to APIM Console: apim/quickstart/quickstart-console-login.md
+        - Log in to APIM Portal: apim/quickstart/quickstart-portal-login.md
+      - Publish your first API:
+        - Publish your first API with APIM Console: apim/quickstart/api-publisher/api-publisher-ui.md
+        - Publish your first API with APIM API: apim/quickstart/api-publisher/api-publisher-api.md
+      - Consume and API:
+        - Using APIM Portal: apim/quickstart/api-consumer/api-consumer-ui.md
+        - Using APIM API: apim/quickstart/api-consumer/api-consumer-api.md
+        - Test your API: apim/quickstart/api-consumer/api-consumer-test.md
+    - Configuration Guide:
+      - Introduction: apim/installation-guide/configuration/configuration-guide.md
+      - Configure APIM Gateway:
+        - General configuration: apim/installation-guide/configuration/gateway/installation-guide-gateway-configuration.md
+        - Internal API: apim/installation-guide/configuration/gateway/installation-guide-gateway-technical-api.md
+        - Metrics: apim/installation-guide/configuration/gateway/installation-guide-gateway-metrics.md
+        - Enable OpenTracing: apim/installation-guide/configuration/gateway/configure-opentracing.md
+        - OpenTracing In Docker: apim/installation-guide/configuration/gateway/opentracing-in-docker.md
+      - Configure APIM API:
+        - General configuration: apim/installation-guide/configuration/rest-apis/installation-guide-rest-apis-configuration.md
+        - Internal API: apim/installation-guide/configuration/rest-apis/installation-guide-rest-apis-technical-api.md
+        - Metrics: apim/installation-guide/configuration/rest-apis/installation-guide-rest-apis-metrics.md
+        - Security: apim/installation-guide/configuration/rest-apis/installation-guide-rest-apis-security.md
+      - Configure APIM Console:
+        - General configuration: apim/installation-guide/configuration/management-ui/installation-guide-management-ui-configuration.md
+        - Dashboards: apim/installation-guide/configuration/management-ui/installation-guide-dashboard-configuration.md
+      - Configure APIM Portal: apim/installation-guide/configuration/portal-ui/installation-guide-portal-ui-configuration.md
+      - Configure repositories:
+        - Introduction: apim/installation-guide/configuration/repositories/installation-guide-repositories.md
+        - Elasticsearch: apim/installation-guide/configuration/repositories/installation-guide-repositories-elasticsearch.md
+        - MongoDB: apim/installation-guide/configuration/repositories/installation-guide-repositories-mongodb.md
+        - JDBC: apim/installation-guide/configuration/repositories/installation-guide-repositories-jdbc.md
+        - Redis: apim/installation-guide/configuration/repositories/installation-guide-repositories-redis.md
+      - Configure authentication:
+        - Introduction: apim/installation-guide/configuration/authentication/installation-guide-authentication.md
+        - Configure in-memory authentication: apim/installation-guide/configuration/authentication/installation-guide-authentication-inmemory.md
+        - Configure LDAP / Active Directory authentication: apim/installation-guide/configuration/authentication/installation-guide-authentication-ldap.md
+        - Configure APIM repository authentication: apim/installation-guide/configuration/authentication/installation-guide-authentication-apim.md
+        - Configure Gravitee Access Management authentication: apim/installation-guide/configuration/authentication/installation-guide-authentication-graviteeam.md
+        - Configure GitHub authentication: apim/installation-guide/configuration/authentication/installation-guide-authentication-github.md
+        - Configure Google authentication: apim/installation-guide/configuration/authentication/installation-guide-authentication-google.md
+        - Configure Keycloak authentication: apim/installation-guide/configuration/authentication/installation-guide-authentication-keycloak.md
+      - Configure Reporters: apim/installation-guide/configuration/reporters/installation-guide-reporters.md
+      - Configure Cache: apim/installation-guide/configuration/installation-guide-cache.md
+      - Configure Notifications: apim/installation-guide/installation-guide-configuration-notifications.md
+      - Configure Dictionaries: apim/installation-guide/installation-guide-configuration-dictionaries.md
+    - API Publisher Guide:
+      - Introduction: apim/user-guide/publisher/manage-api.md
+      - Manage APIs:
+        - Using APIM console: apim/user-guide/publisher/manage-apis/using-console.md
+        - Using Management APIs: apim/user-guide/publisher/manage-apis/using-apis.md
+      - Service Management Ecosystem (SME):
+        - Introducing SME: apim/user-guide/publisher/sme/sme-overview.md
+        - Introducing the Kafka connector: apim/user-guide/publisher/sme/introducing-kafka.md
+        - Using the Kafka connector: apim/user-guide/publisher/sme/using-kafka-connector.md
+        - Configuring the Kafka connector: apim/user-guide/publisher/sme/kafka-connector-configuration.md
+      - Plans and subscriptions:
+        - Introduction: apim/user-guide/publisher/plans/plans-and-subscriptions.md
+        - Create a plan: apim/user-guide/publisher/plans/create-plan.md
+        - Configure plan security: apim/user-guide/publisher/plans/plan-security.md
+        - Configure plan restrictions: apim/user-guide/publisher/plans/plan-restrictions.md
+        - Configure plan flows and policies: apim/user-guide/publisher/plans/plan-policies.md
+        - Publish a plan: apim/user-guide/publisher/plans/plan-publish.md
+        - Configure plan general conditions of use: apim/user-guide/publisher/plans/plan-general-conditions.md
+        - Manage plan subscriptions: apim/user-guide/publisher/plans/plan-subscriptions.md
+      - API users and ownership: apim/user-guide/publisher/manage-members.md
+      - API properties and encryption: apim/user-guide/publisher/api-property-encryption.md
+      - Response templates: apim/user-guide/publisher/response-templates.md
+      - CORS: apim/user-guide/publisher/configuring-cors.md
+      - Logging and analytics: apim/user-guide/publisher/logging-analytics.md
+      - Audit trail: apim/user-guide/publisher/audit-trail.md
+      - Load balancing, failover, and health check: apim/user-guide/publisher/backend-services.md
+      - Send notifications: apim/user-guide/publisher/messaging.md
+      - API rating: apim/user-guide/publisher/api-rating.md
+      - Top APIs: apim/user-guide/publisher/top-apis.md
+      - Resources:
+        - Introduction: apim/user-guide/publisher/resources/resources-overview.md
+        - Cache: apim/user-guide/publisher/resources/resource-cache.md
+        - Cache Redis: apim/user-guide/publisher/resources/resource-cache-redis.md
+        - OAuth2 - Gravitee Access Management: apim/user-guide/publisher/resources/resource-oauth2-am.md
+        - OAuth2 - Generic Authorization Server: apim/user-guide/publisher/resources/resource-oauth2-generic.md
+      - Design Studio Guide:
+        - Introduction: apim/user-guide/publisher/design-studio/design-studio-overview.md
+        - Migrate to Design Studio: apim/user-guide/publisher/design-studio/design-studio-migrate.md
+        - Design your API flows: apim/user-guide/publisher/design-studio/design-studio-create.md
+        - Try It mode: apim/user-guide/publisher/design-studio/design-studio-try-it.md
+        - Debug ode: apim/user-guide/publisher/design-studio/design-studio-debug-mode.md
+      - Documentation:
+        - Publish API documentation: apim/user-guide/publisher/documentation/publish-documentation.md
+        - Markdown documentation: apim/user-guide/publisher/documentation/publish-documentation-markdown.md
+        - AsciiDoc documentation: apim/user-guide/publisher/documentation/publish-documentation-asciidoc.md
+        - Markdown templates: apim/user-guide/publisher/documentation/publish-documentation-markdown-template.md
+        - OpenAPI documentation: apim/user-guide/publisher/documentation/publish-documentation-openapi.md
+        - Customize the APIM Portal navigation: apim/user-guide/publisher/documentation/publish-documentation-system-folders.md
+      - Service discovery:
+        - Introduction: apim/user-guide/publisher/service-discovery/service-discovery-overview.md
+        - Eureka service discovery: apim/user-guide/publisher/service-discovery/service-discovery-eureka.md
+        - HashiCorp Consul service discovery: apim/user-guide/publisher/service-discovery/service-discovery-consul.md
+      - Cockpit features - Promote APIs: apim/user-guide/publisher/promote-api.md
+      - Expression Language: apim/user-guide/publisher/expression-language.md
+    - API Consumer Guide:
+      - Introduction: apim/user-guide/consumer/developer-portal.md
+      - Create a user account: apim/user-guide/consumer/developer-create-account.md
+      - Manage applications: apim/user-guide/consumer/developer-manage.md
+      - Subscribe to an API: apim/user-guide/consumer/developer-subscribe.md
+    - Administration Guide:
+      - Organizations and environments: apim/user-guide/admin/admin-guide-organizations-and-environments.md
+      - Roles and permissions: apim/user-guide/admin/admin-guide-roles-and-permissions.md
+      - Users and groups: apim/user-guide/admin/admin-guide-users-and-groups.md
+      - Support: apim/user-guide/admin/admin-guide-users-support-tickets.md
+      - Platform policies: apim/user-guide/admin/admin-guide-platform-policies.md
+    - How To:
+      - Add custom metrics in dashboards: apim/how-tos/how-to-add-custom-metrics-in-dashboards.md
+      - Configure global API reviewers: apim/how-tos/how-to-configure-global-API-reviewers.md
+    - Developer Guide:
+      - Bootstrap Your Dev Environment: apim/dev-guide/dev-guide-boostrap.md
+      - Plugins: apim/dev-guide/dev-guide-plugins.md
+      - Policies: apim/dev-guide/dev-guide-policies.md
+    - Policy reference:
+      - Introduction: apim/policy-reference/policies-overview.md
+      - API key policy: apim/policy-reference/policy-apikey.md
+      - Assign attributes policy: apim/policy-reference/policy-assign-attributes
+      - Assign content policy: apim/policy-reference/policy-assign-content.md
+      - Assign metrics policy: apim/policy-reference/policy-assign-metrics.md
+      - Basic authentication policy: apim/policy-reference/policy-basic-authentication.md
+      - Cache policy: apim/policy-reference/policy-cache.md
+      - Callout HTTP policy: apim/policy-reference/policy-callout-http.md
+      - Circuit Breaker policy: apim/policy-reference/policy-circuit-breaker.md
+      - Data logging masking policy: apim/policy-reference/policy-data-logging-masking.md
+      - Dynamic routing policy: apim/policy-reference/policy-dynamic-routing.md
+      - Generate HTTP Signature policy: apim/policy-reference/policy-generate-http-signature.md
+      - Generate JWT policy: apim/policy-reference/policy-generate-jwt.md
+      - Groovy policy: apim/policy-reference/policy-groovy.md
+      - HTML to JSON policy: apim/policy-reference/policy-html-json.md
+      - HTTP signature policy: apim/policy-reference/policy-http-signature.md
+      - IP filtering policy: apim/policy-reference/policy-ipfiltering.md
+      - Javascript policy: apim/policy-reference/policy-javascript.md
+      - JSON threat protection policy: apim/policy-reference/policy-json-threat-protection.md
+      - JSON to JSON policy: apim/policy-reference/policy-json-to-json.md
+      - JSON to XML policy: apim/policy-reference/policy-json-xml.md
+      - JSON validation policy: apim/policy-reference/policy-json-validation.md
+      - JWS policy: apim/policy-reference/policy-jws.md
+      - JWT policy: apim/policy-reference/policy-jwt.md
+      - Keyless policy: apim/policy-reference/policy-keyless.md
+      - Latency policy: apim/policy-reference/policy-latency.md
+      - Metrics reporter policy: apim/policy-reference/policy-metrics-reporter.md
+      - Mock policy: apim/policy-reference/policy-mock.md
+      - OAuth2 policy: apim/policy-reference/policy-oauth2.md
+      - OpenID Connect UserInfo policy: apim/policy-reference/policy-openid-connect-userinfo.md
+      - Override HTTP method policy: apim/policy-reference/policy-override-http-method.md
+      - Rate limiting policy: apim/policy-reference/policy-ratelimit.md
+      - Regex threat protection policy: apim/policy-reference/policy-regex-threat-protection.md
+      - Request content limit policy: apim/policy-reference/policy-request-content-limit.md
+      - Request validation policy: apim/policy-reference/policy-request-validation.md
+      - Resource filtering policy: apim/policy-reference/policy-resource-filtering.md
+      - REST to SOAP policy: apim/policy-reference/policy-rest-to-soap.md
+      - Retry policy: apim/policy-reference/policy-retry.md
+      - Role-based access control policy: apim/policy-reference/policy-role-based-access-control.md
+      - SSL enforcement policy: apim/policy-reference/policy-ssl-enforcement.md
+      - Traffic shadowing policy: apim/policy-reference/policy-traffic-shadowing.md
+      - Transform headers policy: apim/policy-reference/policy-transform-headers.md
+      - Transform query parameters policy: apim/policy-reference/policy-transform-queryparameters.md
+      - URL rewriting policy: apim/policy-reference/policy-url-rewriting.md
+      - XML to JSON policy: apim/policy-reference/policy-xml-json.md
+      - Threat protection policy: apim/policy-reference/policy-xml-threat-protection.md
+      - XML validation policy: apim/policy-reference/policy-xml-validation.md
+      - XSLT policy: apim/policy-reference/policy-xlst.md
     - Gravitee Kubernetes Operator (GKO):
       - Introduction: apim/kubernetes/apim-kubernetes-operator-overview.md
       - Architecture: apim/kubernetes/apim-kubernetes-operator-architecture.md
@@ -179,7 +376,7 @@ nav:
         - Setting up a local cluster for deployment: apim/kubernetes/apim-kubernetes-operator-installation-local.md
       - User Guide:
         - Introduction: apim/kubernetes/apim-kubernetes-operator-user-guide.md
-        - Custom Resource Definitions (CRDs) reference: apim/kubernetes/apim-kubernetes-operator-user-guide-api-definition.md
+        - Custom Resource Definitions (CRDs) reference: apim/kubernetes/apim-kubernetes-operator-definitions.md
         - How to use the Management Context custom resource: apim/kubernetes/apim-kubernetes-operator-user-guide-management-context.md
         - How to use the API Definition custom resource: apim/kubernetes/apim-kubernetes-operator-user-guide-api-definition.md
         - How to sync API CRDs with a Management API: apim/kubernetes/apim-kubernetes-operator-user-guide-sync-crds.md
@@ -196,7 +393,7 @@ nav:
       - Example Use Cases: apim/v4-beta/v4-beta-event-native-apim-example-use-cases.md
     - API reference: apim/api-reference/apim-rest-api-reference-index.md
     - Changelog:
-      - apim/changelog.md
+      - APIM changelog index: apim/changelog.md
       - APIM 3.15.x changelog: apim/changelog/changelog-3.15.md
       - APIM 3.18.x changelog: apim/changelog/changelog-3.18.md
       - APIM 3.19.x changelog: apim/changelog/changelog-3.19.md

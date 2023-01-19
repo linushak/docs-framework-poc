@@ -1,12 +1,20 @@
-<span class="label label-version">New in version 3.5</span>
+---
+title: Design your API flows
+tags:
+  - Design Studio
+  - API flows
+  - Introduced in version 3.5
+---
 
-# Overview
+# Design your API flows
+
+## Overview
 
 You can use Design Studio to create new API flows for your plans and
 define policies for each flow. Creating different flows for a plan
 allows you to apply different policies by path and/or HTTP method.
 
-# Get started with Design Studio
+## Get started with Design Studio
 
 1.  link:{{ */apim/3.x/apim\_quickstart\_console\_login.html* |
     relative\_url }}\[Log in to APIM Console^\].
@@ -20,7 +28,7 @@ allows you to apply different policies by path and/or HTTP method.
     */apim/3.x/apim\_publisherguide\_design\_studio\_migrate.html* |
     relative\_url }}\[Migrate to Design Studio^\].
 
-# Create and configure an API flow
+## Create and configure an API flow
 
 You can create flows at API level or at plan level.
 
@@ -66,12 +74,12 @@ You can update a flow by clicking it and changing any required values,
 then clicking the tick icon image:{% link images/icons/tick-icon.png
 %}\[role="icon"\] to update the values.
 
-# Additional configuration
+## Additional configuration
 
 You can configure the following additional resources and properties for
 your API flows.
 
-## Specify Best match for your flow paths
+### Specify Best match for your flow paths
 
 In the **CONFIGURATION** tab, select **Best match** if you want APIM to
 match your flows from the path that is closest to that defined in the
@@ -98,7 +106,7 @@ If the request is `/test/55`, the resulting flow will be `/test/:id`. If
 the request is `/test/subtest`, the resulting flow will be
 `/test/subtest`.
 
-## Define properties for your API flows
+### Define properties for your API flows
 
 In the **PROPERTIES** tab, specify properties as key-value pairs. You
 can specify them one by one, or toggle from **Simple** to **Expert**
@@ -121,7 +129,7 @@ configuration (such as the dynamic routing policy), you can retrieve and
 query property values with the `#properties` statement. For more
 details, see the [???](#example) below.
 
-### Dynamic properties
+#### Dynamic properties
 
 You can configure dynamic properties, which retrieve properties from a
 remote server with a URL and update them according to the details you
@@ -150,7 +158,7 @@ specify.
     global properties, where its value is continuously updated according
     to the `cron` schedule specified.
 
-## Create resources to use in your flows
+### Create resources to use in your flows
 
 In the **RESOURCES** tab, create new resources to use in your flows. You
 can add resources to policies which support them when configuring them
@@ -186,7 +194,7 @@ For example, specify a cache resource as follows:
 
 5.  Click **SAVE**.
 
-# Add policies to a flow
+## Add policies to a flow
 
 You can add as many policies as you want to a flow.
 
@@ -215,7 +223,7 @@ If you hover over a policy in a flow you can perform various operations
 on it: drag the policy to another phase of the flow, disable, delete or
 duplicate the policy.
 
-# Example
+## Example
 
 In this example, we want our API to query our shop databases to check
 their stock levels. We will dynamically reroute any API calls containing
@@ -250,7 +258,7 @@ see link:{{
 */apim/3.x/apim\_installguide\_configuration\_dictionaries.html* |
 relative\_url }}\[Configure dictionaries^\] in the Configuration Guide.
 
-# Deploy your API and view it in the audit history
+## Deploy your API and view it in the audit history
 
 When you have finished designing an API, you need to click the **deploy
 your API** link to deploy your API with your changes.

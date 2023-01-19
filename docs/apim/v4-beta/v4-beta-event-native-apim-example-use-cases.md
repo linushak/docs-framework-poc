@@ -39,11 +39,9 @@ See [Environment variables](https://docs.gravitee.io/apim/3.x/apim_installguide_
 
 ### V4 BETA 3.20.x Postman Collection
 
-These examples use the Gravitee V4 BETA 3.20.x Postman Collection,
-available from the [Gravitee Public Workspace](https://www.postman.com/gravitee-io/workspace/gravitee-public-workspace/overview)
-in Postman.
+These examples use the Gravitee V4 BETA 3.20.x Postman Collection, available from the [Gravitee Public Workspace](https://www.postman.com/gravitee-io/workspace/gravitee-public-workspace/overview) in Postman.
 
-This collection uses the following four variables.
+This collection uses the following four variables:
 
 <table>
 <colgroup>
@@ -95,68 +93,67 @@ Some data ingestion examples are illustrated in the following diagram.
 
 ![Event-native API Management - Data Ingestion](/images/apim/3.x/event-native/event-native-api-management-data-ingestion.png "Data Ingestion")
 
-For data ingestion, run the requests in the *01 - Data Ingestion* folder
-of the Postman Collection.
+For data ingestion, run the requests in the *01 - Data Ingestion* folder of the Postman Collection.
 
-You can also use `curl` to `POST` data to the endpoint, as shown in the
-example below.
+You can also use `curl` to `POST` data to the endpoint, as shown in the example below.
 
-    curl -X POST -d "my_payload" http://localhost:8082/data/ingestion
+```
+curl -X POST -d "my_payload" http://localhost:8082/data/ingestion
+```
 
 ## Event consumption
 
 ### Streaming: server-sent events (SSE)
 
-For streaming with server-sent events (SSE), run the requests in the
-*02 - Event Consumption - SSE* folder of the Postman Collection.
+For streaming with server-sent events (SSE), run the requests in the *02 - Event Consumption - SSE* folder of the Postman Collection.
 
 You can test it with `curl`.
 
-    curl -N -H "Accept:text/event-stream" http://localhost:8082/demo/sse
+```
+curl -N -H "Accept:text/event-stream" http://localhost:8082/demo/sse
+```
 
 ### Streaming: WebSocket
 
-For streaming with WebSocket, run the requests in the *03 - Event
-Consumption - Websocket* folder of the Postman Collection.
+For streaming with WebSocket, run the requests in the *03 - Event Consumption - Websocket* folder of the Postman Collection.
 
-You can test it through a WebSocket connection in Postman, or you can
-use the `websocat` command-line tool as shown in the example below.
+You can test it through a WebSocket connection in Postman, or you can use the `websocat` command-line tool as shown in the example below.
 
-    websocat ws://localhost:8082/demo/ws
+```
+websocat ws://localhost:8082/demo/ws
+```
 
 ### Webhooks
 
-For webhooks, run the requests in the *04 - Event Consumption - Webhook*
-folder of the Postman Collection.
+For webhooks, run the requests in the *04 - Event Consumption - Webhook* folder of the Postman Collection.
 
-This request group uses a webhook callback that is called by the API
-Gateway. The unique callback URL is generated via
-<https://webhook.site/>.
+This request group uses a webhook callback that is called by the API Gateway. The unique callback URL is generated via [https://webhook.site](https://webhook.site/).
 
-To use these requests, go to <https://webhook.site/> to get your unique
-callback URL, and update the Postman Collection to use it. For example:
+To use these requests, go to [https://webhook.site](https://webhook.site/) to get your unique callback URL, and update the Postman Collection to use it. For example:
 
-    {
-        "configuration": {
-            "type": "webhook",
-            "callbackUrl": "https://webhook.site/891490b9-1e37-4b5e-8f91-4d40b9187710"
-        }
-    }
+```
+{
+  "configuration": {
+    "type": "webhook",
+    "callbackUrl": "https://webhook.site/891490b9-1e37-4b5e-8f91-4d40b9187710"
+  }
+}
+```
 
 #### Webhooks with subscription filter
 
-For webhooks with subscription filters, run the requests in the *05 -
-Event Consumption - Webhook - Message Filtering* folder of the Postman
-Collection.
+For webhooks with subscription filters, run the requests in the *05 - Event Consumption - Webhook - Message Filtering* folder of the Postman Collection.
 
 Use the following policy configuration.
 
-     {
-      "name": "Message filtering",
-      "description": "Apply filter to messages",
-      "enabled": true,
-      "policy": "message-filtering",
-      "configuration": {
-        "filter": "{#jsonPath(#message.content, '$.feature') == #subscription.metadata.feature}"
-      }
-    }
+```
+{
+  "name": "Message filtering",
+  "description": "Apply filter to messages",
+  "enabled": true,
+  "policy": "message-filtering",
+  "configuration": {
+    "filter": "{#jsonPath(#message.content, '$.feature') == #subscription.metadata.feature}"
+  }
+}
+```

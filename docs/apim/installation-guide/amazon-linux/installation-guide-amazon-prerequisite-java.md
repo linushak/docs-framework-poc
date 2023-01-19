@@ -36,6 +36,6 @@ Running the Gravitee APIM components requires a Java 11 JRE. To set it up, follo
 
     You don’t **have** to go for this particular implementation of openjdk, as long as you have a decent uncrippled Java 11 JRE it’s fine!
 
-# Next
+# Next steps
 
-Next is [installing MongoDB](installation-guide-amazon-prerequisite-mongodb.md).
+The next step is [installing MongoDB](installation-guide-amazon-prerequisite-mongodb.md).

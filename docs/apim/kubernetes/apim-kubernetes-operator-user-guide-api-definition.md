@@ -1,15 +1,23 @@
-<span class="label label-version">New in version 3.19.0</span> <span
-class="label label-version">BETA release</span>
+---
+title: How to use the API Definition custom resource
+tags:
+  - Gravitee Kubernetes Operator
+  - GKO
+  - Introduced in version 3.19.0
+  - BETA release
+  - K8s
+  - ApiDefinition
+---
 
 # How to use the API Definition (`ApiDefinition`) custom resource
 
-The `APIDefinition` custom resource represents the configuration for a
-single proxied API and its versions. It is similar to a YAML
-representation of an API Definition in JSON format.
+## Overview
 
-The example below shows a simple `ApiDefinition` custom resource
-definition:
+The `ApiDefinition` custom resource represents the configuration for a single proxied API and its versions. It is similar to a YAML representation of an API Definition in JSON format.
 
+The example below shows a simple `ApiDefinition` custom resource definition:
+
+```
     apiVersion: gravitee.io/v1alpha1
     kind: ApiDefinition
     metadata:
@@ -25,12 +33,11 @@ definition:
           - endpoints:
               - name: "Default"
                 target: "https://api.gravitee.io/echo"
+```
 
-# The `ApiDefinition` lifecycle
+## The `ApiDefinition` lifecycle
 
-The `ApiDefiniton` resource has a `Processing Status` field that makes
-it possible to view the status of the resource in the cluster. The
-following `Processing Status` field values are possible:
+The `ApiDefiniton` resource has a `Processing Status` field that makes it possible to view the status of the resource in the cluster. The following `Processing Status` field values are possible:
 
 <table>
 <colgroup>
@@ -67,14 +74,15 @@ correct. No retry will be performed.</p></td>
 </tbody>
 </table>
 
-Events are added to the resource as part of each action performed by the
-operator. To view these events, ensure that the CRD creation steps
-described above are completed and then run the following command:
+Events are added to the resource as part of each action performed by the operator. To view these events, ensure that the CRD creation steps described above are completed and then run the following command:
 
+```
 >     k describe -n default apidefinitions.gravitee.io basic-api-example
+```
 
-# Example
+## Example
 
+```
     Name:         basic-api-example
     Namespace:    default
     [...]
@@ -84,3 +92,4 @@ described above are completed and then run the following command:
       Normal  AddedFinalizer  73s   apidefinition-controller  Added Finalizer for the API definition
       Normal  Creating        73s   apidefinition-controller  Creating API definition
       Normal  Created         72s   apidefinition-controller  Created API definition
+```

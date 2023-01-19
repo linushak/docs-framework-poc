@@ -1,39 +1,37 @@
-<span class="label label-version">New in version 3.19.0</span> <span
-class="label label-version">BETA release</span>
+---
+title: Gravitee Kubernetes Operator - Architecture
+tags:
+  - Gravitee Kubernetes Operator
+  - GKO
+  - Introduced in version 3.19.0
+  - BETA release
+  - Custom Resource Definitions
+  - CRDs
+---
 
-# Overview
+# Custom Resource Definitions (CRDs) reference
 
-The Gravitee Kubernetes Operator comes with three Custom Resource
-Definitions (CRDs) - `ManagementContext`, `ApiDefinition`, and
-`ApiResource`.
+## Overview
 
-# `ManagementContext`
+The Gravitee Kubernetes Operator comes with three Custom Resource Definitions (CRDs) - `ManagementContext`, `ApiDefinition`, and `ApiResource`. These are described below.
 
-The `ManagementContext` custom resource represents the configuration for
-a Management API.
+## `ManagementContext`
+
+The `ManagementContext` custom resource represents the configuration for a Management API.
 
 Resources:
 
--   The `ManagementContext` CRD code is available on
-    [GitHub^](https://github.com/gravitee-io/gravitee-kubernetes-operator/blob/master/api/v1alpha1/managementcontext_types.go).
+- The `ManagementContext` CRD code is available on [GitHub](https://github.com/gravitee-io/gravitee-kubernetes-operator/blob/master/api/v1alpha1/managementcontext_types.go).
+- The `ManagementContext` CRD API reference is documented [here](apim-kubernetes-operator-api-reference.md).
+- You can learn how to use the `ManagementContext` resource in [this section](apim-kubernetes-operator-user-guide-management-context.md).
 
--   The `ManagementContext` CRD API reference is documented link:{{
-    */apim/3.x/apim\_kubernetes\_operator\_api\_reference.html#managementcontext*
-    | relative\_url }}\[here\].
+The `ManagementContext` refers to a remote Management API. You can have as many `ManagementContext` resources as you want, however you need to reference the relevant `ManagementContext` from the API Definition in order to indicate to the GKO where the API should be published.
 
--   You can learn how to use the `ManagementContext` resource in link:{{
-    */apim/3.x/apim\_kubernetes\_operator\_user\_guide\_management\_context.html*
-    | relative\_url }}\[this section\].
-
-The `ManagementContext` refers to a remote Management API. You can have
-as many `ManagementContext` resources as you want, however you need to
-reference the relevant `ManagementContext` from the API Definition in
-order to indicate to the GKO where the API should be published.
-
-## Examples
+### Examples
 
 A basic example of an `ManagementContext` resource is shown below:
 
+```
     apiVersion: gravitee.io/v1alpha1
     kind: ManagementContext
     metadata:
@@ -44,9 +42,11 @@ A basic example of an `ManagementContext` resource is shown below:
         credentials:
           username: admin
           password: admin
+```
 
 The next example shows the same resource but with a Personal Token:
 
+```
     apiVersion: gravitee.io/v1alpha1
     kind: ManagementContext
     metadata:
@@ -55,10 +55,11 @@ The next example shows the same resource but with a Personal Token:
       baseUrl: http://localhost:8083
       auth:
         bearerToken: xxxx-yyyy-zzzz
+```
 
-You can then refer to the `ManagementContext` from the API, as shown in
-the example below:
+You can then refer to the `ManagementContext` from the API, as shown in the example below:
 
+```
     apiVersion: gravitee.io/v1alpha1
     kind: ApiDefinition
     metadata:
@@ -77,52 +78,35 @@ the example below:
           - endpoints:
               - name: "Default"
                 target: "https://api.gravitee.io/echo"
+```
 
-Read more about `ManagementContext` link:{{
-*/apim/3.x/apim\_kubernetes\_operator\_user\_guide\_management\_context.html*
-| relative\_url }}\[here\].
+Read more about `ManagementContext` [here](apim-kubernetes-operator-user-guide-management-context.md).
 
-# `ApiDefinition`
+## `ApiDefinition`
 
-The `APIDefinition` custom resource represents the configuration for a
-single proxied API and its versions. It is similar to a YAML
-representation of an API Definition in JSON format.
+The `APIDefinition` custom resource represents the configuration for a single proxied API and its versions. It is similar to a YAML representation of an API Definition in JSON format.
 
 Resources:
 
--   The `ApiDefinition` CRD code is available on
-    [GitHub^](https://github.com/gravitee-io/gravitee-kubernetes-operator/blob/master/api/v1alpha1/apidefinition_types.go).
+- The `ApiDefinition` CRD code is available on [GitHub](https://github.com/gravitee-io/gravitee-kubernetes-operator/blob/master/api/v1alpha1/apidefinition_types.go).
+- The `ApiDefinition` CRD API reference is documented [here](apim-kubernetes-operator-api-reference.md).
+- You can learn how to use the `ApiDefinition` resource in [this section](apim-kubernetes-operator-user-guide-api-definition.md).
 
--   The `ApiDefinition` CRD API reference is documented link:{{
-    */apim/3.x/apim\_kubernetes\_operator\_api\_reference.html#apidefinition*
-    | relative\_url }}\[here\].
+### Workflow
 
--   You can learn how to use the `ApiDefinition` resource in link:{{
-    */apim/3.x/apim\_kubernetes\_operator\_user\_guide\_api\_definition.html*
-    | relative\_url }}\[this section\].
-
-## Workflow
-
-The following workflow is applied when a new `ApiDefinition` resource is
-added to the cluster:
+The following workflow is applied when a new `ApiDefinition` resource is added to the cluster:
 
 1.  The GKO listens for `ApiDefinition` resources.
-
-2.  The GKO performs some required changes, such as computing
-    automatically IDs or CrossIDs (for API or Plan).
-
+2.  The GKO performs some required changes, such as computing automatically IDs or CrossIDs (for API or Plan).
 3.  The GKO converts the definition to JSON format.
-
-4.  The GKO compares the definition to the existing definition. If
-    something has changed, the GKO pushes the definition to the
-    Management API (if a `ManagementContext` is provided).
-
+4.  The GKO compares the definition to the existing definition. If something has changed, the GKO pushes the definition to the Management API (if a `ManagementContext` is provided).
 5.  The GKO deploys the API to the API Gateway.
 
-## Examples
+### Examples
 
 A basic example of an `ApiDefinition` resource is shown below:
 
+```
     apiVersion: gravitee.io/v1alpha1
     kind: ApiDefinition
     metadata:
@@ -138,9 +122,11 @@ A basic example of an `ApiDefinition` resource is shown below:
           - endpoints:
               - name: "Default"
                 target: "https://api.gravitee.io/echo"
+```
 
 The same API with support for plans is shown in the example below:
 
+```
     apiVersion: gravitee.io/v1alpha1
     kind: ApiDefinition
     metadata:
@@ -171,30 +157,21 @@ The same API with support for plans is shown in the example below:
             endpoints:
               - name: "Default"
                 target: "https://api.gravitee.io/echo"
+```
 
-Read more about `ApiDefinition` link:{{
-*/apim/3.x/apim\_kubernetes\_operator\_user\_guide\_api\_definition.html*
-| relative\_url }}\[here\].
+Read more about `ApiDefinition` [here](apim-kubernetes-operator-user-guide-api-definition.md).
 
-# `ApiResource`
+## `ApiResource`
 
-The `ApiResource` custom resource allows you to use the GKO to create
-reusable link:{{ */apim/3.x/apim\_resources\_overview.html* |
-relative\_url }}\[API resources\] by applying the `ApiResource` custom
-resource definition. This enables you to define resources such as cache
-or authentication providers once only and maintain them in a single
-place, and then reuse them in multiple APIs - any further updates to
-such a resource will be automatically propagated to all APIs containing
-a reference to that resource.
+The `ApiResource` custom resource allows you to use the GKO to create reusable [API resources](../user-guide/publisher/resources/resources-overview.md) by applying the `ApiResource` custom resource definition. This enables you to define resources such as cache or authentication providers once only and maintain them in a single place, and then reuse them in multiple APIs - any further updates to such a resource will be automatically propagated to all APIs containing a reference to that resource.
 
-Read more about `ApiResource` link:{{
-*/apim/3.x/apim\_kubernetes\_operator\_user\_guide\_reusable\_resources.html*
-| relative\_url }}\[here\].
+Read more about `ApiResource` [here](apim-kubernetes-operator-user-guide-reusable-resources.md).
 
-## Examples
+### Examples
 
 Here is an example of an `ApiResource` cache resource:
 
+```
     apiVersion: gravitee.io/v1alpha1
     kind: ApiResource
     metadata:
@@ -208,11 +185,11 @@ Here is an example of an `ApiResource` cache resource:
           timeToIdleSeconds: 0
           timeToLiveSeconds: 0
           maxEntriesLocalHeap: 1000
+```
 
-This reusable resource can then be later referenced in any
-`ApiDefinition` resource using a reference to its namespaced name in the
-`resources` field:
+This reusable resource can then be later referenced in any `ApiDefinition` resource using a reference to its namespaced name in the `resources` field:
 
+```
     apiVersion: gravitee.io/v1alpha1
     kind: ApiDefinition
     metadata:
@@ -233,18 +210,15 @@ This reusable resource can then be later referenced in any
           - endpoints:
               - name: "Default"
                 target: "https://api.gravitee.io/echo"
+```
 
-# CRD dependencies
+## CRD dependencies
 
-## Resource deletion
+### Resource deletion
 
-Since an `ApiDefinition` can rely on a `ManagementContext`, resource
-deletion is restricted until a check is performed first whether there is
-an API associated with the respective `ManagementContext`. This is
-achieved through the use of
-[Finalizers^](https://kubernetes.io/docs/concepts/overview/working-with-objects/finalizers/).
+Since an `ApiDefinition` can rely on a `ManagementContext`, resource deletion is restricted until a check is performed first whether there is an API associated with the respective `ManagementContext`. This is achieved through the use of
+[Finalizers](https://kubernetes.io/docs/concepts/overview/working-with-objects/finalizers/).
 
-# CRD samples
+## CRD samples
 
-Check out some sample CRDs in the [GKO GitHub
-repository^](https://github.com/gravitee-io/gravitee-kubernetes-operator/tree//config/samples/apim).
+Check out some sample CRDs in the [GKO GitHub repository](https://github.com/gravitee-io/gravitee-kubernetes-operator/tree/master/config/samples/apim).
