@@ -1,60 +1,60 @@
-# Prerequisites
+---
+title: APIM Installation Guide - Amazon Linux - APIM Component - Install REST API
+tags:
+  - APIM
+  - Installation
+  - Prerequisites
+  - Amazon
+  - REST API
+---
 
--   Machine up and running
+# Install REST API
 
--   Gravitee YUM repository added
+## Prerequisites
 
--   Java 11 jre installed
+- Machine up and running
+- Gravitee YUM repository added
+- Java 11 jre installed
+- MongoDB installed and running
+- Elasticsearch installed and running
 
--   MongoDB installed and running
+## Security group
 
--   Elasticsearch installed and running
+- open port 8083
 
-# Security group
+## Instructions
 
--   open port 8083
-
-# Instructions
-
-1.  Install REST API:
-
-        sudo yum install graviteeio-apim-rest-api-3x -y
-
-2.  Enable REST API on startup:
-
-        sudo systemctl daemon-reload
-        sudo systemctl enable graviteeio-apim-rest-api
-
-3.  Start REST API:
-
-        sudo systemctl start graviteeio-apim-rest-api
-
-4.  Verify:
-
-        sudo journalctl -f
-
-    Follow along with the startup process. If any of the prerequisites
-    is missing, this is were you’ll get error messages.
-
-    **NOTE:** You can also see the same in
-    `/opt/graviteeio/apim/rest-api/logs/gravitee.log`
-
+1. Install REST API:
+  ```
+  sudo yum install graviteeio-apim-rest-api-3x -y
+  ```
+2. Enable REST API on startup:
+  ```
+  sudo systemctl daemon-reload
+  sudo systemctl enable graviteeio-apim-rest-api
+  ```
+3. Start REST API:
+  ```
+  sudo systemctl start graviteeio-apim-rest-api
+  ```
+4. Verify:
+  ```
+  sudo journalctl -f
+  ```
+    Follow along with the startup process. If any of the prerequisites is missing, this is were you’ll get error messages. You can also see the same in `/opt/graviteeio/apim/rest-api/logs/gravitee.log`.
 5.  Verify some more:
-
-        sudo ss -lntp '( sport = 8083 )'
-
+  ```
+  sudo ss -lntp '( sport = 8083 )'
+  ```
     You should see that there’s a process listening on that port.
-
 6.  Verify some more still:
-
-        curl -X GET http://localhost:8083/management/organizations/DEFAULT/console
-        curl -X GET http://localhost:8083/portal/environments/DEFAULT/apis
-
+  ```
+  curl -X GET http://localhost:8083/management/organizations/DEFAULT/console
+  curl -X GET http://localhost:8083/portal/environments/DEFAULT/apis
+  ```
     If the installation is successful both of these return a json
     document.
 
-# Next
+## Next steps
 
-Next is link:{{
-*/apim/3.x/apim\_installation\_guide\_amazon\_management\_ui.html* |
-relative\_url }}\[installing the Gravitee APIM Management UI\].
+The next step is [installing the Gravitee APIM Management UI](installation-guide-amazon-management-ui.md).

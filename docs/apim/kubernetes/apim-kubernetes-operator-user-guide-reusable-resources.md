@@ -1,22 +1,21 @@
-<span class="label label-version">New in version 3.19.0</span> <span
-class="label label-version">BETA release</span>
+---
+title: Creating a reusable API resource
+tags:
+  - Gravitee Kubernetes Operator
+  - GKO
+  - Introduced in version 3.19.0
+  - BETA release
+  - K8s
+  - Reusable CRD
+---
 
 # Creating a reusable API resource
 
-You can use the GKO to create reusable link:{{
-*/apim/3.x/apim\_resources\_overview.html* | relative\_url }}\[API
-resources\] by applying the [ApiResource
-CRD^](https://github.com/gravitee-io/gravitee-kubernetes-operator/blob/master/docs/api/reference.md#apidefinitionspecresourcesindex).
-This enables you to define resources such as cache or authentication
-providers once only and maintain them in a single place, and then reuse
-them in multiple APIs - any further resource changes will be
-automatically propagated to all APIs containing a reference to the
-updated resource(s).
+You can use the GKO to create reusable [API resources](../user-guide/publisher/resources/resources-overview.md) by applying the [ApiResource CRD](https://github.com/gravitee-io/gravitee-kubernetes-operator/blob/master/docs/api/reference.md#apidefinitionspecresourcesindex). This enables you to define resources such as cache or authentication providers once only and maintain them in a single place, and then reuse them in multiple APIs - any further resource changes will be automatically propagated to all APIs containing a reference to the updated resource(s).
 
-The example below shows a [redis cache
-resource^](https://docs.gravitee.io/apim/3.x/apim_resources_cache_redis.html)
-that can be applied using the `ApiResource` CRD:
+The example below shows a [redis cache resource](https://docs.gravitee.io/apim/3.x/apim_resources_cache_redis.html) that can be applied using the `ApiResource` CRD:
 
+```
     apiVersion: gravitee.io/v1alpha1
     kind: ApiResource
     metadata:
@@ -40,14 +39,13 @@ that can be applied using the `ApiResource` CRD:
               enabled: false
               masterId: "sentinel-master"
           password: "change_me!"
+```
 
 # Referencing API resources in your API definitions
 
-Once an API resource has been created, it can be used as a reference in
-one or more API definitions. The example below shows how to use the
-`reusable-resource-cache-redis` resource in an API definition, using a
-reference to the resource name and namespace:
+Once an API resource has been created, it can be used as a reference in one or more API definitions. The example below shows how to use the `reusable-resource-cache-redis` resource in an API definition, using a reference to the resource name and namespace:
 
+```
     apiVersion: gravitee.io/v1alpha1
     kind: ApiDefinition
     metadata:
@@ -92,11 +90,11 @@ reference to the resource name and namespace:
             key: "cache-key"
         post: []
         enabled: true
+```
 
-You can also define resources inline in your API definitions. The
-following API reuses the redis cache resource defined above, and defines
-inline an in-memory authentication provider:
+You can also define resources inline in your API definitions. The following API reuses the redis cache resource defined above, and defines inline an in-memory authentication provider:
 
+```
     apiVersion: gravitee.io/v1alpha1
     kind: ApiDefinition
     metadata:
@@ -125,7 +123,6 @@ inline an in-memory authentication provider:
                 - username: "user"
                   password: "password"
       # ...
+```
 
-If a resource defined inline contains a reference to a reusable resource
-(using the `ref` property), the reusable resource will take precedence
-over the inline configuration.
+If a resource defined inline contains a reference to a reusable resource (using the `ref` property), the reusable resource will take precedence over the inline configuration.

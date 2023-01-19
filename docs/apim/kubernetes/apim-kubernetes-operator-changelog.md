@@ -1,7 +1,17 @@
-<span class="label label-version">New in version 3.19.0</span> <span
-class="label label-version">BETA release</span>
+---
+title: Gravitee Kubernetes Operator - Changelog
+tags:
+  - Gravitee Kubernetes Operator
+  - GKO
+  - Introduced in version 3.19.0
+  - BETA release
+  - Changelog
+---
 
-# [0.2.0](https://github.com/gravitee-io/gravitee-kubernetes-operator/compare/0.1.1…0.2.0) (2022-11-09)
+# Gravitee Kubernetes Operator changelog
+
+
+## [Version 0.2.0](https://github.com/gravitee-io/gravitee-kubernetes-operator/compare/0.1.1…0.2.0) (2022-11-09)
 
 -   add rbac marker for secret lists
     ([9ed5735](https://github.com/gravitee-io/gravitee-kubernetes-operator/commit/9ed5735300acd5d208b485573a4915d0151bed6f))
@@ -20,14 +30,14 @@ class="label label-version">BETA release</span>
 -   reference secret in context
     ([6d3acf6](https://github.com/gravitee-io/gravitee-kubernetes-operator/commit/6d3acf66b277fb00407096b0c862d472b93f45a3))
 
-# [0.1.1](https://github.com/gravitee-io/gravitee-kubernetes-operator/compare/0.1.0…0.1.1) (2022-10-28)
+## [Version 0.1.1](https://github.com/gravitee-io/gravitee-kubernetes-operator/compare/0.1.0…0.1.1) (2022-10-28)
 
-## Features
+### Features
 
 -   reconcile api resources on context updates
     ([c820c14](https://github.com/gravitee-io/gravitee-kubernetes-operator/commit/c820c1472d050e3676f3ff5823d1d530f31b5852))
 
-## Bug Fixes
+### Bug Fixes
 
 -   add enabled in health check model
     ([c3098e3](https://github.com/gravitee-io/gravitee-kubernetes-operator/commit/c3098e3dd7e375c72697a14b64b6b0aaf3d94dd0))
@@ -47,7 +57,7 @@ class="label label-version">BETA release</span>
 -   rename cors fields to match v3 definition
     ([3ebd4d0](https://github.com/gravitee-io/gravitee-kubernetes-operator/commit/3ebd4d0cd3ee6f545f51e27e6fd087bfa618f7d5))
 
-# [0.1.0](https://github.com/gravitee-io/gravitee-kubernetes-operator/compare/0.0.0…0.1.0) (2022-10-07)
+## [Version 0.1.0](https://github.com/gravitee-io/gravitee-kubernetes-operator/compare/0.0.0…0.1.0) (2022-10-07)
 
 -   add events on api resource
     ([da695a7](https://github.com/gravitee-io/gravitee-kubernetes-operator/commit/da695a721e58ff5187484c258bb41ea8d9591434))

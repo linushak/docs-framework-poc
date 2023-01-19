@@ -13,7 +13,7 @@ This document assumes you are familiar with synchronous APIs,
 asynchronous APIs, and the OpenAPI specification.
 
 Before running any of the examples on this page, work through some of
-the [example use cases](event_native_apim_example_use_cases.html) so you
+the [example use cases](v4-beta-event-native-apim-example-use-cases.md) so you
 know that the event-native engine is running.
 
 ## Asynchronous APIs
@@ -22,14 +22,7 @@ In this release, you can create asynchronous APIs and connect to event
 brokers and asynchronous data sources. You can configure asynchronous
 API connections using the RESTful interface to the management API.
 
-The OpenAPI specification for the management API is available at
-[`swagger.json`](/apim/3.x/management-api/3.20/swagger.json) ([reference
-documentation](/apim/3.x/apim_installguide_rest_apis_documentation.html#apim_console_api_reference)).
-Examples of how to use the management API to configure asynchronous APIs
-can be found in the [Gravitee Postman
-Collections](https://www.postman.com/gravitee-io/workspace/gravitee-public-workspace/overview),
-which are described in [example use
-cases](event_native_apim_example_use_cases.html).
+The OpenAPI specification for the management API is available at [`swagger.json`](/api-ref/apim/3.x/management-api/3.20/swagger.json) ([reference documentation](../api-reference/apim-rest-api-reference-index.md#apim-console-api-reference)). Examples of how to use the management API to configure asynchronous APIs can be found in the [Gravitee Postman Collections](https://www.postman.com/gravitee-io/workspace/gravitee-public-workspace/overview), which are described in [example use cases](event_native_apim_example_use_cases.md).
 
 The management API is in beta and it may change.
 
@@ -40,51 +33,30 @@ An *entrypoint* is how an end user connects to the Gravitee Gateway. An
 
 The following types of entrypoints are available:
 
--   SSE (Server-Sent Events)
+- SSE (Server-Sent Events)
+- SSE advanced (Enterprise Edition only)
+- WebSocket
+- HTTP GET
+- HTTP POST
+- Webhook
+- Webhook advanced (Enterprise Edition only)
 
--   SSE advanced (Enterprise Edition only)
-
--   WebSocket
-
--   HTTP GET
-
--   HTTP POST
-
--   Webhook
-
--   Webhook advanced (Enterprise Edition only)
-
-For more information about these entrypoints, see
-link:{{*/apim/3.x/event\_native\_apim\_introduction.html#http\_post\_and\_http\_get\_entrypoints*
-| relative\_url}}\[HTTP POST and HTTP GET entrypoints\] and
-link:{{*/apim/3.x/event\_native\_apim\_introduction.html#support\_for\_websocket\_and\_sse\_entrypoints*
-| relative\_url}}\[Support for Websocket and SSE entrypoints\].
+For more information about these entrypoints, see [HTTP POST and HTTP GET entrypoints](v4-beta-event-native-apim-introduction.md#http-post-and-http-get-entrypoints) and [WebSocket and SSE entrypoints](v4-beta-event-native-apim-introduction.md#websocket-and-sse-entrypoints).
 
 The following types of endpoints are available:
 
--   Kafka
-
--   Kafka advanced (Enterprise Edition only)
-
--   MQTT
-
--   MQTT advanced (Enterprise Edition only)
+- Kafka
+- Kafka advanced (Enterprise Edition only)
+- MQTT
+- MQTT advanced (Enterprise Edition only)
 
 ## How to create a V4 BETA asynchronous API
 
-The [Gravitee V4 BETA Postman
-Collection](https://www.postman.com/gravitee-io/workspace/gravitee-public-workspace/overview)
-contains several examples of how to create and test an asynchronous API
-using the event-native V4 BETA API definition and
-link:{{*/apim/3.x/v4\_new\_policy\_execution\_engine\_introduction.html*
-| relative\_url}}\[the new V4 BETA policy execution engine\] .
+The [Gravitee V4 BETA Postman Collection](https://www.postman.com/gravitee-io/workspace/gravitee-public-workspace/overview) contains several examples of how to create and test an asynchronous API using the event-native V4 BETA API definition and [the new V4 BETA policy execution engine](v4-beta-new-policy-execution-engine-introduction.md).
 
-For example, to create an HTTP POST entrypoint that connects to a Kafka
-endpoint, send a POST request to
-`{{management_host}}/management/organizations/DEFAULT/environments/DEFAULT/v4/apis/`,
-where `{{management_host}}` is the host for the management API, with the
-following message body:
+For example, to create an HTTP POST entrypoint that connects to a Kafka endpoint, send a POST request to `{{management_host}}/management/organizations/DEFAULT/environments/DEFAULT/v4/apis/`, where `{{management_host}}` is the host for the management API, with the following message body:
 
+```
     {
         "name": "Data Ingestion to Kafka",
         "apiVersion": "1.0",
@@ -145,6 +117,7 @@ following message body:
             }
         ]
     }
+```
 
 ## Quality of Service
 
@@ -206,27 +179,24 @@ failure.</p></td>
 </tbody>
 </table>
 
-Table Quality of service levels
-
 ### Setting quality of service
 
 You can set quality of service levels with the `qos` object in the
-`entrypoints` object, as shown in the following example. See the
-[`swagger.json`](/apim/3.x/management-api/3.20/swagger.json) definition
-of the Management API for a list of possible `qos` values you can
-specify.
+`entrypoints` object, as shown in the following example. See the [`swagger.json`](/api-ref/apim/3.x/management-api/3.20/swagger.json) definition of the Management API for a list of possible `qos` values you can specify.
 
-    "entrypoints": [
-                    {
-                        "type": "sse",
-                        "qos": "none",
-                        "configuration": {
-                            "heartbeatIntervalInMs": 5000,
-                            "metadataAsComment": false,
-                            "headersAsComment": false
-                        }
-                    }
-                ]
+```
+  "entrypoints": [
+    {
+      "type": "sse",
+      "qos": "none",
+      "configuration": {
+        "heartbeatIntervalInMs": 5000,
+        "metadataAsComment": false,
+        "headersAsComment": false
+      }
+    }
+  ]
+```
 
 ### Compatibility
 
@@ -307,36 +277,29 @@ At-Most-Once</p></td>
 </tbody>
 </table>
 
-Table Quality of service compatibility matrix
 
 ## Policies
 
-Policies are steps in the gateway execution chain. A policy guarantees
-that a given business rule will be fulfilled during processing.
+Policies are steps in the gateway execution chain. A policy guarantees that a given business rule will be fulfilled during processing.
 
-Policies can be set on request, response, subscribe, or publish phases.
-The following example shows how to set a policy on a subscribe phase.
+Policies can be set on request, response, subscribe, or publish phases. The following example shows how to set a policy on a subscribe phase.
 
-    "subscribe": [
-                    {
-                        "name": "Message filtering",
-                        "description": "Apply filter to messages",
-                        "enabled": true,
-                        "policy": "message-filtering",
-                        "configuration": {
-                            "filter": "{#message.headers.foo == #subscription.metadata['bar']}"
-                        }
-                    }
-                ]
+```
+  "subscribe": [
+    {
+      "name": "Message filtering",
+      "description": "Apply filter to messages",
+      "enabled": true,
+      "policy": "message-filtering",
+      "configuration": {
+        "filter": "{#message.headers.foo == #subscription.metadata['bar']}"
+      }
+    }
+  ]
+```
 
-For an example, see *04 - Event Consumption - Webhook* &gt; *Webhook
-Messaging Filtering* &gt; *Create API* in the [Gravitee V4 BETA Postman
-Collection](https://www.postman.com/gravitee-io/workspace/gravitee-public-workspace/overview).
+For an example, see *04 - Event Consumption - Webhook* &gt; *Webhook Messaging Filtering* &gt; *Create API* in the [Gravitee V4 BETA Postman Collection](https://www.postman.com/gravitee-io/workspace/gravitee-public-workspace/overview).
 
 ## Use cases
 
-The [Gravitee V4 BETA Postman
-Collection](https://www.postman.com/gravitee-io/workspace/gravitee-public-workspace/overview)
-contains several examples of how end users can work with your
-asynchronous APIs. Some examples are described on [Event
-consumption](event_native_apim_example_use_cases.html#event_consumption).
+The [Gravitee V4 BETA Postman Collection](https://www.postman.com/gravitee-io/workspace/gravitee-public-workspace/overview) contains several examples of how end users can work with your asynchronous APIs. Some examples are described on [Event consumption](event_native_apim_example_use_cases.md#event_consumption).

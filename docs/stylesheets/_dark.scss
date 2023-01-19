@@ -2,7 +2,9 @@
 
 // Source: https://material.io/design/color/dark-theme.html
 
-$body-bg-dark: $gray-800;
+// original dark bg color:
+//$body-bg-dark: $gray-800;
+$body-bg-dark: #34354d;
 $body-overlay-dark: darken($body-bg-dark, 2.5%);
 $border-dark: $gray-700;
 $body-color-dark: #efeff3;

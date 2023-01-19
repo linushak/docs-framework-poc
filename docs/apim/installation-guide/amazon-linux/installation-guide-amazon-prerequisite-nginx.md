@@ -8,8 +8,6 @@ tags:
   - Nginx
 ---
 
-
-
 # Prerequisite - Install Nginx
 
 ## Overview
@@ -61,8 +59,8 @@ For more information, see the [Nginx Installation documentation](https://nginx.o
 
 You should see that there is a process listening on that port.
 
-## Next
+## Next steps
 
-You are done with the prerequisistes!
+You are done with the prerequisites!
 
-Next is [installing the Gravitee APIM Gateway](installation-guide-amazon-gateway.md) or [installing all the Gravitee APIM components](installation-guide-amazon-all.md).
+The next steps are [installing the Gravitee APIM Gateway](installation-guide-amazon-gateway.md) and [installing all the Gravitee APIM components](installation-guide-amazon-all.md).

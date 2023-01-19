@@ -7,7 +7,7 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="../../../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-8.5.11+insiders-4.26.6" name="generator"/>
-<title>Dev guide policies - Gravitee Platform Documentation</title>
+<title>APIM Developer Guide - Policies - Gravitee Platform Documentation</title>
 <link href="../../../assets/stylesheets/main.9b35cbb9.min.css" rel="stylesheet"/>
 <link href="../../../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
 <style>:root{--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M64 32C28.7 32 0 60.7 0 96v320c0 35.3 28.7 64 64 64h224V368c0-26.5 21.5-48 48-48h112V96c0-35.3-28.7-64-64-64H64zm384 320H336c-8.8 0-16 7.2-16 16v112l32-32 64-64 32-32z"/></svg>');--md-admonition-icon--abstract:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M96 0C43 0 0 43 0 96v320c0 53 43 96 96 96h320c17.7 0 32-14.3 32-32s-14.3-32-32-32v-64c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32H96zm0 384h256v64H96c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16h192c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16zm16 48h192c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16s7.2-16 16-16z"/></svg>');--md-admonition-icon--info:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0 0 114.6 0 256s114.6 256 256 256zm-40-176h24v-64h-24c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24h-80c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-144c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32z"/></svg>');--md-admonition-icon--tip:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M480 32c0-12.9-7.8-24.6-19.8-29.6S434.5.2 425.3 9.3L381.7 53c-48 48-113.1 75-181 75H64c-35.3 0-64 28.7-64 64v96c0 35.3 28.7 64 64 64v128c0 17.7 14.3 32 32 32h64c17.7 0 32-14.3 32-32V352h8.7c67.9 0 133 27 181 75l43.6 43.6c9.2 9.2 22.9 11.9 34.9 6.9s19.8-16.6 19.8-29.6V300.4c18.6-8.8 32-32.5 32-60.4s-13.4-51.6-32-60.4V32zm-64 76.7v262.6C357.2 317.8 280.5 288 200.7 288H192v-96h8.7c79.8 0 156.5-29.8 215.3-83.3z"/></svg>');--md-admonition-icon--success:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7l233.4-233.3c12.5-12.5 32.8-12.5 45.3 0z"/></svg>');--md-admonition-icon--question:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0 0 114.6 0 256s114.6 256 256 256zm-86.2-346.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1 0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6-13.3 0-24-10.7-24-24v-13.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1 0-8.4-6.8-15.1-15.1-15.1h-58.3c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM288 352c0 17.7-14.3 32-32 32s-32-14.3-32-32 14.3-32 32-32 32 14.3 32 32z"/></svg>');--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224c0-17.7-14.3-32-32-32s-32 14.3-32 32 14.3 32 32 32 32-14.3 32-32z"/></svg>');--md-admonition-icon--failure:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M459.1 52.4 442.6 6.5c-1.9-3.9-6.1-6.5-10.5-6.5s-8.5 2.6-10.4 6.5l-16.5 45.9-46 16.8c-4.3 1.6-7.3 5.9-7.2 10.4 0 4.5 3 8.7 7.2 10.2l45.7 16.8 16.8 45.8c1.5 4.4 5.8 7.5 10.4 7.5s8.9-3.1 10.4-7.5l16.5-45.8 45.7-16.8c4.2-1.5 7.2-5.7 7.2-10.2 0-4.6-3-8.9-7.2-10.4l-45.6-16.8zm-132.4 53c-12.5-12.5-32.8-12.5-45.3 0l-2.9 2.9c-22-8-45.8-12.3-70.5-12.3C93.1 96 0 189.1 0 304s93.1 208 208 208 208-93.1 208-208c0-24.7-4.3-48.5-12.2-70.5l2.9-2.9c12.5-12.5 12.5-32.8 0-45.3l-80-80zM200 192c-57.4 0-104 46.6-104 104v8c0 8.8-7.2 16-16 16s-16-7.2-16-16v-8c0-75.1 60.9-136 136-136h8c8.8 0 16 7.2 16 16s-7.2 16-16 16h-8z"/></svg>');--md-admonition-icon--danger:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M416 398.9c58.5-41.1 96-104.1 96-174.9C512 100.3 397.4 0 256 0S0 100.3 0 224c0 70.7 37.5 133.8 96 174.9V464c0 26.5 21.5 48 48 48h48v-48c0-8.8 7.2-16 16-16s16 7.2 16 16v48h64v-48c0-8.8 7.2-16 16-16s16 7.2 16 16v48h48c26.5 0 48-21.5 48-48v-65.1zM224 256c0 35.3-28.7 64-64 64s-64-28.7-64-64 28.7-64 64-64 64 28.7 64 64zm128 64c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"/></svg>');--md-admonition-icon--bug:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M320 0c17.7 0 32 14.3 32 32v64h128c35.3 0 64 28.7 64 64v288c0 35.3-28.7 64-64 64H160c-35.3 0-64-28.7-64-64V160c0-35.3 28.7-64 64-64h128V32c0-17.7 14.3-32 32-32zM208 384c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zM264 256c0-22.1-17.9-40-40-40s-40 17.9-40 40 17.9 40 40 40 40-17.9 40-40zm152 40c22.1 0 40-17.9 40-40s-17.9-40-40-40-40 17.9-40 40 17.9 40 40 40zM48 224h16v192H48c-26.5 0-48-21.5-48-48v-96c0-26.5 21.5-48 48-48zm544 0c26.5 0 48 21.5 48 48v96c0 26.5-21.5 48-48 48h-16V224h16z"/></svg>');--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M288 0H128c-17.7 0-32 14.3-32 32s14.3 32 32 32v132.8c0 11.8-3.3 23.5-9.5 33.5L10.3 406.2C3.6 417.2 0 429.7 0 442.6 0 480.9 31.1 512 69.4 512h309.2c38.3 0 69.4-31.1 69.4-69.4 0-12.8-3.6-25.4-10.3-36.4L329.5 230.4c-6.2-10.1-9.5-21.7-9.5-33.5V64c17.7 0 32-14.3 32-32S337.7 0 320 0h-32zm-96 196.8V64h64v132.8c0 23.7 6.6 46.9 19 67.1l34.5 56.1h-171l34.5-56.1c12.4-20.2 19-43.4 19-67.1z"/></svg>');--md-admonition-icon--quote:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M0 216C0 149.7 53.7 96 120 96h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V216zm256 0c0-66.3 53.7-120 120-120h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64h-64c-35.3 0-64-28.7-64-64V216z"/></svg>');}</style>
@@ -20,7 +20,7 @@
 <script id="__analytics">function __md_analytics(){window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-67690250-1","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){var e;this.value&&(e=document.location.pathname,ga("send","pageview",e+"?q="+this.value))}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");ga("send","event","feedback","click",t,e),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){ga("send","pageview",e.pathname)})});var e=document.createElement("script");e.async=!0,e.src="https://www.google-analytics.com/analytics.js",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
 <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
 <meta content="website" property="og:type"/>
-<meta content="Dev guide policies - Gravitee Platform Documentation" property="og:title"/>
+<meta content="APIM Developer Guide - Policies - Gravitee Platform Documentation" property="og:title"/>
 <meta content="None" property="og:description"/>
 <meta content="./assets/images/social/apim/dev-guide/dev-guide-policies.png" property="og:image"/>
 <meta content="image/png" property="og:image:type"/>
@@ -28,16 +28,16 @@
 <meta content="630" property="og:image:height"/>
 <meta content="None" property="og:url"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<meta content="Dev guide policies - Gravitee Platform Documentation" name="twitter:title"/>
+<meta content="APIM Developer Guide - Policies - Gravitee Platform Documentation" name="twitter:title"/>
 <meta content="None" name="twitter:description"/>
 <meta content="./assets/images/social/apim/dev-guide/dev-guide-policies.png" name="twitter:image"/>
 </head>
-<body data-md-color-accent="" data-md-color-primary="teal" data-md-color-scheme="default" dir="ltr">
+<body data-md-color-accent="blue" data-md-color-primary="teal" data-md-color-scheme="default" dir="ltr">
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#sourcebash">
+<a class="md-skip" href="#policies">
           Skip to content
         </a>
 </div>
@@ -63,14 +63,14 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Dev guide policies
+              APIM Developer Guide - Policies
             
           </span>
 </div>
 </div>
 </div>
 <form class="md-header__option" data-md-component="palette">
-<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="teal" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="blue" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="teal" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
 <label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to dark mode">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"></path></svg>
 </label>
@@ -135,7 +135,7 @@
         </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../../">
+<a class="md-tabs__link md-tabs__link--active" href="../../">
           
   
     
@@ -249,7 +249,7 @@
 </div>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_1" id="__nav_1" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" id="__nav_1" type="checkbox"/>
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../..">
 <span class="md-ellipsis">
@@ -342,8 +342,8 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_2" id="__nav_2" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" id="__nav_2" type="checkbox"/>
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../">
 <span class="md-ellipsis">
@@ -362,7 +362,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_2_2" id="__nav_2_2" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" id="__nav_2_2" type="checkbox"/>
 <label class="md-nav__link" for="__nav_2_2">
 <span class="md-ellipsis">
     Overview
@@ -412,7 +412,7 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_2_3" id="__nav_2_3" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" id="__nav_2_3" type="checkbox"/>
 <label class="md-nav__link" for="__nav_2_3">
 <span class="md-ellipsis">
     Installation Guide
@@ -435,7 +435,7 @@
 </a>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_2_3_2" id="__nav_2_3_2" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3_2" id="__nav_2_3_2" type="checkbox"/>
 <label class="md-nav__link" for="__nav_2_3_2">
 <span class="md-ellipsis">
     Install on Amazon
@@ -468,7 +468,7 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../installation-guide/amazon-linux/installation-guide-amazon-prerequisite-yum/">
 <span class="md-ellipsis">
-    Prerequisite - Setup Gravitee YUM repository
+    Prerequisite - Set up Gravitee YUM repository
     
   </span>
 </a>
@@ -505,78 +505,2034 @@
   </span>
 </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../installation-guide/amazon-linux/installation-guide-amazon-gateway/">
+<span class="md-ellipsis">
+    Component - Install Gateway
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../installation-guide/amazon-linux/installation-guide-amazon-rest-api/">
+<span class="md-ellipsis">
+    Component - Install REST API
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../installation-guide/amazon-linux/installation-guide-amazon-management-ui/">
+<span class="md-ellipsis">
+    Component - Install Management UI
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../installation-guide/amazon-linux/installation-guide-amazon-portal-ui/">
+<span class="md-ellipsis">
+    Component - Install Portal UI
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../installation-guide/amazon-linux/installation-guide-amazon-all/">
+<span class="md-ellipsis">
+    Component - Install all
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../installation-guide/amazon-linux/installation-guide-amazon-stack/">
+<span class="md-ellipsis">
+    Full stack installation
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../installation-guide/amazon-linux/installation-guide-amazon-issue/">
+<span class="md-ellipsis">
+    Fixing a known post-installation issue
+    
+  </span>
+</a>
+</li>
 </ul>
 </nav>
 </li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3_3" id="__nav_2_3_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_3_3">
+<span class="md-ellipsis">
+    Install on Docker
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Install on Docker" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_3_3">
+<span class="md-nav__icon md-icon"></span>
+            Install on Docker
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../installation-guide/docker/installation-guide-docker-introduction/">
+<span class="md-ellipsis">
+    Introduction
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../installation-guide/docker/installation-guide-docker-images/">
+<span class="md-ellipsis">
+    Images
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../installation-guide/docker/installation-guide-docker-images-ee/">
+<span class="md-ellipsis">
+    Images (EE)
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../installation-guide/docker/installation-guide-docker-compose/">
+<span class="md-ellipsis">
+    Compose
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../installation-guide/docker/installation-guide-docker-compose-ee/">
+<span class="md-ellipsis">
+    Compose (EE)
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../installation-guide/docker/installation-guide-docker-customize/">
+<span class="md-ellipsis">
+    Customize
+    
+  </span>
+</a>
+</li>
 </ul>
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../installation-guide/installation-guide-migration/">
+<a class="md-nav__link" href="../../installation-guide/installation-guide-kubernetes/">
 <span class="md-ellipsis">
-    Upgrade and migrate
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../installation-guide/configuration/configuration-guide/">
-<span class="md-ellipsis">
-    Configure
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../quickstart/quickstart-overview/">
-<span class="md-ellipsis">
-    Get started
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../user-guide/publisher/manage-api/">
-<span class="md-ellipsis">
-    Manage and configure APIs
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../user-guide/consumer/developer-portal/">
-<span class="md-ellipsis">
-    Consume APIs
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../user-guide/admin/admin-guide-organizations-and-environments/">
-<span class="md-ellipsis">
-    Administration
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../dev-guide-boostrap/">
-<span class="md-ellipsis">
-    Developer reference
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../policy-reference/policies-overview/">
-<span class="md-ellipsis">
-    Policy reference
+    Installing APIM with Kubernetes
     
   </span>
 </a>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_2_12" id="__nav_2_12" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3_5" id="__nav_2_3_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_3_5">
+<span class="md-ellipsis">
+    Install on RedHat and CentOS
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Install on RedHat and CentOS" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_3_5">
+<span class="md-nav__icon md-icon"></span>
+            Install on RedHat and CentOS
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../installation-guide/red-hat/installation-guide-redhat-introduction/">
+<span class="md-ellipsis">
+    Introduction
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../installation-guide/red-hat/installation-guide-redhat-stack/">
+<span class="md-ellipsis">
+    Install full APIM stack
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../installation-guide/red-hat/installation-guide-redhat-gateway/">
+<span class="md-ellipsis">
+    Install APIM Gateway
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../installation-guide/red-hat/installation-guide-redhat-management-api/">
+<span class="md-ellipsis">
+    Install APIM API
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../installation-guide/red-hat/installation-guide-redhat-management-ui/">
+<span class="md-ellipsis">
+    Install APIM Console
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../installation-guide/red-hat/installation-guide-redhat-portal/">
+<span class="md-ellipsis">
+    Install APIM Portal
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3_6" id="__nav_2_3_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_3_6">
+<span class="md-ellipsis">
+    Hybrid Deployment
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Hybrid Deployment" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_3_6">
+<span class="md-nav__icon md-icon"></span>
+            Hybrid Deployment
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../installation-guide/hybrid/installation-guide-hybrid-deployment-v1/">
+<span class="md-ellipsis">
+    Hybrid Deployment Guide V1
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../installation-guide/hybrid/installation-guide-hybrid-deployment-v2/">
+<span class="md-ellipsis">
+    Hybrid Deployment Guide V2
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../installation-guide/hybrid/installation-guide-hybrid-kubernetes/">
+<span class="md-ellipsis">
+    Deploy a Hybrid architecture with Kubernetes
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3_7" id="__nav_2_3_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_3_7">
+<span class="md-ellipsis">
+    Install with .ZIP
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Install with .ZIP" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_3_7">
+<span class="md-nav__icon md-icon"></span>
+            Install with .ZIP
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../installation-guide/with-zip/installation-guide-gateway-install-zip/">
+<span class="md-ellipsis">
+    Install APIM Gateway
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../installation-guide/with-zip/installation-guide-rest-apis-install-zip/">
+<span class="md-ellipsis">
+    Install APIM API
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../installation-guide/with-zip/installation-guide-management-ui-install-zip/">
+<span class="md-ellipsis">
+    Install APIM Console
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../installation-guide/with-zip/installation-guide-portal-ui-install-zip/">
+<span class="md-ellipsis">
+    Install APIM Portal
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../how-tos/how-to-general-configuration/">
+<span class="md-ellipsis">
+    Configure a production-ready APIM environment
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../how-tos/how-to-configure-reverse-proxy/">
+<span class="md-ellipsis">
+    Configure HTTP reverse proxy
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../installation-guide/installation-guide-plugins/">
+<span class="md-ellipsis">
+    Installing and updating Plugins
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../installation-guide/installation-guide-migration/">
+<span class="md-ellipsis">
+    Upgrade APIM
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4" id="__nav_2_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_4">
+<span class="md-ellipsis">
+    Quick Start Guide
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Quick Start Guide" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_4">
+<span class="md-nav__icon md-icon"></span>
+            Quick Start Guide
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../quickstart/quickstart-overview/">
+<span class="md-ellipsis">
+    Introduction
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4_2" id="__nav_2_4_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_4_2">
+<span class="md-ellipsis">
+    Get started
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Get started" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_4_2">
+<span class="md-nav__icon md-icon"></span>
+            Get started
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../quickstart/quickstart-console-login/">
+<span class="md-ellipsis">
+    Log in to APIM Console
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../quickstart/quickstart-portal-login/">
+<span class="md-ellipsis">
+    Log in to APIM Portal
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4_3" id="__nav_2_4_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_4_3">
+<span class="md-ellipsis">
+    Publish your first API
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Publish your first API" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_4_3">
+<span class="md-nav__icon md-icon"></span>
+            Publish your first API
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../quickstart/api-publisher/api-publisher-ui/">
+<span class="md-ellipsis">
+    Publish your first API with APIM Console
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../quickstart/api-publisher/api-publisher-api/">
+<span class="md-ellipsis">
+    Publish your first API with APIM API
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4_4" id="__nav_2_4_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_4_4">
+<span class="md-ellipsis">
+    Consume and API
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Consume and API" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_4_4">
+<span class="md-nav__icon md-icon"></span>
+            Consume and API
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../quickstart/api-consumer/api-consumer-ui/">
+<span class="md-ellipsis">
+    Using APIM Portal
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../quickstart/api-consumer/api-consumer-api/">
+<span class="md-ellipsis">
+    Using APIM API
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../quickstart/api-consumer/api-consumer-test/">
+<span class="md-ellipsis">
+    Test your API
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5" id="__nav_2_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_5">
+<span class="md-ellipsis">
+    Configuration Guide
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Configuration Guide" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_5">
+<span class="md-nav__icon md-icon"></span>
+            Configuration Guide
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../installation-guide/configuration/configuration-guide/">
+<span class="md-ellipsis">
+    Introduction
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5_2" id="__nav_2_5_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_5_2">
+<span class="md-ellipsis">
+    Configure APIM Gateway
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Configure APIM Gateway" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_5_2">
+<span class="md-nav__icon md-icon"></span>
+            Configure APIM Gateway
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../installation-guide/configuration/gateway/installation-guide-gateway-configuration/">
+<span class="md-ellipsis">
+    General configuration
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../installation-guide/configuration/gateway/installation-guide-gateway-technical-api/">
+<span class="md-ellipsis">
+    Internal API
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../installation-guide/configuration/gateway/installation-guide-gateway-metrics/">
+<span class="md-ellipsis">
+    Metrics
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../installation-guide/configuration/gateway/configure-opentracing/">
+<span class="md-ellipsis">
+    Enable OpenTracing
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../installation-guide/configuration/gateway/opentracing-in-docker/">
+<span class="md-ellipsis">
+    OpenTracing In Docker
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5_3" id="__nav_2_5_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_5_3">
+<span class="md-ellipsis">
+    Configure APIM API
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Configure APIM API" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_5_3">
+<span class="md-nav__icon md-icon"></span>
+            Configure APIM API
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../installation-guide/configuration/rest-apis/installation-guide-rest-apis-configuration/">
+<span class="md-ellipsis">
+    General configuration
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../installation-guide/configuration/rest-apis/installation-guide-rest-apis-technical-api/">
+<span class="md-ellipsis">
+    Internal API
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../installation-guide/configuration/rest-apis/installation-guide-rest-apis-metrics/">
+<span class="md-ellipsis">
+    Metrics
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../installation-guide/configuration/rest-apis/installation-guide-rest-apis-security/">
+<span class="md-ellipsis">
+    Security
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5_4" id="__nav_2_5_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_5_4">
+<span class="md-ellipsis">
+    Configure APIM Console
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Configure APIM Console" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_5_4">
+<span class="md-nav__icon md-icon"></span>
+            Configure APIM Console
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../installation-guide/configuration/management-ui/installation-guide-management-ui-configuration/">
+<span class="md-ellipsis">
+    General configuration
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../installation-guide/configuration/management-ui/installation-guide-dashboard-configuration/">
+<span class="md-ellipsis">
+    Dashboards
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../installation-guide/configuration/portal-ui/installation-guide-portal-ui-configuration/">
+<span class="md-ellipsis">
+    Configure APIM Portal
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5_6" id="__nav_2_5_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_5_6">
+<span class="md-ellipsis">
+    Configure repositories
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Configure repositories" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_5_6">
+<span class="md-nav__icon md-icon"></span>
+            Configure repositories
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../installation-guide/configuration/repositories/installation-guide-repositories/">
+<span class="md-ellipsis">
+    Introduction
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../installation-guide/configuration/repositories/installation-guide-repositories-elasticsearch/">
+<span class="md-ellipsis">
+    Elasticsearch
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../installation-guide/configuration/repositories/installation-guide-repositories-mongodb/">
+<span class="md-ellipsis">
+    MongoDB
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../installation-guide/configuration/repositories/installation-guide-repositories-jdbc/">
+<span class="md-ellipsis">
+    JDBC
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../installation-guide/configuration/repositories/installation-guide-repositories-redis/">
+<span class="md-ellipsis">
+    Redis
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5_7" id="__nav_2_5_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_5_7">
+<span class="md-ellipsis">
+    Configure authentication
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Configure authentication" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_5_7">
+<span class="md-nav__icon md-icon"></span>
+            Configure authentication
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../installation-guide/configuration/authentication/installation-guide-authentication/">
+<span class="md-ellipsis">
+    Introduction
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../installation-guide/configuration/authentication/installation-guide-authentication-inmemory/">
+<span class="md-ellipsis">
+    Configure in-memory authentication
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../installation-guide/configuration/authentication/installation-guide-authentication-ldap/">
+<span class="md-ellipsis">
+    Configure LDAP / Active Directory authentication
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../installation-guide/configuration/authentication/installation-guide-authentication-apim/">
+<span class="md-ellipsis">
+    Configure APIM repository authentication
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../installation-guide/configuration/authentication/installation-guide-authentication-graviteeam/">
+<span class="md-ellipsis">
+    Configure Gravitee Access Management authentication
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../installation-guide/configuration/authentication/installation-guide-authentication-github/">
+<span class="md-ellipsis">
+    Configure GitHub authentication
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../installation-guide/configuration/authentication/installation-guide-authentication-google/">
+<span class="md-ellipsis">
+    Configure Google authentication
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../installation-guide/configuration/authentication/installation-guide-authentication-keycloak/">
+<span class="md-ellipsis">
+    Configure Keycloak authentication
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../installation-guide/configuration/reporters/installation-guide-reporters/">
+<span class="md-ellipsis">
+    Configure Reporters
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../installation-guide/configuration/installation-guide-cache/">
+<span class="md-ellipsis">
+    Configure Cache
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../installation-guide/installation-guide-configuration-notifications.md">
+<span class="md-ellipsis">
+    Configure Notifications
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../installation-guide/installation-guide-configuration-dictionaries.md">
+<span class="md-ellipsis">
+    Configure Dictionaries
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_6" id="__nav_2_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_6">
+<span class="md-ellipsis">
+    API Publisher Guide
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="API Publisher Guide" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_6">
+<span class="md-nav__icon md-icon"></span>
+            API Publisher Guide
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/publisher/manage-api/">
+<span class="md-ellipsis">
+    Introduction
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_6_2" id="__nav_2_6_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_6_2">
+<span class="md-ellipsis">
+    Manage APIs
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Manage APIs" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_6_2">
+<span class="md-nav__icon md-icon"></span>
+            Manage APIs
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/publisher/manage-apis/using-console/">
+<span class="md-ellipsis">
+    Using APIM console
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/publisher/manage-apis/using-apis/">
+<span class="md-ellipsis">
+    Using Management APIs
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_6_3" id="__nav_2_6_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_6_3">
+<span class="md-ellipsis">
+    Service Management Ecosystem (SME)
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Service Management Ecosystem (SME)" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_6_3">
+<span class="md-nav__icon md-icon"></span>
+            Service Management Ecosystem (SME)
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/publisher/sme/sme-overview/">
+<span class="md-ellipsis">
+    Introducing SME
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/publisher/sme/introducing-kafka/">
+<span class="md-ellipsis">
+    Introducing the Kafka connector
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/publisher/sme/using-kafka-connector/">
+<span class="md-ellipsis">
+    Using the Kafka connector
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/publisher/sme/kafka-connector-configuration/">
+<span class="md-ellipsis">
+    Configuring the Kafka connector
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_6_4" id="__nav_2_6_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_6_4">
+<span class="md-ellipsis">
+    Plans and subscriptions
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Plans and subscriptions" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_6_4">
+<span class="md-nav__icon md-icon"></span>
+            Plans and subscriptions
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/publisher/plans/plans-and-subscriptions/">
+<span class="md-ellipsis">
+    Introduction
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/publisher/plans/create-plan/">
+<span class="md-ellipsis">
+    Create a plan
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/publisher/plans/plan-security/">
+<span class="md-ellipsis">
+    Configure plan security
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/publisher/plans/plan-restrictions/">
+<span class="md-ellipsis">
+    Configure plan restrictions
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/publisher/plans/plan-policies/">
+<span class="md-ellipsis">
+    Configure plan flows and policies
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/publisher/plans/plan-publish/">
+<span class="md-ellipsis">
+    Publish a plan
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/publisher/plans/plan-general-conditions/">
+<span class="md-ellipsis">
+    Configure plan general conditions of use
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/publisher/plans/plan-subscriptions/">
+<span class="md-ellipsis">
+    Manage plan subscriptions
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/publisher/manage-members/">
+<span class="md-ellipsis">
+    API users and ownership
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/publisher/api-property-encryption/">
+<span class="md-ellipsis">
+    API properties and encryption
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/publisher/response-templates/">
+<span class="md-ellipsis">
+    Response templates
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/publisher/configuring-cors/">
+<span class="md-ellipsis">
+    CORS
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/publisher/logging-analytics/">
+<span class="md-ellipsis">
+    Logging and analytics
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/publisher/audit-trail/">
+<span class="md-ellipsis">
+    Audit trail
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/publisher/backend-services/">
+<span class="md-ellipsis">
+    Load balancing, failover, and health check
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/publisher/messaging/">
+<span class="md-ellipsis">
+    Send notifications
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/publisher/api-rating/">
+<span class="md-ellipsis">
+    API rating
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/publisher/top-apis/">
+<span class="md-ellipsis">
+    Top APIs
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_6_15" id="__nav_2_6_15" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_6_15">
+<span class="md-ellipsis">
+    Resources
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Resources" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_6_15">
+<span class="md-nav__icon md-icon"></span>
+            Resources
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/publisher/resources/resources-overview/">
+<span class="md-ellipsis">
+    Introduction
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/publisher/resources/resource-cache/">
+<span class="md-ellipsis">
+    Cache
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/publisher/resources/resource-cache-redis/">
+<span class="md-ellipsis">
+    Cache Redis
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/publisher/resources/resource-oauth2-am/">
+<span class="md-ellipsis">
+    OAuth2 - Gravitee Access Management
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/publisher/resources/resource-oauth2-generic/">
+<span class="md-ellipsis">
+    OAuth2 - Generic Authorization Server
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_6_16" id="__nav_2_6_16" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_6_16">
+<span class="md-ellipsis">
+    Design Studio Guide
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Design Studio Guide" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_6_16">
+<span class="md-nav__icon md-icon"></span>
+            Design Studio Guide
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/publisher/design-studio/design-studio-overview/">
+<span class="md-ellipsis">
+    Introduction
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/publisher/design-studio/design-studio-migrate/">
+<span class="md-ellipsis">
+    Migrate to Design Studio
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/publisher/design-studio/design-studio-create/">
+<span class="md-ellipsis">
+    Design your API flows
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/publisher/design-studio/design-studio-try-it/">
+<span class="md-ellipsis">
+    Try It mode
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/publisher/design-studio/design-studio-debug-mode/">
+<span class="md-ellipsis">
+    Debug ode
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_6_17" id="__nav_2_6_17" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_6_17">
+<span class="md-ellipsis">
+    Documentation
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Documentation" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_6_17">
+<span class="md-nav__icon md-icon"></span>
+            Documentation
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/publisher/documentation/publish-documentation/">
+<span class="md-ellipsis">
+    Publish API documentation
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/publisher/documentation/publish-documentation-markdown/">
+<span class="md-ellipsis">
+    Markdown documentation
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/publisher/documentation/publish-documentation-asciidoc/">
+<span class="md-ellipsis">
+    AsciiDoc documentation
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/publisher/documentation/publish-documentation-markdown-template/">
+<span class="md-ellipsis">
+    Markdown templates
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/publisher/documentation/publish-documentation-openapi/">
+<span class="md-ellipsis">
+    OpenAPI documentation
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/publisher/documentation/publish-documentation-system-folders/">
+<span class="md-ellipsis">
+    Customize the APIM Portal navigation
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_6_18" id="__nav_2_6_18" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_6_18">
+<span class="md-ellipsis">
+    Service discovery
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Service discovery" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_6_18">
+<span class="md-nav__icon md-icon"></span>
+            Service discovery
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/publisher/service-discovery/service-discovery-overview/">
+<span class="md-ellipsis">
+    Introduction
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/publisher/service-discovery/service-discovery-eureka/">
+<span class="md-ellipsis">
+    Eureka service discovery
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/publisher/service-discovery/service-discovery-consul/">
+<span class="md-ellipsis">
+    HashiCorp Consul service discovery
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/publisher/promote-api/">
+<span class="md-ellipsis">
+    Cockpit features - Promote APIs
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/publisher/expression-language/">
+<span class="md-ellipsis">
+    Expression Language
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_7" id="__nav_2_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_7">
+<span class="md-ellipsis">
+    API Consumer Guide
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="API Consumer Guide" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_7">
+<span class="md-nav__icon md-icon"></span>
+            API Consumer Guide
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/consumer/developer-portal/">
+<span class="md-ellipsis">
+    Introduction
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/consumer/developer-create-account/">
+<span class="md-ellipsis">
+    Create a user account
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/consumer/developer-manage/">
+<span class="md-ellipsis">
+    Manage applications
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/consumer/developer-subscribe/">
+<span class="md-ellipsis">
+    Subscribe to an API
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_8" id="__nav_2_8" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_8">
+<span class="md-ellipsis">
+    Administration Guide
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Administration Guide" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_8">
+<span class="md-nav__icon md-icon"></span>
+            Administration Guide
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/admin/admin-guide-organizations-and-environments/">
+<span class="md-ellipsis">
+    Organizations and environments
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/admin/admin-guide-roles-and-permissions/">
+<span class="md-ellipsis">
+    Roles and permissions
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/admin/admin-guide-users-and-groups/">
+<span class="md-ellipsis">
+    Users and groups
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/admin/admin-guide-users-support-tickets/">
+<span class="md-ellipsis">
+    Support
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/admin/admin-guide-platform-policies/">
+<span class="md-ellipsis">
+    Platform policies
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_9" id="__nav_2_9" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_9">
+<span class="md-ellipsis">
+    How To
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="How To" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_9">
+<span class="md-nav__icon md-icon"></span>
+            How To
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../how-tos/how-to-add-custom-metrics-in-dashboards/">
+<span class="md-ellipsis">
+    Add custom metrics in dashboards
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../how-tos/how-to-configure-global-API-reviewers/">
+<span class="md-ellipsis">
+    Configure global API reviewers
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_10" id="__nav_2_10" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_10">
+<span class="md-ellipsis">
+    Developer Guide
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Developer Guide" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_10">
+<span class="md-nav__icon md-icon"></span>
+            Developer Guide
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../dev-guide-boostrap/">
+<span class="md-ellipsis">
+    Bootstrap Your Dev Environment
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../dev-guide-plugins/">
+<span class="md-ellipsis">
+    Plugins
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    Policies
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    Policies
+    
+  </span>
+</a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#getting-started">
+<span class="md-ellipsis">
+      Getting started
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#policy-skeleton-generation">
+<span class="md-ellipsis">
+      Policy skeleton generation
+    </span>
+</a>
+<nav aria-label="Policy skeleton generation" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#pomxml">
+<span class="md-ellipsis">
+      pom.xml
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#readmemd">
+<span class="md-ellipsis">
+      README.md
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#policy-assemblyxml">
+<span class="md-ellipsis">
+      policy-assembly.xml
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#json-configuration-schemas">
+<span class="md-ellipsis">
+      JSON Configuration schemas
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fooheadercheckpolicyconfigurationjava">
+<span class="md-ellipsis">
+      FooHeaderCheckPolicyConfiguration.java
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fooheadercheckpolicyjava">
+<span class="md-ellipsis">
+      FooHeaderCheckPolicy.java
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#apply-policy-during-the-request-phase">
+<span class="md-ellipsis">
+      Apply policy during the Request phase
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#apply-policy-during-the-response-phase">
+<span class="md-ellipsis">
+      Apply policy during the Response phase
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#apply-policy-during-both-the-request-and-response-phases">
+<span class="md-ellipsis">
+      Apply policy during both the Request and Response phases
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#provided-parameters">
+<span class="md-ellipsis">
+      Provided parameters
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#pluginproperties">
+<span class="md-ellipsis">
+      plugin.properties
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fooheadercheckpolicytestjava">
+<span class="md-ellipsis">
+      FooHeaderCheckPolicyTest.java
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_11" id="__nav_2_11" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_11">
+<span class="md-ellipsis">
+    Policy reference
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Policy reference" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_11">
+<span class="md-nav__icon md-icon"></span>
+            Policy reference
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../policy-reference/policies-overview/">
+<span class="md-ellipsis">
+    Introduction
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../policy-reference/policy-apikey/">
+<span class="md-ellipsis">
+    API key policy
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../policy-reference/policy-assign-attributes">
+<span class="md-ellipsis">
+    Assign attributes policy
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../policy-reference/policy-assign-content/">
+<span class="md-ellipsis">
+    Assign content policy
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../policy-reference/policy-assign-metrics/">
+<span class="md-ellipsis">
+    Assign metrics policy
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../policy-reference/policy-basic-authentication/">
+<span class="md-ellipsis">
+    Basic authentication policy
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../policy-reference/policy-cache/">
+<span class="md-ellipsis">
+    Cache policy
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../policy-reference/policy-callout-http/">
+<span class="md-ellipsis">
+    Callout HTTP policy
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../policy-reference/policy-circuit-breaker/">
+<span class="md-ellipsis">
+    Circuit Breaker policy
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../policy-reference/policy-data-logging-masking/">
+<span class="md-ellipsis">
+    Data logging masking policy
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../policy-reference/policy-dynamic-routing/">
+<span class="md-ellipsis">
+    Dynamic routing policy
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../policy-reference/policy-generate-http-signature/">
+<span class="md-ellipsis">
+    Generate HTTP Signature policy
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../policy-reference/policy-generate-jwt/">
+<span class="md-ellipsis">
+    Generate JWT policy
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../policy-reference/policy-groovy/">
+<span class="md-ellipsis">
+    Groovy policy
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../policy-reference/policy-html-json/">
+<span class="md-ellipsis">
+    HTML to JSON policy
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../policy-reference/policy-http-signature/">
+<span class="md-ellipsis">
+    HTTP signature policy
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../policy-reference/policy-ipfiltering/">
+<span class="md-ellipsis">
+    IP filtering policy
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../policy-reference/policy-javascript/">
+<span class="md-ellipsis">
+    Javascript policy
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../policy-reference/policy-json-threat-protection/">
+<span class="md-ellipsis">
+    JSON threat protection policy
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../policy-reference/policy-json-to-json/">
+<span class="md-ellipsis">
+    JSON to JSON policy
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../policy-reference/policy-json-xml/">
+<span class="md-ellipsis">
+    JSON to XML policy
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../policy-reference/policy-json-validation/">
+<span class="md-ellipsis">
+    JSON validation policy
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../policy-reference/policy-jws/">
+<span class="md-ellipsis">
+    JWS policy
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../policy-reference/policy-jwt/">
+<span class="md-ellipsis">
+    JWT policy
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../policy-reference/policy-keyless/">
+<span class="md-ellipsis">
+    Keyless policy
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../policy-reference/policy-latency/">
+<span class="md-ellipsis">
+    Latency policy
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../policy-reference/policy-metrics-reporter/">
+<span class="md-ellipsis">
+    Metrics reporter policy
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../policy-reference/policy-mock/">
+<span class="md-ellipsis">
+    Mock policy
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../policy-reference/policy-oauth2/">
+<span class="md-ellipsis">
+    OAuth2 policy
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../policy-reference/policy-openid-connect-userinfo/">
+<span class="md-ellipsis">
+    OpenID Connect UserInfo policy
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../policy-reference/policy-override-http-method/">
+<span class="md-ellipsis">
+    Override HTTP method policy
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../policy-reference/policy-ratelimit/">
+<span class="md-ellipsis">
+    Rate limiting policy
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../policy-reference/policy-regex-threat-protection/">
+<span class="md-ellipsis">
+    Regex threat protection policy
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../policy-reference/policy-request-content-limit/">
+<span class="md-ellipsis">
+    Request content limit policy
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../policy-reference/policy-request-validation/">
+<span class="md-ellipsis">
+    Request validation policy
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../policy-reference/policy-resource-filtering/">
+<span class="md-ellipsis">
+    Resource filtering policy
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../policy-reference/policy-rest-to-soap/">
+<span class="md-ellipsis">
+    REST to SOAP policy
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../policy-reference/policy-retry/">
+<span class="md-ellipsis">
+    Retry policy
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../policy-reference/policy-role-based-access-control/">
+<span class="md-ellipsis">
+    Role-based access control policy
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../policy-reference/policy-ssl-enforcement/">
+<span class="md-ellipsis">
+    SSL enforcement policy
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../policy-reference/policy-traffic-shadowing/">
+<span class="md-ellipsis">
+    Traffic shadowing policy
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../policy-reference/policy-transform-headers/">
+<span class="md-ellipsis">
+    Transform headers policy
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../policy-reference/policy-transform-queryparameters/">
+<span class="md-ellipsis">
+    Transform query parameters policy
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../policy-reference/policy-url-rewriting/">
+<span class="md-ellipsis">
+    URL rewriting policy
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../policy-reference/policy-xml-json/">
+<span class="md-ellipsis">
+    XML to JSON policy
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../policy-reference/policy-xml-threat-protection/">
+<span class="md-ellipsis">
+    Threat protection policy
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../policy-reference/policy-xml-validation/">
+<span class="md-ellipsis">
+    XML validation policy
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../policy-reference/policy-xlst.md">
+<span class="md-ellipsis">
+    XSLT policy
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_12" id="__nav_2_12" type="checkbox"/>
 <label class="md-nav__link" for="__nav_2_12">
 <span class="md-ellipsis">
     Gravitee Kubernetes Operator (GKO)
@@ -607,7 +2563,7 @@
 </a>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_2_12_3" id="__nav_2_12_3" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_12_3" id="__nav_2_12_3" type="checkbox"/>
 <label class="md-nav__link" for="__nav_2_12_3">
 <span class="md-ellipsis">
     Installation and deployment
@@ -649,7 +2605,7 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_2_12_4" id="__nav_2_12_4" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_12_4" id="__nav_2_12_4" type="checkbox"/>
 <label class="md-nav__link" for="__nav_2_12_4">
 <span class="md-ellipsis">
     User Guide
@@ -672,7 +2628,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../kubernetes/apim-kubernetes-operator-user-guide-api-definition/">
+<a class="md-nav__link" href="../../kubernetes/apim-kubernetes-operator-definitions/">
 <span class="md-ellipsis">
     Custom Resource Definitions (CRDs) reference
     
@@ -742,7 +2698,7 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_2_13" id="__nav_2_13" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_13" id="__nav_2_13" type="checkbox"/>
 <label class="md-nav__link" for="__nav_2_13">
 <span class="md-ellipsis">
     V4 policy execution engine (V4 BETA)
@@ -776,7 +2732,7 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_2_14" id="__nav_2_14" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_14" id="__nav_2_14" type="checkbox"/>
 <label class="md-nav__link" for="__nav_2_14">
 <span class="md-ellipsis">
     Event-native API Management (V4 BETA)
@@ -826,7 +2782,7 @@
 </a>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_2_16" id="__nav_2_16" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_16" id="__nav_2_16" type="checkbox"/>
 <label class="md-nav__link" for="__nav_2_16">
 <span class="md-ellipsis">
     Changelog
@@ -843,7 +2799,7 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../changelog/">
 <span class="md-ellipsis">
-    APIM changelog
+    APIM changelog index
     
   </span>
 </a>
@@ -895,7 +2851,7 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../../am/">
 <span class="md-ellipsis">
@@ -925,7 +2881,7 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../../ae/">
 <span class="md-ellipsis">
@@ -944,7 +2900,7 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5" id="__nav_5" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" id="__nav_5" type="checkbox"/>
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../../cockpit/">
 <span class="md-ellipsis">
@@ -963,7 +2919,7 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_6" id="__nav_6" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" id="__nav_6" type="checkbox"/>
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../../ee/">
 <span class="md-ellipsis">
@@ -1009,7 +2965,7 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_7" id="__nav_7" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" id="__nav_7" type="checkbox"/>
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../../releases/">
 <span class="md-ellipsis">
@@ -1028,7 +2984,7 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_8" id="__nav_8" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" id="__nav_8" type="checkbox"/>
 <label class="md-nav__link" for="__nav_8">
 <span class="md-ellipsis">
     API Reference
@@ -1054,7 +3010,7 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_9" id="__nav_9" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" id="__nav_9" type="checkbox"/>
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../../dev-community/">
 <span class="md-ellipsis">
@@ -1073,7 +3029,7 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_10" id="__nav_10" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" id="__nav_10" type="checkbox"/>
 <label class="md-nav__link" for="__nav_10">
 <span class="md-ellipsis">
     Marketplace
@@ -1105,121 +3061,111 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
+<nav class="md-tags">
+<span class="md-tag">APIM</span>
+<span class="md-tag">Developer guide</span>
+<span class="md-tag">Policies</span>
+</nav>
 <a class="md-content__button md-icon" href="https://github.com/ivan-gravitee/docs-framework-poc/edit/master/docs/apim/dev-guide/dev-guide-policies.md" title="Edit this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
-<p>[[gravitee-devguide-policies]]
-= Policies
-:page-sidebar: apim_3_x_sidebar
-:page-permalink: apim/3.x/apim_devguide_policies.html
-:page-folder: apim/dev-guide
-:page-layout: apim3x</p>
+<h1 id="policies">Policies</h1>
 <p>Policies are steps in the Request/Response <em>gateway</em> proxy chain. A <em>policy</em> acts as a <em>proxy controller</em> by guaranteeing if a given business rule is fulfilled during Request/Response processing.</p>
 <p>Let's look at an example of how to develop a policy.</p>
-<p>== Getting started</p>
-<p>Before you start, don't forget to activate http://central.sonatype.org/pages/ossrh-guide.html[OSS repositories, window=\"_blank\"] in your https://maven.apache.org/settings.html[Maven settings, window=\"_blank\"].</p>
-<p>== Policy skeleton generation</p>
+<h2 id="getting-started">Getting started</h2>
+<p>Before you start, don't forget to activate <a href="http://central.sonatype.org/pages/ossrh-guide.html">OSS repositories</a> in your <a href="https://maven.apache.org/settings.html">Maven settings</a>.</p>
+<h2 id="policy-skeleton-generation">Policy skeleton generation</h2>
 <p>Imagine you want to create a policy that controls if requests contains the <code>X-Foo</code> header. Let's name it the <em>Foo header check policy</em>. Then you can generate your policy like this:</p>
-<h2 id="sourcebash">[source,bash]</h2>
-<p>$ mvn archetype:generate\
-    -DarchetypeGroupId=io.gravitee.maven.archetypes\
-    -DarchetypeArtifactId=gravitee-policy-maven-archetype\
-    -DarchetypeVersion=1.8.0\
-    -DartifactId=foo-header-check-policy\
-    -DgroupId=my.gravitee.extension.policy\
-    -Dversion=1.0.0-SNAPSHOT\
-    -DpolicyName=FooHeaderCheck</p>
-<hr/>
-<h1 id="note">[NOTE]</h1>
-<p>When generating a policy, choose a short but clear name for it, <em>without specifying the <em>policy</em> suffix</em>. The <code>gravitee-policy-maven-archetype</code> will add it automatically.</p>
-<p>For example, <em>do not</em> specify the <code>policyName</code> of your policy like this:</p>
-<h2 id="source">[source]</h2>
-<h2 id="-dpolicynameamazingstuffpolicy">-DpolicyName=AmazingStuffPolicy</h2>
-<p>but like this:</p>
-<h2 id="source_1">[source]</h2>
-<h2 id="-dpolicynameamazingstuff">-DpolicyName=AmazingStuff</h2>
-<p>==========================</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>$ mvn archetype:generate\
+<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a>    -DarchetypeGroupId=io.gravitee.maven.archetypes\
+<a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a>    -DarchetypeArtifactId=gravitee-policy-maven-archetype\
+<a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a>    -DarchetypeVersion=1.8.0\
+<a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a>    -DartifactId=foo-header-check-policy\
+<a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a>    -DgroupId=my.gravitee.extension.policy\
+<a href="#__codelineno-0-7" id="__codelineno-0-7" name="__codelineno-0-7"></a>    -Dversion=1.0.0-SNAPSHOT\
+<a href="#__codelineno-0-8" id="__codelineno-0-8" name="__codelineno-0-8"></a>    -DpolicyName=FooHeaderCheck
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When generating a policy, choose a short but clear name for it, <em>without specifying the <em>policy</em> suffix</em>. The <code>gravitee-policy-maven-archetype</code> will add it automatically.
+For example, <em>do not</em> specify the <code>policyName</code> of your policy like this:
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>-DpolicyName=AmazingStuffPolicy
+</code></pre></div>
+Instead, do it like this:
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>-DpolicyName=AmazingStuff
+</code></pre></div></p>
+</div>
 <p>Once executed and parameters confirmed, the above command will create the <code>foo-header-check-policy</code> directory containing the following structure:</p>
-<h2 id="source_2">[source]</h2>
-<p>.
-├── pom.xml
-├── README.md
-└── src
-    ├── assembly
-    │   └── policy-assembly.xml
-    ├── main
-    │   ├── java
-    │   │   └── my
-    │   │       └── gravitee
-    │   │           └── extension
-    │   │               └── policy
-    │   │                   ├── FooHeaderCheckPolicyConfiguration.java
-    │   │                   └── FooHeaderCheckPolicy.java
-    │   └── resources
-    │       └── plugin.properties
-    └── test
-        └── java
-            └── my
-                └── gravitee
-                    └── extension
-                        └── policy
-                            └── FooHeaderCheckPolicyTest.java</p>
-<hr/>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a>.
+<a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a>├── pom.xml
+<a href="#__codelineno-3-3" id="__codelineno-3-3" name="__codelineno-3-3"></a>├── README.md
+<a href="#__codelineno-3-4" id="__codelineno-3-4" name="__codelineno-3-4"></a>└── src
+<a href="#__codelineno-3-5" id="__codelineno-3-5" name="__codelineno-3-5"></a>    ├── assembly
+<a href="#__codelineno-3-6" id="__codelineno-3-6" name="__codelineno-3-6"></a>    │   └── policy-assembly.xml
+<a href="#__codelineno-3-7" id="__codelineno-3-7" name="__codelineno-3-7"></a>    ├── main
+<a href="#__codelineno-3-8" id="__codelineno-3-8" name="__codelineno-3-8"></a>    │   ├── java
+<a href="#__codelineno-3-9" id="__codelineno-3-9" name="__codelineno-3-9"></a>    │   │   └── my
+<a href="#__codelineno-3-10" id="__codelineno-3-10" name="__codelineno-3-10"></a>    │   │       └── gravitee
+<a href="#__codelineno-3-11" id="__codelineno-3-11" name="__codelineno-3-11"></a>    │   │           └── extension
+<a href="#__codelineno-3-12" id="__codelineno-3-12" name="__codelineno-3-12"></a>    │   │               └── policy
+<a href="#__codelineno-3-13" id="__codelineno-3-13" name="__codelineno-3-13"></a>    │   │                   ├── FooHeaderCheckPolicyConfiguration.java
+<a href="#__codelineno-3-14" id="__codelineno-3-14" name="__codelineno-3-14"></a>    │   │                   └── FooHeaderCheckPolicy.java
+<a href="#__codelineno-3-15" id="__codelineno-3-15" name="__codelineno-3-15"></a>    │   └── resources
+<a href="#__codelineno-3-16" id="__codelineno-3-16" name="__codelineno-3-16"></a>    │       └── plugin.properties
+<a href="#__codelineno-3-17" id="__codelineno-3-17" name="__codelineno-3-17"></a>    └── test
+<a href="#__codelineno-3-18" id="__codelineno-3-18" name="__codelineno-3-18"></a>        └── java
+<a href="#__codelineno-3-19" id="__codelineno-3-19" name="__codelineno-3-19"></a>            └── my
+<a href="#__codelineno-3-20" id="__codelineno-3-20" name="__codelineno-3-20"></a>                └── gravitee
+<a href="#__codelineno-3-21" id="__codelineno-3-21" name="__codelineno-3-21"></a>                    └── extension
+<a href="#__codelineno-3-22" id="__codelineno-3-22" name="__codelineno-3-22"></a>                        └── policy
+<a href="#__codelineno-3-23" id="__codelineno-3-23" name="__codelineno-3-23"></a>                            └── FooHeaderCheckPolicyTest.java
+</code></pre></div>
 <p>The different generated files are as follows:</p>
-<p>|===
-|File |Description</p>
-<p>| &lt;<bookmark-pom>&gt; |The main Maven POM file
-| &lt;<bookmark-readme>&gt; |The main entry point for the policy documentation
-| &lt;<bookmark-policy-assembly>&gt; |The common Maven assembly descriptor for any policies
-| &lt;<bookmark-configuration-class>&gt; |The policy configuration class
-| &lt;<bookmark-policy-class>&gt; |The policy class, from which the business behavior is implemented
-| &lt;<bookmark-descriptor>&gt; |The policy descriptor file
-| &lt;<bookmark-test>&gt; |The policy unit test Java class
-|===</bookmark-test></bookmark-descriptor></bookmark-policy-class></bookmark-configuration-class></bookmark-policy-assembly></bookmark-readme></bookmark-pom></p>
-<p>[discrete]
-[[bookmark-pom]]
-=== pom.xml</p>
-<p>Each policy (and more generally all Gravitee projects) are https://maven.apache.org/[Maven] managed. A policy project is described by using the Maven https://maven.apache.org/pom.html[Project Object Model] file.</p>
-<p>[discrete]
-[[bookmark-readme]]
-=== README.md</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a>|===
+<a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a>|File |Description
+<a href="#__codelineno-4-3" id="__codelineno-4-3" name="__codelineno-4-3"></a>
+<a href="#__codelineno-4-4" id="__codelineno-4-4" name="__codelineno-4-4"></a>| &lt;&lt;bookmark-pom&gt;&gt; |The main Maven POM file
+<a href="#__codelineno-4-5" id="__codelineno-4-5" name="__codelineno-4-5"></a>| &lt;&lt;bookmark-readme&gt;&gt; |The main entry point for the policy documentation
+<a href="#__codelineno-4-6" id="__codelineno-4-6" name="__codelineno-4-6"></a>| &lt;&lt;bookmark-policy-assembly&gt;&gt; |The common Maven assembly descriptor for any policies
+<a href="#__codelineno-4-7" id="__codelineno-4-7" name="__codelineno-4-7"></a>| &lt;&lt;bookmark-configuration-class&gt;&gt; |The policy configuration class
+<a href="#__codelineno-4-8" id="__codelineno-4-8" name="__codelineno-4-8"></a>| &lt;&lt;bookmark-policy-class&gt;&gt; |The policy class, from which the business behavior is implemented
+<a href="#__codelineno-4-9" id="__codelineno-4-9" name="__codelineno-4-9"></a>| &lt;&lt;bookmark-descriptor&gt;&gt; |The policy descriptor file
+<a href="#__codelineno-4-10" id="__codelineno-4-10" name="__codelineno-4-10"></a>| &lt;&lt;bookmark-test&gt;&gt; |The policy unit test Java class
+<a href="#__codelineno-4-11" id="__codelineno-4-11" name="__codelineno-4-11"></a>|===
+</code></pre></div>
+<h3 id="pomxml">pom.xml</h3>
+<p>Each policy (and more generally all Gravitee projects) are <a href="https://maven.apache.org/">Maven</a> managed. A policy project is described by using the Maven <a href="https://maven.apache.org/pom.html">Project Object Model</a> file.</p>
+<h3 id="readmemd">README.md</h3>
 <p>Each policy should have a dedicated <code>README.md</code> file to document it. The <code>README.md</code> file should contain everything related to the use of your policy: <em>What is its functionality? How can you use it? How can you configure it?</em></p>
-<p>[discrete]
-[[bookmark-policy-assembly]]
-=== policy-assembly.xml</p>
+<h3 id="policy-assemblyxml">policy-assembly.xml</h3>
 <p>A policy is just a kind of Gravitee plugin.</p>
 <p>It can be plugged into the &lt;<gateway, _gateway_="" apim="">&gt; by using the distribution file built from the <code>policy-assembly.xml</code> file.</gateway,></p>
 <p>Based on our <em>FooHeaderCheck</em> policy, the distribution file structure is as follows:</p>
-<h2 id="source_3">[source]</h2>
-<p>.
-├── foo-header-check-policy-1.0.0-SNAPSHOT.jar
-├── lib
-└── schemas
-    └── urn:jsonschema:my:gravitee:extension:policy:FooHeaderCheckPolicyConfiguration.json</p>
-<hr/>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a>.
+<a href="#__codelineno-5-2" id="__codelineno-5-2" name="__codelineno-5-2"></a>├── foo-header-check-policy-1.0.0-SNAPSHOT.jar
+<a href="#__codelineno-5-3" id="__codelineno-5-3" name="__codelineno-5-3"></a>├── lib
+<a href="#__codelineno-5-4" id="__codelineno-5-4" name="__codelineno-5-4"></a>└── schemas
+<a href="#__codelineno-5-5" id="__codelineno-5-5" name="__codelineno-5-5"></a>    └── urn:jsonschema:my:gravitee:extension:policy:FooHeaderCheckPolicyConfiguration.json
+</code></pre></div>
 <p>The different generated files are as follows:</p>
-<p>|===
-|File |Description</p>
-<p>|<code>foo-header-check-policy-1.0.0-SNAPSHOT.jar</code> |The main <em>policy</em> jar file
-|<code>lib/</code> |Where the external dependencies are stored (from the https://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html[Maven POM file dependencies]
-|<code>schemas/</code> |Where the JSON configuration schemas are stored
-|===</p>
-<p>[discrete]
-[[bookmark-configuration-schema]]
-=== JSON Configuration schemas</p>
-<p>Policy configuration is described inside one or several http://docs.oracle.com/javase/tutorial/javabeans/[Java Bean] classes (see the &lt;<bookmark-configuration-class>&gt; example).</bookmark-configuration-class></p>
-<p>During the packaging phase, each policy configuration class is processed to generate one or several http://json-schema.org/[JSON schema(s)] that will be read by the <em>gateway</em> when the policy is plugged in.</p>
-<p>JSON schema generation is performed by Gravitee's https://github.com/gravitee-io/json-schema-generator-maven-plugin[json-schema-generator-maven-plugin] Maven plugin.</p>
-<p>[discrete]
-[[bookmark-configuration-class]]
-=== FooHeaderCheckPolicyConfiguration.java</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a>|===
+<a href="#__codelineno-6-2" id="__codelineno-6-2" name="__codelineno-6-2"></a>|File |Description
+<a href="#__codelineno-6-3" id="__codelineno-6-3" name="__codelineno-6-3"></a>
+<a href="#__codelineno-6-4" id="__codelineno-6-4" name="__codelineno-6-4"></a>|`foo-header-check-policy-1.0.0-SNAPSHOT.jar` |The main _policy_ jar file
+<a href="#__codelineno-6-5" id="__codelineno-6-5" name="__codelineno-6-5"></a>|`lib/` |Where the external dependencies are stored (from the Maven POM file dependencies - see https://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html)
+<a href="#__codelineno-6-6" id="__codelineno-6-6" name="__codelineno-6-6"></a>|`schemas/` |Where the JSON configuration schemas are stored
+<a href="#__codelineno-6-7" id="__codelineno-6-7" name="__codelineno-6-7"></a>|===
+</code></pre></div>
+<h3 id="json-configuration-schemas">JSON Configuration schemas</h3>
+<p>Policy configuration is described inside one or several <a href="http://docs.oracle.com/javase/tutorial/javabeans/">Java Bean</a> classes (see the example in the next section below).</p>
+<p>During the packaging phase, each policy configuration class is processed to generate one or several <a href="http://json-schema.org">JSON schema(s)</a> that will be read by the <em>gateway</em> when the policy is plugged in.</p>
+<p>JSON schema generation is performed by Gravitee's <a href="https://github.com/gravitee-io/json-schema-generator-maven-plugin">json-schema-generator-maven-plugin</a> Maven plugin.</p>
+<h3 id="fooheadercheckpolicyconfigurationjava">FooHeaderCheckPolicyConfiguration.java</h3>
 <p>The policy configuration class.</p>
-<p>policy configuration is described in one or several http://docs.oracle.com/javase/tutorial/javabeans/[Java Bean] class(es) where each attribute is a configuration parameter.</p>
-<p>During packaging, policy configuration is compiled into link:#schemas[JSON Configuration schemas]. These schemas are used to parse https://github.com/gravitee-io/gravitee-gateway[API definitions].</p>
+<p>Policy configuration is described in one or several <a href="http://docs.oracle.com/javase/tutorial/javabeans/">Java Bean</a> class(es) where each attribute is a configuration parameter.</p>
+<p>During packaging, policy configuration is compiled into link:#schemas[JSON Configuration schemas]. These schemas are used to parse <a href="https://github.com/gravitee-io/gravitee-gateway">API definitions</a>.</p>
 <p>Policy configuration is injected into the policy class instance at runtime and can then be used during implementation.</p>
-<p>[discrete]
-[[bookmark-policy-class]]
-=== FooHeaderCheckPolicy.java</p>
+<h3 id="fooheadercheckpolicyjava">FooHeaderCheckPolicy.java</h3>
 <p>The main policy class. Contains business code that implements the policy.</p>
 <p>A policy can be applied on several parts of the proxy chain:</p>
 <ul>
@@ -1227,90 +3173,95 @@
 <li>The Response phase</li>
 <li>Both of them</li>
 </ul>
-<p>[discrete]
-=== Apply policy during the Request phase</p>
+<h3 id="apply-policy-during-the-request-phase">Apply policy during the Request phase</h3>
 <p>A policy can be applied to the proxy Request phase by just implementing a method dealing with the <code>io.gravitee.gateway.api.policy.annotations.OnRequest</code> annotation. For instance:</p>
-<h2 id="sourcejava">[source,java]</h2>
-<p>@OnRequest
-public void onRequest(Request request, Response response, PolicyChain policyChain) {
-    // Add a dummy header
-    request.headers().set("X-DummyHeader", configuration.getDummyHeaderValue());</p>
-<div class="highlight"><pre><span></span><code>// Finally continue chaining
-policyChain.doNext(request, response);
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a>@OnRequest
+<a href="#__codelineno-7-2" id="__codelineno-7-2" name="__codelineno-7-2"></a>public void onRequest(Request request, Response response, PolicyChain policyChain) {
+<a href="#__codelineno-7-3" id="__codelineno-7-3" name="__codelineno-7-3"></a>    // Add a dummy header
+<a href="#__codelineno-7-4" id="__codelineno-7-4" name="__codelineno-7-4"></a>    request.headers().set("X-DummyHeader", configuration.getDummyHeaderValue());
+<a href="#__codelineno-7-5" id="__codelineno-7-5" name="__codelineno-7-5"></a>
+<a href="#__codelineno-7-6" id="__codelineno-7-6" name="__codelineno-7-6"></a>    // Finally continue chaining
+<a href="#__codelineno-7-7" id="__codelineno-7-7" name="__codelineno-7-7"></a>    policyChain.doNext(request, response);
+<a href="#__codelineno-7-8" id="__codelineno-7-8" name="__codelineno-7-8"></a>}
 </code></pre></div>
-<h2 id="_1">}</h2>
-<p>NOTE: The <code>PolicyChain</code> <em>must always be called to end <em>on Request</em> processing</em>. Ensure you make a call to the <code>PolicyChain#doNext()</code> or <code>PolicyChain#failWith()</code> to correctly end the <em>on Request</em> processing.</p>
-<p>[discrete]
-=== Apply policy during the Response phase</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code>PolicyChain</code> <em>must always be called to end <em>on Request</em> processing</em>. Ensure you make a call to the <code>PolicyChain#doNext()</code> or <code>PolicyChain#failWith()</code> to correctly end the <em>on Request</em> processing.</p>
+</div>
+<h3 id="apply-policy-during-the-response-phase">Apply policy during the Response phase</h3>
 <p>A policy can be applied to the proxy Response phase by just implementing a method which works the <code>io.gravitee.gateway.api.policy.annotations.OnResponse</code> annotation. For instance:</p>
-<h2 id="sourcejava_1">[source,java]</h2>
-<p>@OnResponse
-public void onResponse(Request request, Response response, PolicyChain policyChain) {
-    if (isASuccessfulResponse(response)) {
-        policyChain.doNext(request, response);
-    } else {
-        policyChain.failWith(new PolicyResult() {
-            @Override
-            public boolean isFailure() {
-                return true;
-            }</p>
-<div class="highlight"><pre><span></span><code>        @Override
-        public int httpStatusCode() {
-            return HttpStatusCode.INTERNAL_SERVER_ERROR_500;
-        }
-
-        @Override
-        public String message() {
-            return "Not a successful response :-(";
-        }
-    });
-}
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a>@OnResponse
+<a href="#__codelineno-8-2" id="__codelineno-8-2" name="__codelineno-8-2"></a>public void onResponse(Request request, Response response, PolicyChain policyChain) {
+<a href="#__codelineno-8-3" id="__codelineno-8-3" name="__codelineno-8-3"></a>    if (isASuccessfulResponse(response)) {
+<a href="#__codelineno-8-4" id="__codelineno-8-4" name="__codelineno-8-4"></a>        policyChain.doNext(request, response);
+<a href="#__codelineno-8-5" id="__codelineno-8-5" name="__codelineno-8-5"></a>    } else {
+<a href="#__codelineno-8-6" id="__codelineno-8-6" name="__codelineno-8-6"></a>        policyChain.failWith(new PolicyResult() {
+<a href="#__codelineno-8-7" id="__codelineno-8-7" name="__codelineno-8-7"></a>            @Override
+<a href="#__codelineno-8-8" id="__codelineno-8-8" name="__codelineno-8-8"></a>            public boolean isFailure() {
+<a href="#__codelineno-8-9" id="__codelineno-8-9" name="__codelineno-8-9"></a>                return true;
+<a href="#__codelineno-8-10" id="__codelineno-8-10" name="__codelineno-8-10"></a>            }
+<a href="#__codelineno-8-11" id="__codelineno-8-11" name="__codelineno-8-11"></a>
+<a href="#__codelineno-8-12" id="__codelineno-8-12" name="__codelineno-8-12"></a>            @Override
+<a href="#__codelineno-8-13" id="__codelineno-8-13" name="__codelineno-8-13"></a>            public int httpStatusCode() {
+<a href="#__codelineno-8-14" id="__codelineno-8-14" name="__codelineno-8-14"></a>                return HttpStatusCode.INTERNAL_SERVER_ERROR_500;
+<a href="#__codelineno-8-15" id="__codelineno-8-15" name="__codelineno-8-15"></a>            }
+<a href="#__codelineno-8-16" id="__codelineno-8-16" name="__codelineno-8-16"></a>
+<a href="#__codelineno-8-17" id="__codelineno-8-17" name="__codelineno-8-17"></a>            @Override
+<a href="#__codelineno-8-18" id="__codelineno-8-18" name="__codelineno-8-18"></a>            public String message() {
+<a href="#__codelineno-8-19" id="__codelineno-8-19" name="__codelineno-8-19"></a>                return "Not a successful response :-(";
+<a href="#__codelineno-8-20" id="__codelineno-8-20" name="__codelineno-8-20"></a>            }
+<a href="#__codelineno-8-21" id="__codelineno-8-21" name="__codelineno-8-21"></a>        });
+<a href="#__codelineno-8-22" id="__codelineno-8-22" name="__codelineno-8-22"></a>    }
+<a href="#__codelineno-8-23" id="__codelineno-8-23" name="__codelineno-8-23"></a>}
+<a href="#__codelineno-8-24" id="__codelineno-8-24" name="__codelineno-8-24"></a>
+<a href="#__codelineno-8-25" id="__codelineno-8-25" name="__codelineno-8-25"></a>private static boolean isASuccessfulResponse(Response response) {
+<a href="#__codelineno-8-26" id="__codelineno-8-26" name="__codelineno-8-26"></a>    switch (response.status() / 100) {
+<a href="#__codelineno-8-27" id="__codelineno-8-27" name="__codelineno-8-27"></a>        case 1:
+<a href="#__codelineno-8-28" id="__codelineno-8-28" name="__codelineno-8-28"></a>        case 2:
+<a href="#__codelineno-8-29" id="__codelineno-8-29" name="__codelineno-8-29"></a>        case 3:
+<a href="#__codelineno-8-30" id="__codelineno-8-30" name="__codelineno-8-30"></a>            return true;
+<a href="#__codelineno-8-31" id="__codelineno-8-31" name="__codelineno-8-31"></a>        default:
+<a href="#__codelineno-8-32" id="__codelineno-8-32" name="__codelineno-8-32"></a>            return false;
+<a href="#__codelineno-8-33" id="__codelineno-8-33" name="__codelineno-8-33"></a>    }
+<a href="#__codelineno-8-34" id="__codelineno-8-34" name="__codelineno-8-34"></a>}
 </code></pre></div>
-<p>}</p>
-<p>private static boolean isASuccessfulResponse(Response response) {
-    switch (response.status() / 100) {
-        case 1:
-        case 2:
-        case 3:
-            return true;
-        default:
-            return false;
-    }
-}</p>
-<hr/>
-<p>NOTE: The <code>PolicyChain</code> <em>must always be called to end <em>on Response</em> processing</em>. Ensure you make a call to the <code>PolicyChain#doNext()</code> or <code>PolicyChain#failWith()</code> to correctly end the <em>on Response</em> processing.</p>
-<p>[discrete]
-=== Apply policy during both the Request and Response phases</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code>PolicyChain</code> <em>must always be called to end <em>on Response</em> processing</em>. Ensure you make a call to the <code>PolicyChain#doNext()</code> or <code>PolicyChain#failWith()</code> to correctly end the <em>on Response</em> processing.</p>
+</div>
+<h3 id="apply-policy-during-both-the-request-and-response-phases">Apply policy during both the Request and Response phases</h3>
 <p>A policy is not restricted to only one <em>gateway</em> proxy phase. It can be applied during both the Request and Response phases by simply using both annotations in the same class.</p>
-<p>[discrete]
-=== Provided parameters</p>
-<p>The annotated methods can declare several parameters (but not necessary all of them) which will be automatically provided by the <em>gateway</em> at runtime.
-Available parameters are:</p>
-<p>|===
-|Parameter class |Mandatory |Description</p>
-<p>|<code>io.gravitee.gateway.api.Request</code> |No |Wrapper to the Request object containing all information about the processed request (URI, parameters, headers, input stream, …)
-|<code>io.gravitee.gateway.api.Response</code> |No |Wrapper to the Response object containing all information about the processed response (status, headers, output stream, …)
-|<code>io.gravitee.gateway.api.policy.PolicyChain</code> |Yes |The current policy chain that gives control to the policy to continue (<code>doNext</code>) or reject (<code>failWith</code>) the current chain.
-|<code>io.gravitee.gateway.api.policy.PolicyContext</code> |No |The policy context that can be used to get contextualized objects (API store, …).
-|===</p>
-<p>[discrete]
-[[bookmark-descriptor]]
-=== plugin.properties</p>
+<h3 id="provided-parameters">Provided parameters</h3>
+<p>The annotated methods can declare several parameters (but not necessary all of them) which will be automatically provided by the <em>gateway</em> at runtime.</p>
+<p>Available parameters are:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-9-1" id="__codelineno-9-1" name="__codelineno-9-1"></a>|===
+<a href="#__codelineno-9-2" id="__codelineno-9-2" name="__codelineno-9-2"></a>|Parameter class |Mandatory |Description
+<a href="#__codelineno-9-3" id="__codelineno-9-3" name="__codelineno-9-3"></a>
+<a href="#__codelineno-9-4" id="__codelineno-9-4" name="__codelineno-9-4"></a>|`io.gravitee.gateway.api.Request` |No |Wrapper to the Request object containing all information about the processed request (URI, parameters, headers, input stream, …)
+<a href="#__codelineno-9-5" id="__codelineno-9-5" name="__codelineno-9-5"></a>|`io.gravitee.gateway.api.Response` |No |Wrapper to the Response object containing all information about the processed response (status, headers, output stream, …)
+<a href="#__codelineno-9-6" id="__codelineno-9-6" name="__codelineno-9-6"></a>|`io.gravitee.gateway.api.policy.PolicyChain` |Yes |The current policy chain that gives control to the policy to continue (`doNext`) or reject (`failWith`) the current chain.
+<a href="#__codelineno-9-7" id="__codelineno-9-7" name="__codelineno-9-7"></a>|`io.gravitee.gateway.api.policy.PolicyContext` |No |The policy context that can be used to get contextualized objects (API store, …).
+<a href="#__codelineno-9-8" id="__codelineno-9-8" name="__codelineno-9-8"></a>|===
+</code></pre></div>
+<h3 id="pluginproperties">plugin.properties</h3>
 <p>As mentioned previously, a policy is a kind of Gravitee plugin. Each plugin is described by the <em>plugin.properties</em> descriptor which declares the following parameters:</p>
-<p>|===
-|Parameter |Description |Default value</p>
-<p>|<code>id</code> |The policy identifier |<em>policy</em> artifact id
-|<code>name</code> |The policy name |N/A (mandatory parameter)
-|<code>version</code> |The policy version |N/A (mandatory parameter)
-|<code>description</code> |The policy description |"Description of the <em>Policy name</em> Gravitee Policy"
-|<code>class</code> |The main policy class |Path to the generated class file
-|<code>type</code> |The type of Gravitee plugin |<code>policy</code>
-|===</p>
-<p>NOTE: A policy is enabled when declared in the API definition. The policy identifier is used, as its name suggests, to identify the policy. You must ensure you choose the correct policy identifier* from the outset. It may be hard to rename it later if there are many API definitions linked to it.</p>
-<p>[discrete]
-[[bookmark-test]]
-=== FooHeaderCheckPolicyTest.java</p>
-<p>The http://junit.org/[JUnit] unit test class for this policy.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-10-1" id="__codelineno-10-1" name="__codelineno-10-1"></a>|===
+<a href="#__codelineno-10-2" id="__codelineno-10-2" name="__codelineno-10-2"></a>|Parameter |Description |Default value
+<a href="#__codelineno-10-3" id="__codelineno-10-3" name="__codelineno-10-3"></a>
+<a href="#__codelineno-10-4" id="__codelineno-10-4" name="__codelineno-10-4"></a>|`id` |The policy identifier |_policy_ artifact id
+<a href="#__codelineno-10-5" id="__codelineno-10-5" name="__codelineno-10-5"></a>|`name` |The policy name |N/A (mandatory parameter)
+<a href="#__codelineno-10-6" id="__codelineno-10-6" name="__codelineno-10-6"></a>|`version` |The policy version |N/A (mandatory parameter)
+<a href="#__codelineno-10-7" id="__codelineno-10-7" name="__codelineno-10-7"></a>|`description` |The policy description |"Description of the _Policy name_ Gravitee Policy"
+<a href="#__codelineno-10-8" id="__codelineno-10-8" name="__codelineno-10-8"></a>|`class` |The main policy class |Path to the generated class file
+<a href="#__codelineno-10-9" id="__codelineno-10-9" name="__codelineno-10-9"></a>|`type` |The type of Gravitee plugin |`policy`
+<a href="#__codelineno-10-10" id="__codelineno-10-10" name="__codelineno-10-10"></a>|===
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A policy is enabled when declared in the API definition. The policy identifier is used, as its name suggests, to identify the policy. You must ensure you choose the correct policy identifier* from the outset. It may be hard to rename it later if there are many API definitions linked to it.</p>
+</div>
+<h3 id="fooheadercheckpolicytestjava">FooHeaderCheckPolicyTest.java</h3>
+<p>The <a href="http://junit.org/">JUnit</a> unit test class for this policy.</p>
 <aside class="md-source-file">
 <span class="md-source-file__fact">
 <span class="md-icon" title="Date of last update">
@@ -1366,6 +3317,34 @@ Available parameters are:</p>
           </a>
 </main>
 <footer class="md-footer">
+<nav aria-label="Footer" class="md-footer__inner md-grid">
+<a aria-label="Previous: Plugins" class="md-footer__link md-footer__link--prev" href="../dev-guide-plugins/" rel="prev">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</div>
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Previous
+              </span>
+              Plugins
+            </div>
+</div>
+</a>
+<a aria-label="Next: Introduction" class="md-footer__link md-footer__link--next" href="../../policy-reference/policies-overview/" rel="next">
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Next
+              </span>
+              Introduction
+            </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg>
+</div>
+</a>
+</nav>
 <div class="md-footer-meta md-typeset">
 <div class="md-footer-meta__inner md-grid">
 <div class="md-copyright">
@@ -1380,7 +3359,7 @@ Available parameters are:</p>
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "content.code.annotate", "navigation.top", "navigation.expand", "navigation.indexes", "toc.follow", "toc.integrate"], "search": "../../../assets/javascripts/workers/search.939a4419.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": {"provider": "mike"}}</script>
+<script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "content.code.annotate", "navigation.top", "navigation.indexes", "toc.follow", "toc.integrate"], "search": "../../../assets/javascripts/workers/search.939a4419.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": {"provider": "mike"}}</script>
 <script src="../../../assets/javascripts/bundle.af94fead.min.js"></script>
 <script src="../../../javascripts/extra.js"></script>
 <script src="../../../assets/js/swagger-ui-bundle.js"></script>

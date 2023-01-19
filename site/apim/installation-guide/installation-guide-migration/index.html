@@ -7,7 +7,7 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="../../../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-8.5.11+insiders-4.26.6" name="generator"/>
-<title>Upgrade and migrate - Gravitee Platform Documentation</title>
+<title>Upgrade APIM - Gravitee Platform Documentation</title>
 <link href="../../../assets/stylesheets/main.9b35cbb9.min.css" rel="stylesheet"/>
 <link href="../../../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
 <style>:root{--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M64 32C28.7 32 0 60.7 0 96v320c0 35.3 28.7 64 64 64h224V368c0-26.5 21.5-48 48-48h112V96c0-35.3-28.7-64-64-64H64zm384 320H336c-8.8 0-16 7.2-16 16v112l32-32 64-64 32-32z"/></svg>');--md-admonition-icon--abstract:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M96 0C43 0 0 43 0 96v320c0 53 43 96 96 96h320c17.7 0 32-14.3 32-32s-14.3-32-32-32v-64c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32H96zm0 384h256v64H96c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16h192c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16zm16 48h192c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16s7.2-16 16-16z"/></svg>');--md-admonition-icon--info:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0 0 114.6 0 256s114.6 256 256 256zm-40-176h24v-64h-24c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24h-80c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-144c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32z"/></svg>');--md-admonition-icon--tip:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M480 32c0-12.9-7.8-24.6-19.8-29.6S434.5.2 425.3 9.3L381.7 53c-48 48-113.1 75-181 75H64c-35.3 0-64 28.7-64 64v96c0 35.3 28.7 64 64 64v128c0 17.7 14.3 32 32 32h64c17.7 0 32-14.3 32-32V352h8.7c67.9 0 133 27 181 75l43.6 43.6c9.2 9.2 22.9 11.9 34.9 6.9s19.8-16.6 19.8-29.6V300.4c18.6-8.8 32-32.5 32-60.4s-13.4-51.6-32-60.4V32zm-64 76.7v262.6C357.2 317.8 280.5 288 200.7 288H192v-96h8.7c79.8 0 156.5-29.8 215.3-83.3z"/></svg>');--md-admonition-icon--success:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7l233.4-233.3c12.5-12.5 32.8-12.5 45.3 0z"/></svg>');--md-admonition-icon--question:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0 0 114.6 0 256s114.6 256 256 256zm-86.2-346.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1 0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6-13.3 0-24-10.7-24-24v-13.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1 0-8.4-6.8-15.1-15.1-15.1h-58.3c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM288 352c0 17.7-14.3 32-32 32s-32-14.3-32-32 14.3-32 32-32 32 14.3 32 32z"/></svg>');--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224c0-17.7-14.3-32-32-32s-32 14.3-32 32 14.3 32 32 32 32-14.3 32-32z"/></svg>');--md-admonition-icon--failure:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M459.1 52.4 442.6 6.5c-1.9-3.9-6.1-6.5-10.5-6.5s-8.5 2.6-10.4 6.5l-16.5 45.9-46 16.8c-4.3 1.6-7.3 5.9-7.2 10.4 0 4.5 3 8.7 7.2 10.2l45.7 16.8 16.8 45.8c1.5 4.4 5.8 7.5 10.4 7.5s8.9-3.1 10.4-7.5l16.5-45.8 45.7-16.8c4.2-1.5 7.2-5.7 7.2-10.2 0-4.6-3-8.9-7.2-10.4l-45.6-16.8zm-132.4 53c-12.5-12.5-32.8-12.5-45.3 0l-2.9 2.9c-22-8-45.8-12.3-70.5-12.3C93.1 96 0 189.1 0 304s93.1 208 208 208 208-93.1 208-208c0-24.7-4.3-48.5-12.2-70.5l2.9-2.9c12.5-12.5 12.5-32.8 0-45.3l-80-80zM200 192c-57.4 0-104 46.6-104 104v8c0 8.8-7.2 16-16 16s-16-7.2-16-16v-8c0-75.1 60.9-136 136-136h8c8.8 0 16 7.2 16 16s-7.2 16-16 16h-8z"/></svg>');--md-admonition-icon--danger:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M416 398.9c58.5-41.1 96-104.1 96-174.9C512 100.3 397.4 0 256 0S0 100.3 0 224c0 70.7 37.5 133.8 96 174.9V464c0 26.5 21.5 48 48 48h48v-48c0-8.8 7.2-16 16-16s16 7.2 16 16v48h64v-48c0-8.8 7.2-16 16-16s16 7.2 16 16v48h48c26.5 0 48-21.5 48-48v-65.1zM224 256c0 35.3-28.7 64-64 64s-64-28.7-64-64 28.7-64 64-64 64 28.7 64 64zm128 64c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"/></svg>');--md-admonition-icon--bug:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M320 0c17.7 0 32 14.3 32 32v64h128c35.3 0 64 28.7 64 64v288c0 35.3-28.7 64-64 64H160c-35.3 0-64-28.7-64-64V160c0-35.3 28.7-64 64-64h128V32c0-17.7 14.3-32 32-32zM208 384c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zM264 256c0-22.1-17.9-40-40-40s-40 17.9-40 40 17.9 40 40 40 40-17.9 40-40zm152 40c22.1 0 40-17.9 40-40s-17.9-40-40-40-40 17.9-40 40 17.9 40 40 40zM48 224h16v192H48c-26.5 0-48-21.5-48-48v-96c0-26.5 21.5-48 48-48zm544 0c26.5 0 48 21.5 48 48v96c0 26.5-21.5 48-48 48h-16V224h16z"/></svg>');--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M288 0H128c-17.7 0-32 14.3-32 32s14.3 32 32 32v132.8c0 11.8-3.3 23.5-9.5 33.5L10.3 406.2C3.6 417.2 0 429.7 0 442.6 0 480.9 31.1 512 69.4 512h309.2c38.3 0 69.4-31.1 69.4-69.4 0-12.8-3.6-25.4-10.3-36.4L329.5 230.4c-6.2-10.1-9.5-21.7-9.5-33.5V64c17.7 0 32-14.3 32-32S337.7 0 320 0h-32zm-96 196.8V64h64v132.8c0 23.7 6.6 46.9 19 67.1l34.5 56.1h-171l34.5-56.1c12.4-20.2 19-43.4 19-67.1z"/></svg>');--md-admonition-icon--quote:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M0 216C0 149.7 53.7 96 120 96h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V216zm256 0c0-66.3 53.7-120 120-120h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64h-64c-35.3 0-64-28.7-64-64V216z"/></svg>');}</style>
@@ -20,7 +20,7 @@
 <script id="__analytics">function __md_analytics(){window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-67690250-1","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){var e;this.value&&(e=document.location.pathname,ga("send","pageview",e+"?q="+this.value))}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");ga("send","event","feedback","click",t,e),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){ga("send","pageview",e.pathname)})});var e=document.createElement("script");e.async=!0,e.src="https://www.google-analytics.com/analytics.js",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
 <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
 <meta content="website" property="og:type"/>
-<meta content="Upgrade and migrate - Gravitee Platform Documentation" property="og:title"/>
+<meta content="Upgrade APIM - Gravitee Platform Documentation" property="og:title"/>
 <meta content="None" property="og:description"/>
 <meta content="./assets/images/social/apim/installation-guide/installation-guide-migration.png" property="og:image"/>
 <meta content="image/png" property="og:image:type"/>
@@ -28,16 +28,16 @@
 <meta content="630" property="og:image:height"/>
 <meta content="None" property="og:url"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<meta content="Upgrade and migrate - Gravitee Platform Documentation" name="twitter:title"/>
+<meta content="Upgrade APIM - Gravitee Platform Documentation" name="twitter:title"/>
 <meta content="None" name="twitter:description"/>
 <meta content="./assets/images/social/apim/installation-guide/installation-guide-migration.png" name="twitter:image"/>
 </head>
-<body data-md-color-accent="" data-md-color-primary="teal" data-md-color-scheme="default" dir="ltr">
+<body data-md-color-accent="blue" data-md-color-primary="teal" data-md-color-scheme="default" dir="ltr">
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#upgrade-notes">
+<a class="md-skip" href="#upgrade-apim">
           Skip to content
         </a>
 </div>
@@ -63,14 +63,14 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Upgrade and migrate
+              Upgrade APIM
             
           </span>
 </div>
 </div>
 </div>
 <form class="md-header__option" data-md-component="palette">
-<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="teal" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="blue" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="teal" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
 <label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to dark mode">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"></path></svg>
 </label>
@@ -249,7 +249,7 @@
 </div>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_1" id="__nav_1" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" id="__nav_1" type="checkbox"/>
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../..">
 <span class="md-ellipsis">
@@ -362,7 +362,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_2_2" id="__nav_2_2" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" id="__nav_2_2" type="checkbox"/>
 <label class="md-nav__link" for="__nav_2_2">
 <span class="md-ellipsis">
     Overview
@@ -411,8 +411,8 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_2_3" id="__nav_2_3" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" id="__nav_2_3" type="checkbox"/>
 <label class="md-nav__link" for="__nav_2_3">
 <span class="md-ellipsis">
     Installation Guide
@@ -435,7 +435,7 @@
 </a>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_2_3_2" id="__nav_2_3_2" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3_2" id="__nav_2_3_2" type="checkbox"/>
 <label class="md-nav__link" for="__nav_2_3_2">
 <span class="md-ellipsis">
     Install on Amazon
@@ -468,7 +468,7 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../amazon-linux/installation-guide-amazon-prerequisite-yum/">
 <span class="md-ellipsis">
-    Prerequisite - Setup Gravitee YUM repository
+    Prerequisite - Set up Gravitee YUM repository
     
   </span>
 </a>
@@ -505,79 +505,2149 @@
   </span>
 </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../amazon-linux/installation-guide-amazon-gateway/">
+<span class="md-ellipsis">
+    Component - Install Gateway
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../amazon-linux/installation-guide-amazon-rest-api/">
+<span class="md-ellipsis">
+    Component - Install REST API
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../amazon-linux/installation-guide-amazon-management-ui/">
+<span class="md-ellipsis">
+    Component - Install Management UI
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../amazon-linux/installation-guide-amazon-portal-ui/">
+<span class="md-ellipsis">
+    Component - Install Portal UI
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../amazon-linux/installation-guide-amazon-all/">
+<span class="md-ellipsis">
+    Component - Install all
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../amazon-linux/installation-guide-amazon-stack/">
+<span class="md-ellipsis">
+    Full stack installation
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../amazon-linux/installation-guide-amazon-issue/">
+<span class="md-ellipsis">
+    Fixing a known post-installation issue
+    
+  </span>
+</a>
+</li>
 </ul>
 </nav>
 </li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3_3" id="__nav_2_3_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_3_3">
+<span class="md-ellipsis">
+    Install on Docker
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Install on Docker" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_3_3">
+<span class="md-nav__icon md-icon"></span>
+            Install on Docker
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../docker/installation-guide-docker-introduction/">
+<span class="md-ellipsis">
+    Introduction
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../docker/installation-guide-docker-images/">
+<span class="md-ellipsis">
+    Images
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../docker/installation-guide-docker-images-ee/">
+<span class="md-ellipsis">
+    Images (EE)
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../docker/installation-guide-docker-compose/">
+<span class="md-ellipsis">
+    Compose
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../docker/installation-guide-docker-compose-ee/">
+<span class="md-ellipsis">
+    Compose (EE)
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../docker/installation-guide-docker-customize/">
+<span class="md-ellipsis">
+    Customize
+    
+  </span>
+</a>
+</li>
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
-<a class="md-nav__link md-nav__link--active" href="./">
-<span class="md-ellipsis">
-    Upgrade and migrate
-    
-  </span>
-</a>
-</li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../configuration/configuration-guide/">
+<a class="md-nav__link" href="../installation-guide-kubernetes/">
 <span class="md-ellipsis">
-    Configure
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../quickstart/quickstart-overview/">
-<span class="md-ellipsis">
-    Get started
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../user-guide/publisher/manage-api/">
-<span class="md-ellipsis">
-    Manage and configure APIs
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../user-guide/consumer/developer-portal/">
-<span class="md-ellipsis">
-    Consume APIs
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../user-guide/admin/admin-guide-organizations-and-environments/">
-<span class="md-ellipsis">
-    Administration
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../dev-guide/dev-guide-boostrap/">
-<span class="md-ellipsis">
-    Developer reference
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../policy-reference/policies-overview/">
-<span class="md-ellipsis">
-    Policy reference
+    Installing APIM with Kubernetes
     
   </span>
 </a>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_2_12" id="__nav_2_12" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3_5" id="__nav_2_3_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_3_5">
+<span class="md-ellipsis">
+    Install on RedHat and CentOS
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Install on RedHat and CentOS" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_3_5">
+<span class="md-nav__icon md-icon"></span>
+            Install on RedHat and CentOS
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../red-hat/installation-guide-redhat-introduction/">
+<span class="md-ellipsis">
+    Introduction
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../red-hat/installation-guide-redhat-stack/">
+<span class="md-ellipsis">
+    Install full APIM stack
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../red-hat/installation-guide-redhat-gateway/">
+<span class="md-ellipsis">
+    Install APIM Gateway
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../red-hat/installation-guide-redhat-management-api/">
+<span class="md-ellipsis">
+    Install APIM API
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../red-hat/installation-guide-redhat-management-ui/">
+<span class="md-ellipsis">
+    Install APIM Console
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../red-hat/installation-guide-redhat-portal/">
+<span class="md-ellipsis">
+    Install APIM Portal
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3_6" id="__nav_2_3_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_3_6">
+<span class="md-ellipsis">
+    Hybrid Deployment
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Hybrid Deployment" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_3_6">
+<span class="md-nav__icon md-icon"></span>
+            Hybrid Deployment
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../hybrid/installation-guide-hybrid-deployment-v1/">
+<span class="md-ellipsis">
+    Hybrid Deployment Guide V1
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../hybrid/installation-guide-hybrid-deployment-v2/">
+<span class="md-ellipsis">
+    Hybrid Deployment Guide V2
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../hybrid/installation-guide-hybrid-kubernetes/">
+<span class="md-ellipsis">
+    Deploy a Hybrid architecture with Kubernetes
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3_7" id="__nav_2_3_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_3_7">
+<span class="md-ellipsis">
+    Install with .ZIP
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Install with .ZIP" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_3_7">
+<span class="md-nav__icon md-icon"></span>
+            Install with .ZIP
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../with-zip/installation-guide-gateway-install-zip/">
+<span class="md-ellipsis">
+    Install APIM Gateway
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../with-zip/installation-guide-rest-apis-install-zip/">
+<span class="md-ellipsis">
+    Install APIM API
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../with-zip/installation-guide-management-ui-install-zip/">
+<span class="md-ellipsis">
+    Install APIM Console
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../with-zip/installation-guide-portal-ui-install-zip/">
+<span class="md-ellipsis">
+    Install APIM Portal
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../how-tos/how-to-general-configuration/">
+<span class="md-ellipsis">
+    Configure a production-ready APIM environment
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../how-tos/how-to-configure-reverse-proxy/">
+<span class="md-ellipsis">
+    Configure HTTP reverse proxy
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../installation-guide-plugins/">
+<span class="md-ellipsis">
+    Installing and updating Plugins
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    Upgrade APIM
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    Upgrade APIM
+    
+  </span>
+</a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#upgrade-notes">
+<span class="md-ellipsis">
+      Upgrade Notes
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#breaking-changes">
+<span class="md-ellipsis">
+      Breaking changes
+    </span>
+</a>
+<nav aria-label="Breaking changes" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#api-key-and-jwt-plans">
+<span class="md-ellipsis">
+      API key and JWT plans
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#breaking-changes_1">
+<span class="md-ellipsis">
+      Breaking changes
+    </span>
+</a>
+<nav aria-label="Breaking changes" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#portal-api">
+<span class="md-ellipsis">
+      Portal API
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#breaking-changes_2">
+<span class="md-ellipsis">
+      Breaking changes
+    </span>
+</a>
+<nav aria-label="Breaking changes" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#environment-audits">
+<span class="md-ellipsis">
+      Environment Audits
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#platform-alerts-on-multi-environments-apim">
+<span class="md-ellipsis">
+      Platform alerts on multi-environments APIM
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#system-roles-edition">
+<span class="md-ellipsis">
+      System Roles Edition
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#plugin-renaming">
+<span class="md-ellipsis">
+      Plugin renaming
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mysql">
+<span class="md-ellipsis">
+      MySQL
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#plans-data">
+<span class="md-ellipsis">
+      Plans data
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#breaking-changes_3">
+<span class="md-ellipsis">
+      Breaking changes
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#breaking-changes_4">
+<span class="md-ellipsis">
+      Breaking Changes
+    </span>
+</a>
+<nav aria-label="Breaking Changes" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#management-api-documentation">
+<span class="md-ellipsis">
+      Management API Documentation
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#docker-images-enterprise-edition">
+<span class="md-ellipsis">
+      Docker Images - Enterprise Edition
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#upgrade-order">
+<span class="md-ellipsis">
+      Upgrade Order
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#deprecated-bridge-endpoints">
+<span class="md-ellipsis">
+      Deprecated Bridge Endpoints
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-mongodb-upgrade-scripts-have-been-moved">
+<span class="md-ellipsis">
+      The mongodb upgrade scripts have been moved
+    </span>
+</a>
+<nav aria-label="The mongodb upgrade scripts have been moved" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mongodb">
+<span class="md-ellipsis">
+      MongoDB
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#breaking-changes_5">
+<span class="md-ellipsis">
+      Breaking changes
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#breaking-change">
+<span class="md-ellipsis">
+      Breaking Change
+    </span>
+</a>
+<nav aria-label="Breaking Change" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#docker-images-enterprise-edition_1">
+<span class="md-ellipsis">
+      Docker Images - Enterprise Edition
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#api-definition-import-process-changes">
+<span class="md-ellipsis">
+      API definition import process changes
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#deprecations">
+<span class="md-ellipsis">
+      Deprecations
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#breaking-changes_6">
+<span class="md-ellipsis">
+      Breaking changes
+    </span>
+</a>
+<nav aria-label="Breaking changes" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#api-key-and-jwt-plans_1">
+<span class="md-ellipsis">
+      API key and JWT plans
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4" id="__nav_2_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_4">
+<span class="md-ellipsis">
+    Quick Start Guide
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Quick Start Guide" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_4">
+<span class="md-nav__icon md-icon"></span>
+            Quick Start Guide
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../quickstart/quickstart-overview/">
+<span class="md-ellipsis">
+    Introduction
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4_2" id="__nav_2_4_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_4_2">
+<span class="md-ellipsis">
+    Get started
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Get started" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_4_2">
+<span class="md-nav__icon md-icon"></span>
+            Get started
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../quickstart/quickstart-console-login/">
+<span class="md-ellipsis">
+    Log in to APIM Console
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../quickstart/quickstart-portal-login/">
+<span class="md-ellipsis">
+    Log in to APIM Portal
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4_3" id="__nav_2_4_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_4_3">
+<span class="md-ellipsis">
+    Publish your first API
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Publish your first API" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_4_3">
+<span class="md-nav__icon md-icon"></span>
+            Publish your first API
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../quickstart/api-publisher/api-publisher-ui/">
+<span class="md-ellipsis">
+    Publish your first API with APIM Console
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../quickstart/api-publisher/api-publisher-api/">
+<span class="md-ellipsis">
+    Publish your first API with APIM API
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4_4" id="__nav_2_4_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_4_4">
+<span class="md-ellipsis">
+    Consume and API
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Consume and API" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_4_4">
+<span class="md-nav__icon md-icon"></span>
+            Consume and API
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../quickstart/api-consumer/api-consumer-ui/">
+<span class="md-ellipsis">
+    Using APIM Portal
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../quickstart/api-consumer/api-consumer-api/">
+<span class="md-ellipsis">
+    Using APIM API
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../quickstart/api-consumer/api-consumer-test/">
+<span class="md-ellipsis">
+    Test your API
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5" id="__nav_2_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_5">
+<span class="md-ellipsis">
+    Configuration Guide
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Configuration Guide" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_5">
+<span class="md-nav__icon md-icon"></span>
+            Configuration Guide
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../configuration/configuration-guide/">
+<span class="md-ellipsis">
+    Introduction
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5_2" id="__nav_2_5_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_5_2">
+<span class="md-ellipsis">
+    Configure APIM Gateway
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Configure APIM Gateway" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_5_2">
+<span class="md-nav__icon md-icon"></span>
+            Configure APIM Gateway
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../configuration/gateway/installation-guide-gateway-configuration/">
+<span class="md-ellipsis">
+    General configuration
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../configuration/gateway/installation-guide-gateway-technical-api/">
+<span class="md-ellipsis">
+    Internal API
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../configuration/gateway/installation-guide-gateway-metrics/">
+<span class="md-ellipsis">
+    Metrics
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../configuration/gateway/configure-opentracing/">
+<span class="md-ellipsis">
+    Enable OpenTracing
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../configuration/gateway/opentracing-in-docker/">
+<span class="md-ellipsis">
+    OpenTracing In Docker
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5_3" id="__nav_2_5_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_5_3">
+<span class="md-ellipsis">
+    Configure APIM API
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Configure APIM API" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_5_3">
+<span class="md-nav__icon md-icon"></span>
+            Configure APIM API
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../configuration/rest-apis/installation-guide-rest-apis-configuration/">
+<span class="md-ellipsis">
+    General configuration
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../configuration/rest-apis/installation-guide-rest-apis-technical-api/">
+<span class="md-ellipsis">
+    Internal API
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../configuration/rest-apis/installation-guide-rest-apis-metrics/">
+<span class="md-ellipsis">
+    Metrics
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../configuration/rest-apis/installation-guide-rest-apis-security/">
+<span class="md-ellipsis">
+    Security
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5_4" id="__nav_2_5_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_5_4">
+<span class="md-ellipsis">
+    Configure APIM Console
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Configure APIM Console" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_5_4">
+<span class="md-nav__icon md-icon"></span>
+            Configure APIM Console
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../configuration/management-ui/installation-guide-management-ui-configuration/">
+<span class="md-ellipsis">
+    General configuration
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../configuration/management-ui/installation-guide-dashboard-configuration/">
+<span class="md-ellipsis">
+    Dashboards
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../configuration/portal-ui/installation-guide-portal-ui-configuration/">
+<span class="md-ellipsis">
+    Configure APIM Portal
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5_6" id="__nav_2_5_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_5_6">
+<span class="md-ellipsis">
+    Configure repositories
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Configure repositories" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_5_6">
+<span class="md-nav__icon md-icon"></span>
+            Configure repositories
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../configuration/repositories/installation-guide-repositories/">
+<span class="md-ellipsis">
+    Introduction
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../configuration/repositories/installation-guide-repositories-elasticsearch/">
+<span class="md-ellipsis">
+    Elasticsearch
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../configuration/repositories/installation-guide-repositories-mongodb/">
+<span class="md-ellipsis">
+    MongoDB
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../configuration/repositories/installation-guide-repositories-jdbc/">
+<span class="md-ellipsis">
+    JDBC
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../configuration/repositories/installation-guide-repositories-redis/">
+<span class="md-ellipsis">
+    Redis
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5_7" id="__nav_2_5_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_5_7">
+<span class="md-ellipsis">
+    Configure authentication
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Configure authentication" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_5_7">
+<span class="md-nav__icon md-icon"></span>
+            Configure authentication
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../configuration/authentication/installation-guide-authentication/">
+<span class="md-ellipsis">
+    Introduction
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../configuration/authentication/installation-guide-authentication-inmemory/">
+<span class="md-ellipsis">
+    Configure in-memory authentication
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../configuration/authentication/installation-guide-authentication-ldap/">
+<span class="md-ellipsis">
+    Configure LDAP / Active Directory authentication
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../configuration/authentication/installation-guide-authentication-apim/">
+<span class="md-ellipsis">
+    Configure APIM repository authentication
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../configuration/authentication/installation-guide-authentication-graviteeam/">
+<span class="md-ellipsis">
+    Configure Gravitee Access Management authentication
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../configuration/authentication/installation-guide-authentication-github/">
+<span class="md-ellipsis">
+    Configure GitHub authentication
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../configuration/authentication/installation-guide-authentication-google/">
+<span class="md-ellipsis">
+    Configure Google authentication
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../configuration/authentication/installation-guide-authentication-keycloak/">
+<span class="md-ellipsis">
+    Configure Keycloak authentication
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../configuration/reporters/installation-guide-reporters/">
+<span class="md-ellipsis">
+    Configure Reporters
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../configuration/installation-guide-cache/">
+<span class="md-ellipsis">
+    Configure Cache
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../installation-guide-configuration-notifications.md">
+<span class="md-ellipsis">
+    Configure Notifications
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../installation-guide-configuration-dictionaries.md">
+<span class="md-ellipsis">
+    Configure Dictionaries
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_6" id="__nav_2_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_6">
+<span class="md-ellipsis">
+    API Publisher Guide
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="API Publisher Guide" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_6">
+<span class="md-nav__icon md-icon"></span>
+            API Publisher Guide
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/publisher/manage-api/">
+<span class="md-ellipsis">
+    Introduction
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_6_2" id="__nav_2_6_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_6_2">
+<span class="md-ellipsis">
+    Manage APIs
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Manage APIs" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_6_2">
+<span class="md-nav__icon md-icon"></span>
+            Manage APIs
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/publisher/manage-apis/using-console/">
+<span class="md-ellipsis">
+    Using APIM console
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/publisher/manage-apis/using-apis/">
+<span class="md-ellipsis">
+    Using Management APIs
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_6_3" id="__nav_2_6_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_6_3">
+<span class="md-ellipsis">
+    Service Management Ecosystem (SME)
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Service Management Ecosystem (SME)" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_6_3">
+<span class="md-nav__icon md-icon"></span>
+            Service Management Ecosystem (SME)
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/publisher/sme/sme-overview/">
+<span class="md-ellipsis">
+    Introducing SME
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/publisher/sme/introducing-kafka/">
+<span class="md-ellipsis">
+    Introducing the Kafka connector
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/publisher/sme/using-kafka-connector/">
+<span class="md-ellipsis">
+    Using the Kafka connector
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/publisher/sme/kafka-connector-configuration/">
+<span class="md-ellipsis">
+    Configuring the Kafka connector
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_6_4" id="__nav_2_6_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_6_4">
+<span class="md-ellipsis">
+    Plans and subscriptions
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Plans and subscriptions" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_6_4">
+<span class="md-nav__icon md-icon"></span>
+            Plans and subscriptions
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/publisher/plans/plans-and-subscriptions/">
+<span class="md-ellipsis">
+    Introduction
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/publisher/plans/create-plan/">
+<span class="md-ellipsis">
+    Create a plan
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/publisher/plans/plan-security/">
+<span class="md-ellipsis">
+    Configure plan security
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/publisher/plans/plan-restrictions/">
+<span class="md-ellipsis">
+    Configure plan restrictions
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/publisher/plans/plan-policies/">
+<span class="md-ellipsis">
+    Configure plan flows and policies
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/publisher/plans/plan-publish/">
+<span class="md-ellipsis">
+    Publish a plan
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/publisher/plans/plan-general-conditions/">
+<span class="md-ellipsis">
+    Configure plan general conditions of use
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/publisher/plans/plan-subscriptions/">
+<span class="md-ellipsis">
+    Manage plan subscriptions
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/publisher/manage-members/">
+<span class="md-ellipsis">
+    API users and ownership
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/publisher/api-property-encryption/">
+<span class="md-ellipsis">
+    API properties and encryption
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/publisher/response-templates/">
+<span class="md-ellipsis">
+    Response templates
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/publisher/configuring-cors/">
+<span class="md-ellipsis">
+    CORS
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/publisher/logging-analytics/">
+<span class="md-ellipsis">
+    Logging and analytics
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/publisher/audit-trail/">
+<span class="md-ellipsis">
+    Audit trail
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/publisher/backend-services/">
+<span class="md-ellipsis">
+    Load balancing, failover, and health check
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/publisher/messaging/">
+<span class="md-ellipsis">
+    Send notifications
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/publisher/api-rating/">
+<span class="md-ellipsis">
+    API rating
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/publisher/top-apis/">
+<span class="md-ellipsis">
+    Top APIs
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_6_15" id="__nav_2_6_15" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_6_15">
+<span class="md-ellipsis">
+    Resources
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Resources" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_6_15">
+<span class="md-nav__icon md-icon"></span>
+            Resources
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/publisher/resources/resources-overview/">
+<span class="md-ellipsis">
+    Introduction
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/publisher/resources/resource-cache/">
+<span class="md-ellipsis">
+    Cache
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/publisher/resources/resource-cache-redis/">
+<span class="md-ellipsis">
+    Cache Redis
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/publisher/resources/resource-oauth2-am/">
+<span class="md-ellipsis">
+    OAuth2 - Gravitee Access Management
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/publisher/resources/resource-oauth2-generic/">
+<span class="md-ellipsis">
+    OAuth2 - Generic Authorization Server
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_6_16" id="__nav_2_6_16" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_6_16">
+<span class="md-ellipsis">
+    Design Studio Guide
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Design Studio Guide" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_6_16">
+<span class="md-nav__icon md-icon"></span>
+            Design Studio Guide
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/publisher/design-studio/design-studio-overview/">
+<span class="md-ellipsis">
+    Introduction
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/publisher/design-studio/design-studio-migrate/">
+<span class="md-ellipsis">
+    Migrate to Design Studio
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/publisher/design-studio/design-studio-create/">
+<span class="md-ellipsis">
+    Design your API flows
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/publisher/design-studio/design-studio-try-it/">
+<span class="md-ellipsis">
+    Try It mode
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/publisher/design-studio/design-studio-debug-mode/">
+<span class="md-ellipsis">
+    Debug ode
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_6_17" id="__nav_2_6_17" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_6_17">
+<span class="md-ellipsis">
+    Documentation
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Documentation" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_6_17">
+<span class="md-nav__icon md-icon"></span>
+            Documentation
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/publisher/documentation/publish-documentation/">
+<span class="md-ellipsis">
+    Publish API documentation
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/publisher/documentation/publish-documentation-markdown/">
+<span class="md-ellipsis">
+    Markdown documentation
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/publisher/documentation/publish-documentation-asciidoc/">
+<span class="md-ellipsis">
+    AsciiDoc documentation
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/publisher/documentation/publish-documentation-markdown-template/">
+<span class="md-ellipsis">
+    Markdown templates
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/publisher/documentation/publish-documentation-openapi/">
+<span class="md-ellipsis">
+    OpenAPI documentation
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/publisher/documentation/publish-documentation-system-folders/">
+<span class="md-ellipsis">
+    Customize the APIM Portal navigation
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_6_18" id="__nav_2_6_18" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_6_18">
+<span class="md-ellipsis">
+    Service discovery
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Service discovery" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_6_18">
+<span class="md-nav__icon md-icon"></span>
+            Service discovery
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/publisher/service-discovery/service-discovery-overview/">
+<span class="md-ellipsis">
+    Introduction
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/publisher/service-discovery/service-discovery-eureka/">
+<span class="md-ellipsis">
+    Eureka service discovery
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/publisher/service-discovery/service-discovery-consul/">
+<span class="md-ellipsis">
+    HashiCorp Consul service discovery
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/publisher/promote-api/">
+<span class="md-ellipsis">
+    Cockpit features - Promote APIs
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/publisher/expression-language/">
+<span class="md-ellipsis">
+    Expression Language
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_7" id="__nav_2_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_7">
+<span class="md-ellipsis">
+    API Consumer Guide
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="API Consumer Guide" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_7">
+<span class="md-nav__icon md-icon"></span>
+            API Consumer Guide
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/consumer/developer-portal/">
+<span class="md-ellipsis">
+    Introduction
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/consumer/developer-create-account/">
+<span class="md-ellipsis">
+    Create a user account
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/consumer/developer-manage/">
+<span class="md-ellipsis">
+    Manage applications
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/consumer/developer-subscribe/">
+<span class="md-ellipsis">
+    Subscribe to an API
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_8" id="__nav_2_8" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_8">
+<span class="md-ellipsis">
+    Administration Guide
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Administration Guide" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_8">
+<span class="md-nav__icon md-icon"></span>
+            Administration Guide
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/admin/admin-guide-organizations-and-environments/">
+<span class="md-ellipsis">
+    Organizations and environments
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/admin/admin-guide-roles-and-permissions/">
+<span class="md-ellipsis">
+    Roles and permissions
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/admin/admin-guide-users-and-groups/">
+<span class="md-ellipsis">
+    Users and groups
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/admin/admin-guide-users-support-tickets/">
+<span class="md-ellipsis">
+    Support
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user-guide/admin/admin-guide-platform-policies/">
+<span class="md-ellipsis">
+    Platform policies
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_9" id="__nav_2_9" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_9">
+<span class="md-ellipsis">
+    How To
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="How To" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_9">
+<span class="md-nav__icon md-icon"></span>
+            How To
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../how-tos/how-to-add-custom-metrics-in-dashboards/">
+<span class="md-ellipsis">
+    Add custom metrics in dashboards
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../how-tos/how-to-configure-global-API-reviewers/">
+<span class="md-ellipsis">
+    Configure global API reviewers
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_10" id="__nav_2_10" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_10">
+<span class="md-ellipsis">
+    Developer Guide
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Developer Guide" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_10">
+<span class="md-nav__icon md-icon"></span>
+            Developer Guide
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../dev-guide/dev-guide-boostrap/">
+<span class="md-ellipsis">
+    Bootstrap Your Dev Environment
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../dev-guide/dev-guide-plugins/">
+<span class="md-ellipsis">
+    Plugins
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../dev-guide/dev-guide-policies/">
+<span class="md-ellipsis">
+    Policies
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_11" id="__nav_2_11" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_11">
+<span class="md-ellipsis">
+    Policy reference
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Policy reference" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_11">
+<span class="md-nav__icon md-icon"></span>
+            Policy reference
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../policy-reference/policies-overview/">
+<span class="md-ellipsis">
+    Introduction
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../policy-reference/policy-apikey/">
+<span class="md-ellipsis">
+    API key policy
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../policy-reference/policy-assign-attributes">
+<span class="md-ellipsis">
+    Assign attributes policy
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../policy-reference/policy-assign-content/">
+<span class="md-ellipsis">
+    Assign content policy
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../policy-reference/policy-assign-metrics/">
+<span class="md-ellipsis">
+    Assign metrics policy
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../policy-reference/policy-basic-authentication/">
+<span class="md-ellipsis">
+    Basic authentication policy
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../policy-reference/policy-cache/">
+<span class="md-ellipsis">
+    Cache policy
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../policy-reference/policy-callout-http/">
+<span class="md-ellipsis">
+    Callout HTTP policy
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../policy-reference/policy-circuit-breaker/">
+<span class="md-ellipsis">
+    Circuit Breaker policy
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../policy-reference/policy-data-logging-masking/">
+<span class="md-ellipsis">
+    Data logging masking policy
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../policy-reference/policy-dynamic-routing/">
+<span class="md-ellipsis">
+    Dynamic routing policy
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../policy-reference/policy-generate-http-signature/">
+<span class="md-ellipsis">
+    Generate HTTP Signature policy
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../policy-reference/policy-generate-jwt/">
+<span class="md-ellipsis">
+    Generate JWT policy
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../policy-reference/policy-groovy/">
+<span class="md-ellipsis">
+    Groovy policy
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../policy-reference/policy-html-json/">
+<span class="md-ellipsis">
+    HTML to JSON policy
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../policy-reference/policy-http-signature/">
+<span class="md-ellipsis">
+    HTTP signature policy
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../policy-reference/policy-ipfiltering/">
+<span class="md-ellipsis">
+    IP filtering policy
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../policy-reference/policy-javascript/">
+<span class="md-ellipsis">
+    Javascript policy
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../policy-reference/policy-json-threat-protection/">
+<span class="md-ellipsis">
+    JSON threat protection policy
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../policy-reference/policy-json-to-json/">
+<span class="md-ellipsis">
+    JSON to JSON policy
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../policy-reference/policy-json-xml/">
+<span class="md-ellipsis">
+    JSON to XML policy
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../policy-reference/policy-json-validation/">
+<span class="md-ellipsis">
+    JSON validation policy
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../policy-reference/policy-jws/">
+<span class="md-ellipsis">
+    JWS policy
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../policy-reference/policy-jwt/">
+<span class="md-ellipsis">
+    JWT policy
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../policy-reference/policy-keyless/">
+<span class="md-ellipsis">
+    Keyless policy
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../policy-reference/policy-latency/">
+<span class="md-ellipsis">
+    Latency policy
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../policy-reference/policy-metrics-reporter/">
+<span class="md-ellipsis">
+    Metrics reporter policy
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../policy-reference/policy-mock/">
+<span class="md-ellipsis">
+    Mock policy
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../policy-reference/policy-oauth2/">
+<span class="md-ellipsis">
+    OAuth2 policy
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../policy-reference/policy-openid-connect-userinfo/">
+<span class="md-ellipsis">
+    OpenID Connect UserInfo policy
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../policy-reference/policy-override-http-method/">
+<span class="md-ellipsis">
+    Override HTTP method policy
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../policy-reference/policy-ratelimit/">
+<span class="md-ellipsis">
+    Rate limiting policy
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../policy-reference/policy-regex-threat-protection/">
+<span class="md-ellipsis">
+    Regex threat protection policy
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../policy-reference/policy-request-content-limit/">
+<span class="md-ellipsis">
+    Request content limit policy
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../policy-reference/policy-request-validation/">
+<span class="md-ellipsis">
+    Request validation policy
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../policy-reference/policy-resource-filtering/">
+<span class="md-ellipsis">
+    Resource filtering policy
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../policy-reference/policy-rest-to-soap/">
+<span class="md-ellipsis">
+    REST to SOAP policy
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../policy-reference/policy-retry/">
+<span class="md-ellipsis">
+    Retry policy
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../policy-reference/policy-role-based-access-control/">
+<span class="md-ellipsis">
+    Role-based access control policy
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../policy-reference/policy-ssl-enforcement/">
+<span class="md-ellipsis">
+    SSL enforcement policy
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../policy-reference/policy-traffic-shadowing/">
+<span class="md-ellipsis">
+    Traffic shadowing policy
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../policy-reference/policy-transform-headers/">
+<span class="md-ellipsis">
+    Transform headers policy
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../policy-reference/policy-transform-queryparameters/">
+<span class="md-ellipsis">
+    Transform query parameters policy
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../policy-reference/policy-url-rewriting/">
+<span class="md-ellipsis">
+    URL rewriting policy
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../policy-reference/policy-xml-json/">
+<span class="md-ellipsis">
+    XML to JSON policy
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../policy-reference/policy-xml-threat-protection/">
+<span class="md-ellipsis">
+    Threat protection policy
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../policy-reference/policy-xml-validation/">
+<span class="md-ellipsis">
+    XML validation policy
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../policy-reference/policy-xlst.md">
+<span class="md-ellipsis">
+    XSLT policy
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_12" id="__nav_2_12" type="checkbox"/>
 <label class="md-nav__link" for="__nav_2_12">
 <span class="md-ellipsis">
     Gravitee Kubernetes Operator (GKO)
@@ -608,7 +2678,7 @@
 </a>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_2_12_3" id="__nav_2_12_3" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_12_3" id="__nav_2_12_3" type="checkbox"/>
 <label class="md-nav__link" for="__nav_2_12_3">
 <span class="md-ellipsis">
     Installation and deployment
@@ -650,7 +2720,7 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_2_12_4" id="__nav_2_12_4" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_12_4" id="__nav_2_12_4" type="checkbox"/>
 <label class="md-nav__link" for="__nav_2_12_4">
 <span class="md-ellipsis">
     User Guide
@@ -673,7 +2743,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../kubernetes/apim-kubernetes-operator-user-guide-api-definition/">
+<a class="md-nav__link" href="../../kubernetes/apim-kubernetes-operator-definitions/">
 <span class="md-ellipsis">
     Custom Resource Definitions (CRDs) reference
     
@@ -743,7 +2813,7 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_2_13" id="__nav_2_13" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_13" id="__nav_2_13" type="checkbox"/>
 <label class="md-nav__link" for="__nav_2_13">
 <span class="md-ellipsis">
     V4 policy execution engine (V4 BETA)
@@ -777,7 +2847,7 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_2_14" id="__nav_2_14" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_14" id="__nav_2_14" type="checkbox"/>
 <label class="md-nav__link" for="__nav_2_14">
 <span class="md-ellipsis">
     Event-native API Management (V4 BETA)
@@ -827,7 +2897,7 @@
 </a>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_2_16" id="__nav_2_16" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_16" id="__nav_2_16" type="checkbox"/>
 <label class="md-nav__link" for="__nav_2_16">
 <span class="md-ellipsis">
     Changelog
@@ -844,7 +2914,7 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../changelog/">
 <span class="md-ellipsis">
-    APIM changelog
+    APIM changelog index
     
   </span>
 </a>
@@ -896,7 +2966,7 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../../am/">
 <span class="md-ellipsis">
@@ -926,7 +2996,7 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../../ae/">
 <span class="md-ellipsis">
@@ -945,7 +3015,7 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5" id="__nav_5" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" id="__nav_5" type="checkbox"/>
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../../cockpit/">
 <span class="md-ellipsis">
@@ -964,7 +3034,7 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_6" id="__nav_6" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" id="__nav_6" type="checkbox"/>
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../../ee/">
 <span class="md-ellipsis">
@@ -1010,7 +3080,7 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_7" id="__nav_7" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" id="__nav_7" type="checkbox"/>
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../../releases/">
 <span class="md-ellipsis">
@@ -1029,7 +3099,7 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_8" id="__nav_8" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" id="__nav_8" type="checkbox"/>
 <label class="md-nav__link" for="__nav_8">
 <span class="md-ellipsis">
     API Reference
@@ -1055,7 +3125,7 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_9" id="__nav_9" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" id="__nav_9" type="checkbox"/>
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../../dev-community/">
 <span class="md-ellipsis">
@@ -1074,7 +3144,7 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_10" id="__nav_10" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" id="__nav_10" type="checkbox"/>
 <label class="md-nav__link" for="__nav_10">
 <span class="md-ellipsis">
     Marketplace
@@ -1106,17 +3176,29 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
+<nav class="md-tags">
+<span class="md-tag">APIM</span>
+<span class="md-tag">Upgrade</span>
+<span class="md-tag">Migration</span>
+</nav>
 <a class="md-content__button md-icon" href="https://github.com/ivan-gravitee/docs-framework-poc/edit/master/docs/apim/installation-guide/installation-guide-migration.md" title="Edit this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
-<h1 id="upgrade-notes">Upgrade Notes</h1>
+<h1 id="upgrade-apim">Upgrade APIM</h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>WORK IN PROGRESS (content incorporation and cleanup for individual versions)</p>
+</div>
+<h2 id="upgrade-notes">Upgrade Notes</h2>
 <p>If you plan to skip versions when you upgrade, ensure that you read the
 version-specific upgrade notes for each intermediate version. You may be
 required to perform manual actions as part of the upgrade.</p>
-<p>Be sure to run scripts on the correct database since <code>gravitee</code> is not
-always the default database! Check your db name by running <code>show dbs;</code></p>
-<h1 id="breaking-changes">Breaking changes</h1>
-<h2 id="api-key-and-jwt-plans">API key and JWT plans</h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Be sure to run scripts on the correct database since <code>gravitee</code> is not always the default database! Check your db name by running <code>show dbs;</code>.</p>
+</div>
+<h2 id="breaking-changes">Breaking changes</h2>
+<h3 id="api-key-and-jwt-plans">API key and JWT plans</h3>
 <p>The security chain (the internal process that selects the executable
 plan for the incoming request and applies the related security rules)
 parses all active plans to select and execute the relevant one.</p>
@@ -1171,8 +3253,8 @@ unauthorized</p></td>
 </tr>
 </tbody>
 </table>
-<h1 id="breaking-changes_1">Breaking changes</h1>
-<h2 id="portal-api">Portal API</h2>
+<h2 id="breaking-changes_1">Breaking changes</h2>
+<h3 id="portal-api">Portal API</h3>
 <p>Endpoint: <code>[GET] portal/environments/{envId}/applications</code>.</p>
 <p>For performance reasons, calling <code>/applications?size=-1</code> will no longer
 return the number of subscribers and the only information available in
@@ -1188,8 +3270,8 @@ the owner of each application will be:</p>
 <p>email</p>
 </li>
 </ul>
-<h1 id="breaking-changes_2">Breaking changes</h1>
-<h2 id="environment-audits">Environment Audits</h2>
+<h2 id="breaking-changes_2">Breaking changes</h2>
+<h3 id="environment-audits">Environment Audits</h3>
 <p>Endpoint:
 <code>[GET] management/organizations/{orgId}/environments/{envId}/apis/{api}/audit</code>
 (link:{{ <em>/apim/3.x/management-api/</em> | relative_url | append:
@@ -1206,7 +3288,7 @@ get only environment or organization audit you have to use the query
 params <code>referenceType:string</code> with <code>ENVIRONMENT</code> or <code>ORGANIZATION</code>. You
 can also filter by environment id with <code>environment:string</code> query
 params.</p>
-<h2 id="platform-alerts-on-multi-environments-apim">Platform alerts on multi-environments APIM</h2>
+<h3 id="platform-alerts-on-multi-environments-apim">Platform alerts on multi-environments APIM</h3>
 <p>Before this version, platform alerts were common to all environments.
 That led to inconsistencies while handling platform alerts on
 multi-environments APIM.</p>
@@ -1217,7 +3299,7 @@ related only to this environment.</p>
 the default environment. You will see them disappear from your others
 (non-default) environments, and will have to recreate them manually if
 relevant.</p>
-<h2 id="system-roles-edition">System Roles Edition</h2>
+<h3 id="system-roles-edition">System Roles Edition</h3>
 <p>To provide more flexibility in the way roles are managed, some system
 roles have been made editable. From now on, the permissions of the
 following roles can be edited:</p>
@@ -1243,7 +3325,7 @@ Organization Admin Role will be the only one able to revert the changes.</p>
 </code></pre></div>
 <p>Updating permissions for system roles should be done carefully to avoid
 any unexpected behavior.</p>
-<h2 id="plugin-renaming">Plugin renaming</h2>
+<h3 id="plugin-renaming">Plugin renaming</h3>
 <p>From this version, and for the next 3.18.x versions and greater, the
 name of the Elasticsearch repository component changes.<br/>
 As a consequence, the Elasticsearch repository component available on
@@ -1256,10 +3338,10 @@ As a consequence, the Elasticsearch repository component available on
 <p>You can download directly the Elasticsearch repository using this
 link:<br/>
 <a href="https://download.gravitee.io/graviteeio-apim/plugins/repositories/gravitee-apim-repository-elasticsearch/gravitee-apim-repository-elasticsearch-3.18.0.zip">https://download.gravitee.io/graviteeio-apim/plugins/repositories/gravitee-apim-repository-elasticsearch/gravitee-apim-repository-elasticsearch-3.18.0.zip</a></p>
-<h2 id="mysql">MySQL</h2>
+<h3 id="mysql">MySQL</h3>
 <p>In 3.18.0, the MySQL Java driver has been updated to 8.0.29. As a
 consequence, TLS 1.0 and 1.1 are no longer supported.</p>
-<h1 id="plans-data">Plans data</h1>
+<h2 id="plans-data">Plans data</h2>
 <p>Since this version, APIM improves plans data storage, and uses the
 <code>plans</code> database collection as the unique source of plans data.</p>
 <p>Before trusting data in <code>plans</code> collection, we have to ensure their
@@ -1270,7 +3352,7 @@ dry-run mode per default.</p>
 mode disabled : if relevant, it will fix plans data in your database as
 it’s explained in <a href="https://docs.gravitee.io/pages/apim/3.x/installation-guide/upgrades/3.10.8/README.html#plans_anomalies_in_database">this
 documentation</a></p>
-<h1 id="breaking-changes_3">Breaking changes</h1>
+<h2 id="breaking-changes_3">Breaking changes</h2>
 <p>From this version, and for the next 3.17.x versions, the name of the
 Elasticsearch repository component changes.<br/>
 As a consequence, the Elasticsearch repository component available on
@@ -1283,8 +3365,8 @@ As a consequence, the Elasticsearch repository component available on
 <p>You can download directly the Elasticsearch repository using this
 link:<br/>
 <a href="https://download.gravitee.io/graviteeio-apim/plugins/repositories/gravitee-apim-repository-elasticsearch/gravitee-apim-repository-elasticsearch-3.17.3.zip">https://download.gravitee.io/graviteeio-apim/plugins/repositories/gravitee-apim-repository-elasticsearch/gravitee-apim-repository-elasticsearch-3.17.3.zip</a></p>
-<h1 id="breaking-changes_4">Breaking Changes</h1>
-<h2 id="management-api-documentation">Management API Documentation</h2>
+<h2 id="breaking-changes_4">Breaking Changes</h2>
+<h3 id="management-api-documentation">Management API Documentation</h3>
 <p>From this version, APIM’s Management API documentation is now using
 OpenAPI v3 format, instead of the old Swagger v2 format.</p>
 <p>As a consequence, the specification of this API is now accessible from:</p>
@@ -1299,7 +3381,7 @@ OpenAPI v3 format, instead of the old Swagger v2 format.</p>
 <p>To allow a smooth transition, the old URL
 (<code>{host:port}/management/swagger.json</code>) will remain available until
 3.18.0.</p>
-<h2 id="docker-images-enterprise-edition">Docker Images - Enterprise Edition</h2>
+<h3 id="docker-images-enterprise-edition">Docker Images - Enterprise Edition</h3>
 <p>To reduce the number of security vulnerabilities and ensure a better
 maintenance in the future, the base Docker images used for the
 Enterprise Edition have changed.</p>
@@ -1310,7 +3392,7 @@ Gravitee.io might need to update their Dockerfile to make them
 compatible with the Alpine distribution.</p>
 <p><em>Notes</em>: Community Edition users will not be affected as the base images
 were already <strong>Alpine</strong> ones.</p>
-<h1 id="upgrade-order">Upgrade Order</h1>
+<h2 id="upgrade-order">Upgrade Order</h2>
 <p>In order to achieve a 0 downtime upgrade, APIM has to be upgraded before
 upgrading the gateways.</p>
 <p>On hybrid architectures where gateway bridge feature is enabled,
@@ -1323,7 +3405,7 @@ gateways have to be upgraded in this order :</p>
 <p>The bridge client gateway</p>
 </li>
 </ol>
-<h1 id="deprecated-bridge-endpoints">Deprecated Bridge Endpoints</h1>
+<h2 id="deprecated-bridge-endpoints">Deprecated Bridge Endpoints</h2>
 <p>Since bridge client rely on their own internals to fulfil API key
 requests, the ``/apis/{api.id}/keys/{api.key}`` endpoint has been
 deprecated on the bridge server and will be removed in a future version.</p>
@@ -1332,7 +3414,7 @@ with ``/keys/_findByCriteria`` endpoint. It will be removed in a
 future version.</p>
 <p>More information on the gateway bridge feature can be found
 <a href="https://docs.gravitee.io/apim/3.x/apim_installguide_hybrid_deployment.html#apim_gateway_http_bridge_server">here</a>.</p>
-<h1 id="the-mongodb-upgrade-scripts-have-been-moved">The mongodb upgrade scripts have been moved</h1>
+<h2 id="the-mongodb-upgrade-scripts-have-been-moved">The mongodb upgrade scripts have been moved</h2>
 <p>For the sake of improving our documentation management process, we have
 started decommissioning our
 <a href="https://github.com/gravitee-io/release">release</a> repository (which
@@ -1341,13 +3423,13 @@ contained among other things this guide).</p>
 inside the release repository anymore and have been moved to the
 <a href="https://github.com/gravitee-io/gravitee-api-management/tree/master/gravitee-apim-repository/gravitee-apim-repository-mongodb/src/main/resources/scripts">gravitee-api-management</a>
 repository.</p>
-<h2 id="mongodb">MongoDB</h2>
+<h3 id="mongodb">MongoDB</h3>
 <p>Before running any script, please create a dump of your existing
 database.</p>
 <p><a href="https://raw.githubusercontent.com/gravitee-io/gravitee-api-management/master/gravitee-apim-repository/gravitee-apim-repository-mongodb/src/main/resources/scripts/3.17.0/api-keys-cleanup.js">/apim/3.x/mongodb/3.17.0/api-keys-cleanup.js</a><br/>
 This script performs some cleanup on the keys collection in order to
 avoid issues while moving to the new model.</p>
-<h1 id="breaking-changes_5">Breaking changes</h1>
+<h2 id="breaking-changes_5">Breaking changes</h2>
 <p>From this version, and for the next 3.17.x versions, the name of the
 Elasticsearch repository component changes.<br/>
 As a consequence, the Elasticsearch repository component available on
@@ -1360,8 +3442,8 @@ As a consequence, the Elasticsearch repository component available on
 <p>You can download directly the Elasticsearch repository using this
 link:<br/>
 <a href="https://download.gravitee.io/graviteeio-apim/plugins/repositories/gravitee-apim-repository-elasticsearch/gravitee-apim-repository-elasticsearch-3.16.5.zip">https://download.gravitee.io/graviteeio-apim/plugins/repositories/gravitee-apim-repository-elasticsearch/gravitee-apim-repository-elasticsearch-3.16.5.zip</a></p>
-<h1 id="breaking-change">Breaking Change</h1>
-<h2 id="docker-images-enterprise-edition_1">Docker Images - Enterprise Edition</h2>
+<h2 id="breaking-change">Breaking Change</h2>
+<h3 id="docker-images-enterprise-edition_1">Docker Images - Enterprise Edition</h3>
 <p>To reduce the number of security vulnerabilities and ensure a better
 maintenance in the future, the base Docker images used for the
 Enterprise Edition have changed.</p>
@@ -1372,7 +3454,7 @@ Gravitee.io might need to update their Dockerfile to make them
 compatible with the Alpine distribution.</p>
 <p><em>Notes</em>: Community Edition users will not be affected as the base images
 were already <strong>Alpine</strong> ones.</p>
-<h1 id="api-definition-import-process-changes">API definition import process changes</h1>
+<h2 id="api-definition-import-process-changes">API definition import process changes</h2>
 <p>Gravitee 3.16.0 introduces a new <strong>crossId</strong> in API definition, which
 identifies entities across environments. This improves the API import
 and promotion processes reliability.</p>
@@ -1382,7 +3464,7 @@ API.</p>
 <p>Otherwise, if you import an API definition which doesn’t contain
 <strong>crossId</strong>, Gravitee will do the best-effort to import your API
 definition without it.</p>
-<h1 id="deprecations">Deprecations</h1>
+<h2 id="deprecations">Deprecations</h2>
 <p>The Rest API endpoints listed below are deprecated since Gravitee
 v3.0.9, and will be removed in a future version.</p>
 <table>
@@ -1407,8 +3489,8 @@ v3.0.9, and will be removed in a future version.</p>
 </tr>
 </tbody>
 </table>
-<h1 id="breaking-changes_6">Breaking changes</h1>
-<h2 id="api-key-and-jwt-plans_1">API key and JWT plans</h2>
+<h2 id="breaking-changes_6">Breaking changes</h2>
+<h3 id="api-key-and-jwt-plans_1">API key and JWT plans</h3>
 <p>The security chain (the internal process that selects the executable
 plan for the incoming request and applies the related security rules)
 parses all active plans to select and execute the relevant one.</p>
@@ -1476,8 +3558,8 @@ As a consequence, the Elasticsearch repository component available on
 <p>You can download directly the Elasticsearch repository using this
 link:<br/>
 <a href="https://download.gravitee.io/graviteeio-apim/plugins/repositories/gravitee-apim-repository-elasticsearch/gravitee-apim-repository-elasticsearch-3.15.9.zip">https://download.gravitee.io/graviteeio-apim/plugins/repositories/gravitee-apim-repository-elasticsearch/gravitee-apim-repository-elasticsearch-3.15.9.zip</a></p>
-<h1 id="breaking-change_1">Breaking Change</h1>
-<h2 id="docker-images-enterprise-edition_2">Docker Images - Enterprise Edition</h2>
+<h2 id="breaking-change_1">Breaking Change</h2>
+<h3 id="docker-images-enterprise-edition_2">Docker Images - Enterprise Edition</h3>
 <p>To reduce the number of security vulnerabilities and ensure a better
 maintenance in the future, the base Docker images used for the
 Enterprise Edition have changed.</p>
@@ -1488,8 +3570,8 @@ Gravitee.io might need to update their Dockerfile to make them
 compatible with the Alpine distribution.</p>
 <p><em>Notes</em>: Community Edition users will not be affected as the base images
 were already <strong>Alpine</strong> ones.</p>
-<h1 id="breaking-change_2">Breaking Change</h1>
-<h2 id="management-api">Management API</h2>
+<h2 id="breaking-change_2">Breaking Change</h2>
+<h3 id="management-api">Management API</h3>
 <p>Since they were deprecated since version 3.12.0, the Rest API endpoints
 listed below have been removed.</p>
 <table>
@@ -1564,12 +3646,12 @@ listed below have been removed.</p>
 </tr>
 </tbody>
 </table>
-<h2 id="deprecation-of-path-based-api-creation">Deprecation of path-based API creation</h2>
+<h3 id="deprecation-of-path-based-api-creation">Deprecation of path-based API creation</h3>
 <p>The path-based approach to create APIs will be removed in our next LTS
 and has been deprecated. From now on, this mode is disabled by default
 but can still be re-activated from your organization settings.</p>
-<h2 id="gateway">Gateway</h2>
-<h3 id="custom-policy-breaking-changes">Custom policy breaking changes</h3>
+<h3 id="gateway">Gateway</h3>
+<h4 id="custom-policy-breaking-changes">Custom policy breaking changes</h4>
 <p>We’ve made huge improvements on the v3.15.0 in order to considerably
 decrease the memory and cpu resources required to serve the traffic on
 the gateway. For that, we rework some parts of the gateway which have
@@ -1601,7 +3683,7 @@ they match one of the following cases:</p>
 </li>
 </ul>
 <p>For each of these cases, please find the appropriate actions below.</p>
-<h4 id="http-headers">Http headers</h4>
+<h5 id="http-headers">Http headers</h5>
 <p>Starting from 3.15.0 we rework the way the request and response headers
 are manage to make them even performant than ever.</p>
 <p>For that reason, if your custom policy relies on headers make sure to
@@ -1620,7 +3702,7 @@ the few methods where name changed a bit:</p>
     returned a list)</p>
 </li>
 </ul>
-<h4 id="policy-class-loading">Policy class loading</h4>
+<h5 id="policy-class-loading">Policy class loading</h5>
 <p>We’ve made huge improvements on the v3.15.0 by reworking the way
 policies are loaded when deploying an api on the APIM gateway. While
 previously, one ClassLoader were instantiated per deployed api, we
@@ -1645,8 +3727,8 @@ the following configuration:</p>
 <p>```yaml classloader: legacy: enabled: true ```</p>
 <p>We highly recommend adopting the new class loading strategy as soon as
 possible as it may not be maintained in the future versions.</p>
-<h1 id="breaking-changes_8">Breaking changes</h1>
-<h2 id="gateway_1">Gateway</h2>
+<h2 id="breaking-changes_8">Breaking changes</h2>
+<h3 id="gateway_1">Gateway</h3>
 <p>From with this version, the name of the APIM Gateway component changes.
 As a consequence:</p>
 <ol>
@@ -1663,7 +3745,7 @@ As a consequence:</p>
     <code>graviteeio-gateway-x.y.z</code></p>
 </li>
 </ol>
-<h1 id="gateway-bridge-upgrade">Gateway bridge upgrade</h1>
+<h2 id="gateway-bridge-upgrade">Gateway bridge upgrade</h2>
 <p>On hybrid architectures where gateway bridge feature is enabled,
 gateways have to be upgraded in this order :</p>
 <ol>
@@ -1676,7 +3758,7 @@ gateways have to be upgraded in this order :</p>
 </ol>
 <p>More information on the gateway bridge feature can be found
 <a href="https://docs.gravitee.io/apim/3.x/apim_installguide_hybrid_deployment.html#apim_gateway_http_bridge_server">here</a>.</p>
-<h1 id="elastic-search-reporter-plugins-configuration">Elastic Search reporter plugins configuration</h1>
+<h2 id="elastic-search-reporter-plugins-configuration">Elastic Search reporter plugins configuration</h2>
 <p>Before Gravitee 3.14 :</p>
 <ul>
 <li>
@@ -1699,8 +3781,8 @@ startup :</p>
 <p>And then, you have to override
 <code>reporters.elasticsearch.pipeline.plugins.ingest</code> default configuration,
 to remove unrelevant plugin.</p>
-<h1 id="breaking-changes_9">Breaking changes</h1>
-<h2 id="gateway_2">Gateway</h2>
+<h2 id="breaking-changes_9">Breaking changes</h2>
+<h3 id="gateway_2">Gateway</h3>
 <p>From with this version, the name of the APIM Gateway component changes.
 As a consequence:</p>
 <ol>
@@ -1717,15 +3799,15 @@ As a consequence:</p>
     <code>graviteeio-gateway-x.y.z</code></p>
 </li>
 </ol>
-<h1 id="breaking-changes_10">Breaking changes</h1>
-<h2 id="gateway_3">Gateway</h2>
+<h2 id="breaking-changes_10">Breaking changes</h2>
+<h3 id="gateway_3">Gateway</h3>
 <p>HTTP Bridge Service is now disabled by default starting.</p>
 <p>If you are using this feature, <strong>do not forget to update your
 settings.</strong></p>
 <p>For more information, <a href="https://docs.gravitee.io/apim/3.x/apim_installguide_hybrid_deployment.html#apim_gateway_http_bridge_server">click
 here</a>
 for documentation.</p>
-<h2 id="management-web-ui">Management Web UI</h2>
+<h3 id="management-web-ui">Management Web UI</h3>
 <p>From with this version, the name of the APIM Console component changes.
 As a consequence:</p>
 <ol>
@@ -1742,7 +3824,7 @@ As a consequence:</p>
     <code>graviteeio-management-ui-x.y.z</code></p>
 </li>
 </ol>
-<h2 id="portal-web-ui">Portal Web UI</h2>
+<h3 id="portal-web-ui">Portal Web UI</h3>
 <p>From with this version, the name of the APIM Portal component changes.
 As a consequence:</p>
 <ol>
@@ -1761,8 +3843,8 @@ As a consequence:</p>
 </ol>
 <p>In future versions, others plugins &amp; components might be renamed. Stay
 tuned!</p>
-<h1 id="breaking-changes_11">Breaking changes</h1>
-<h2 id="gateway_4">Gateway</h2>
+<h2 id="breaking-changes_11">Breaking changes</h2>
+<h3 id="gateway_4">Gateway</h3>
 <p>From with this version, the name of the APIM Gateway component changes.
 As a consequence:</p>
 <ol>
@@ -1779,8 +3861,8 @@ As a consequence:</p>
     <code>graviteeio-gateway-x.y.z</code></p>
 </li>
 </ol>
-<h1 id="breaking-changes_12">Breaking changes</h1>
-<h2 id="management-web-ui_1">Management Web UI</h2>
+<h2 id="breaking-changes_12">Breaking changes</h2>
+<h3 id="management-web-ui_1">Management Web UI</h3>
 <p>From with this version, the name of the APIM Console component changes.
 As a consequence:</p>
 <ol>
@@ -1797,7 +3879,7 @@ As a consequence:</p>
     <code>graviteeio-management-ui-x.y.z</code></p>
 </li>
 </ol>
-<h2 id="portal-web-ui_1">Portal Web UI</h2>
+<h3 id="portal-web-ui_1">Portal Web UI</h3>
 <p>From with this version, the name of the APIM Portal component changes.
 As a consequence:</p>
 <ol>
@@ -1816,12 +3898,12 @@ As a consequence:</p>
 </ol>
 <p>In future versions, others plugins &amp; components might be renamed. Stay
 tuned!</p>
-<h1 id="breaking-change_3">Breaking Change</h1>
+<h2 id="breaking-change_3">Breaking Change</h2>
 <p><strong>Policy plugin <code>gravitee-policy-apikey</code> prior to version 2.3.0 is no
 longer compatible with APIM 3.12.0.</strong></p>
 <p>Starting in version 3.12.0, you must use <code>gravitee-policy-apikey</code> &gt;=
 2.3.0.</p>
-<h1 id="default-settings-change-announcement">Default Settings Change Announcement</h1>
+<h2 id="default-settings-change-announcement">Default Settings Change Announcement</h2>
 <p>HTTP Bridge Service will be disabled by default starting in version
 3.13.</p>
 <p>If you are using this feature, <strong>do not forget to update your
@@ -1829,8 +3911,8 @@ settings.</strong></p>
 <p>For more information, <a href="https://docs.gravitee.io/apim/3.x/apim_installguide_hybrid_deployment.html#apim_gateway_http_bridge_server">click
 here</a>
 for documentation.</p>
-<h1 id="api-keys">API Keys</h1>
-<h2 id="model-change">Model Change</h2>
+<h2 id="api-keys">API Keys</h2>
+<h3 id="model-change">Model Change</h3>
 <p>Before this version, API keys contained a <strong>key</strong> attribute, which is
 both the value of the key and also the database ID.</p>
 <p>Starting in version 3.12.0, APIKeys now contain distinct attributes:</p>
@@ -1856,7 +3938,7 @@ as <strong><em>ID</em></strong>) :</p>
 <p>POST /subscriptions/{subscription.id}/_renew</p>
 </li>
 </ul>
-<h2 id="deprecated-endpoints">Deprecated Endpoints</h2>
+<h3 id="deprecated-endpoints">Deprecated Endpoints</h3>
 <p>The Rest API endpoints listed below are now deprecated, and will be
 removed in a future version.</p>
 <table>
@@ -1931,13 +4013,13 @@ removed in a future version.</p>
 </tr>
 </tbody>
 </table>
-<h1 id="repository">Repository</h1>
-<h2 id="mongodb_1">MongoDB</h2>
+<h2 id="repository">Repository</h2>
+<h3 id="mongodb_1">MongoDB</h3>
 <p>Before running any script, please create a dump of your existing
 database.</p>
 <p><a href="https://raw.githubusercontent.com/gravitee-io/gravitee-api-management/master/gravitee-apim-repository/gravitee-apim-repository-mongodb/src/main/resources/scripts/3.12.0/api-keys-migration.js">/apim/3.x/mongodb/3.12.0/api-keys-migration.js</a><br/>
 This script adds <strong>key</strong> and <strong>api</strong> columns in api keys <strong>keys</strong> table.</p>
-<h1 id="breaking-changes_13">Breaking changes</h1>
+<h2 id="breaking-changes_13">Breaking changes</h2>
 <h2 id="management-web-ui_2">Management Web UI</h2>
 <p>From with this version, the name of the APIM Console component changes.
 As a consequence:</p>
@@ -1955,7 +4037,7 @@ As a consequence:</p>
     <code>graviteeio-management-ui-x.y.z</code></p>
 </li>
 </ol>
-<h2 id="portal-web-ui_2">Portal Web UI</h2>
+<h3 id="portal-web-ui_2">Portal Web UI</h3>
 <p>From with this version, the name of the APIM Portal component changes.
 As a consequence:</p>
 <ol>
@@ -1974,13 +4056,13 @@ As a consequence:</p>
 </ol>
 <p>In future versions, others plugins &amp; components might be renamed. Stay
 tuned!</p>
-<h1 id="repository_1">Repository</h1>
-<h2 id="mongodb_2">Mongodb</h2>
+<h2 id="repository_1">Repository</h2>
+<h3 id="mongodb_2">Mongodb</h3>
 <p>Before running any script, please create a dump of your existing
 database.</p>
 <p><a href="https://raw.githubusercontent.com/gravitee-io/gravitee-api-management/master/gravitee-apim-repository/gravitee-apim-repository-mongodb/src/main/resources/scripts/3.11.1/1-event-debug-migration.js">/apim/3.x/mongodb/3.11.1/1-event-debug-migration.js</a><br/>
 This script removes the <code>API_ID</code> property for events of type <code>DEBUG</code>.</p>
-<h1 id="breaking-changes_14">Breaking changes</h1>
+<h2 id="breaking-changes_14">Breaking changes</h2>
 <p>From with this version, the name of the APIM Rest APIs component
 changes. As a consequence:</p>
 <ol>
@@ -1999,15 +4081,15 @@ changes. As a consequence:</p>
 </ol>
 <p>In future versions, others plugins &amp; components might be renamed. Stay
 tuned!</p>
-<h1 id="security-update">Security update</h1>
+<h2 id="security-update">Security update</h2>
 <p>From this version, API properties can be encrypted.</p>
 <p>Encryption key is located in gravitee.yml of Rest APIs and gateway.</p>
 <p>You should not use this default key, and set your own custom 32 bytes
 length secret.</p>
 <p>```ỳml # Encrypt API properties using this secret api: properties:
 encryption: secret: vvLJ4Q8Khvv9tm2tIPdkGEdmgKUruAL6 ```</p>
-<h1 id="breaking-changes_15">Breaking changes</h1>
-<h2 id="api-key-and-jwt-plans_2">API key and JWT plans</h2>
+<h2 id="breaking-changes_15">Breaking changes</h2>
+<h3 id="api-key-and-jwt-plans_2">API key and JWT plans</h3>
 <p>The security chain (the internal process that selects the executable
 plan for the incoming request and applies the related security rules)
 parses all active plans to select and execute the relevant one.</p>
@@ -2062,7 +4144,7 @@ unauthorized</p></td>
 </tr>
 </tbody>
 </table>
-<h1 id="breaking-changes_16">Breaking changes</h1>
+<h2 id="breaking-changes_16">Breaking changes</h2>
 <p>From this version, and for the next 3.10.x versions, the name of the
 Elasticsearch repository component changes.<br/>
 As a consequence, the Elasticsearch repository component available on
@@ -2075,8 +4157,8 @@ As a consequence, the Elasticsearch repository component available on
 <p>You can download directly the Elasticsearch repository using this
 link:<br/>
 <a href="https://download.gravitee.io/graviteeio-apim/plugins/repositories/gravitee-apim-repository-elasticsearch/gravitee-apim-repository-elasticsearch-3.10.15.zip">https://download.gravitee.io/graviteeio-apim/plugins/repositories/gravitee-apim-repository-elasticsearch/gravitee-apim-repository-elasticsearch-3.10.15.zip</a></p>
-<h1 id="breaking-change_4">Breaking Change</h1>
-<h2 id="docker-images-enterprise-edition_3">Docker Images - Enterprise Edition</h2>
+<h2 id="breaking-change_4">Breaking Change</h2>
+<h3 id="docker-images-enterprise-edition_3">Docker Images - Enterprise Edition</h3>
 <p>To reduce the number of security vulnerabilities and ensure a better
 maintenance in the future, the base Docker images used for the
 Enterprise Edition have changed.</p>
@@ -2087,7 +4169,7 @@ Gravitee.io might need to update their Dockerfile to make them
 compatible with the Alpine distribution.</p>
 <p><em>Notes</em>: Community Edition users will not be affected as the base images
 were already <strong>Alpine</strong> ones.</p>
-<h1 id="elastic-search-reporter-plugins-configuration_1">Elastic Search reporter plugins configuration</h1>
+<h2 id="elastic-search-reporter-plugins-configuration_1">Elastic Search reporter plugins configuration</h2>
 <p>Before Gravitee 3.10.9 :</p>
 <ul>
 <li>
@@ -2110,8 +4192,8 @@ startup :</p>
 <p>And then, you have to override
 <code>reporters.elasticsearch.pipeline.plugins.ingest</code> default configuration,
 to remove unrelevant plugin.</p>
-<h1 id="breaking-changes_17">Breaking changes</h1>
-<h2 id="gateway_5">Gateway</h2>
+<h2 id="breaking-changes_17">Breaking changes</h2>
+<h3 id="gateway_5">Gateway</h3>
 <p>From with this version, the name of the APIM Gateway component changes.
 As a consequence:</p>
 <ol>
@@ -2128,8 +4210,8 @@ As a consequence:</p>
     <code>graviteeio-gateway-x.y.z</code></p>
 </li>
 </ol>
-<h1 id="plans-anomalies-in-database">Plans anomalies in database</h1>
-<h2 id="tldr">TLDR</h2>
+<h2 id="plans-anomalies-in-database">Plans anomalies in database</h2>
+<h3 id="tldr">TLDR</h3>
 <p>In Gravitee &lt; 3.10.8, some processes have caused database
 inconsistencies, regarding plans and flows.</p>
 <p>Gravitee 3.10.8, introduces an automated process to detect and fix those
@@ -2138,7 +4220,7 @@ anomalies.</p>
 modification. Check the <code>gravitee-upgraders.log</code> file to see if any of
 your API is concerned, and how it will be fixed.</p>
 <p>After check, fix those database anomalies by disabling the dry mode.</p>
-<h2 id="what-are-those-database-anomalies">What are those database anomalies ?</h2>
+<h3 id="what-are-those-database-anomalies">What are those database anomalies ?</h3>
 <p>In Gravitee &lt; 3.10.8, some processes have caused inconsistencies in
 database, regarding plans and flows.</p>
 <p>Concerned processes are :</p>
@@ -2158,7 +4240,7 @@ database, regarding plans and flows.</p>
 </ul>
 <p>For concerned APIs, plans and flows displayed in console doesn’t reflect
 the ones runned by gateway.</p>
-<h2 id="how-to-fix-it">How to fix it ?</h2>
+<h3 id="how-to-fix-it">How to fix it ?</h3>
 <p>Gravitee 3.10.8, introduces an automated process to detect and fix those
 anomalies.</p>
 <p>This process will run on management API startup. By default, it will run
@@ -2166,7 +4248,7 @@ in <em>dry</em> mode, to detect and list anomalies without fixing them in
 database.</p>
 <p>After you checked those anomalies have to be fixed, you can disable the
 <em>dry</em> mode, and restart your API to update your database.</p>
-<h2 id="my-apis-are-concerned">My APIs are concerned ?</h2>
+<h3 id="my-apis-are-concerned">My APIs are concerned ?</h3>
 <p>On management API startup, you will see this trace in the console, or
 the dedicated <code>gravitee-upgraders.log</code> log file.</p>
 <p>If no anomaly was detected :</p>
@@ -2200,11 +4282,11 @@ the dedicated <code>gravitee-upgraders.log</code> log file.</p>
 14:51:51.025 [main] INFO  i.g.r.a.s.i.u.PlansDataFixUpgrader - - Will create plan "Silver-Recreated" for API "Petstore" (121112-1211-1111-121121211), which is missing in plans table
 14:51:51.058 [main] INFO  i.g.r.a.s.i.u.PlansDataFixUpgrader - Finishing PlansDataFixUpgrader execution
 </code></pre></div>
-<h2 id="how-anomalies-are-fixed">How anomalies are fixed ?</h2>
+<h3 id="how-anomalies-are-fixed">How anomalies are fixed ?</h3>
 <p>This process will fix your API plans data.</p>
 <p>But it won’t change the runtime behavior of your APIs in the gateway,
 until you redeploy them manually from console.</p>
-<h3 id="some-plans-were-considered-by-gateway-but-were-not-visible-in-console">Some plans were considered by gateway, but were not visible in console :</h3>
+<h4 id="some-plans-were-considered-by-gateway-but-were-not-visible-in-console">Some plans were considered by gateway, but were not visible in console :</h4>
 <p>They will be recreated in console, and you will see new plans appear :</p>
 <ul>
 <li>
@@ -2218,14 +4300,14 @@ until you redeploy them manually from console.</p>
 <p>Those plans will be in <code>deprecated</code> state, without any subscription. It
 will allow you to check those plans and their flows, and close them if
 relevant.</p>
-<h3 id="some-plans-visible-in-console-were-not-considered-by-gateway">Some plans visible in console were not considered by gateway :</h3>
+<h4 id="some-plans-visible-in-console-were-not-considered-by-gateway">Some plans visible in console were not considered by gateway :</h4>
 <p>Those plans will be closed, as they were not actually used during API
 runtime.</p>
-<h2 id="im-ready-how-to-disable-the-dry-mode-and-fix-data">I’m ready. How to disable the dry mode and fix data ?</h2>
+<h3 id="im-ready-how-to-disable-the-dry-mode-and-fix-data">I’m ready. How to disable the dry mode and fix data ?</h3>
 <p>To fix data in your database, turn off the dry-mode, setting the
 <code>services.plans-data-fix-upgrader.dryRun</code> parameter to false. Then,
 restart the management API.</p>
-<h2 id="further-configuration">Further configuration ?</h2>
+<h3 id="further-configuration">Further configuration ?</h3>
 <p>You can configure this process in gravitee.yml, for example :</p>
 <div class="highlight"><pre><span></span><code>services:
   plans-data-fix-upgrader:
@@ -2266,8 +4348,8 @@ will be send to the api owner for each fixed API.</p></td>
 </tr>
 </tbody>
 </table>
-<h1 id="breaking-changes_18">Breaking changes</h1>
-<h2 id="management-web-ui_3">Management Web UI</h2>
+<h2 id="breaking-changes_18">Breaking changes</h2>
+<h3 id="management-web-ui_3">Management Web UI</h3>
 <p>From with this version, the name of the APIM Console component changes.
 As a consequence:</p>
 <ol>
@@ -2284,7 +4366,7 @@ As a consequence:</p>
     <code>graviteeio-management-ui-x.y.z</code></p>
 </li>
 </ol>
-<h2 id="portal-web-ui_3">Portal Web UI</h2>
+<h3 id="portal-web-ui_3">Portal Web UI</h3>
 <p>From with this version, the name of the APIM Portal component changes.
 As a consequence:</p>
 <ol>
@@ -2303,7 +4385,7 @@ As a consequence:</p>
 </ol>
 <p>In future versions, others plugins &amp; components might be renamed. Stay
 tuned!</p>
-<h1 id="breaking-changes_19">Breaking changes</h1>
+<h2 id="breaking-changes_19">Breaking changes</h2>
 <p>From this version, the name of the APIM Rest APIs component changes. As
 a consequence:</p>
 <ol>
@@ -2322,13 +4404,13 @@ a consequence:</p>
 </ol>
 <p>In future versions, others plugins &amp; components might be renamed. Stay
 tuned!</p>
-<h1 id="repository_2">Repository</h1>
-<h2 id="mongodb_3">Mongodb</h2>
+<h2 id="repository_2">Repository</h2>
+<h3 id="mongodb_3">Mongodb</h3>
 <p>Before running any script, please create a dump of your existing
 database.</p>
 <p><a href="https://raw.githubusercontent.com/gravitee-io/gravitee-api-management/master/gravitee-apim-repository/gravitee-apim-repository-mongodb/src/main/resources/scripts/3.10.1/1-upgrade-parameters-for-theme-console.js">/apim/3.x/mongodb/3.10.1/1-upgrade-parameters-for-theme-console.js</a><br/>
 This script upgrade default value of <code>theme.logo</code> in parameters</p>
-<h1 id="breaking-changes_20">Breaking changes</h1>
+<h2 id="breaking-changes_20">Breaking changes</h2>
 <p>From with this version, the name of some components of Gravitee.io APIM
 changes. As a consequence, the following plugins are renamed :</p>
 <table>
@@ -2372,12 +4454,12 @@ changes. As a consequence, the following plugins are renamed :</p>
 available using this link:</p>
 <p><a href="https://download.gravitee.io/graviteeio-apim/plugins/repositories/gravitee-apim-repository-mongodb/gravitee-apim-repository-mongodb-3.10.0.zip">https://download.gravitee.io/graviteeio-apim/plugins/repositories/gravitee-apim-repository-mongodb/gravitee-apim-repository-mongodb-3.10.0.zip</a></p>
 <p>In future versions, others plugins will be renamed. Stay tuned!</p>
-<h1 id="breaking-changes_21">Breaking changes</h1>
-<h2 id="threat-protection-policies">Threat protection policies</h2>
+<h2 id="breaking-changes_21">Breaking changes</h2>
+<h3 id="threat-protection-policies">Threat protection policies</h3>
 <p>From this version, configuration form for JSON Threat Protection Policy
 and XML Threat Protection Policy changes: <code>null</code> is no longer
 authorized, only <code>-1</code> is accepted for a <em>no limit</em> setting.</p>
-<h3 id="impacts">Impacts</h3>
+<h4 id="impacts">Impacts</h4>
 <ul>
 <li>
 <p>If some fields are set to <code>null</code> in your db, and if you want to edit
@@ -2393,7 +4475,7 @@ authorized, only <code>-1</code> is accepted for a <em>no limit</em> setting.</p
     your request payload.</p>
 </li>
 </ul>
-<h2 id="management-rest-api">Management Rest API</h2>
+<h3 id="management-rest-api">Management Rest API</h3>
 <p>From with this version, the name of the APIM Rest APIs component
 changes. As a consequence:</p>
 <ol>
@@ -2412,7 +4494,7 @@ changes. As a consequence:</p>
 </ol>
 <p>In future versions, others plugins &amp; components might be renamed. Stay
 tuned!</p>
-<h1 id="breaking-changes_22">Breaking changes</h1>
+<h2 id="breaking-changes_22">Breaking changes</h2>
 <p>From with this version, the name of some components of Gravitee.io APIM
 changes. As a consequence, the following plugins are renamed :</p>
 <table>
@@ -2456,24 +4538,24 @@ changes. As a consequence, the following plugins are renamed :</p>
 available using this link:</p>
 <p><a href="https://download.gravitee.io/graviteeio-apim/plugins/repositories/gravitee-apim-repository-mongodb/gravitee-apim-repository-mongodb-3.9.3.zip">https://download.gravitee.io/graviteeio-apim/plugins/repositories/gravitee-apim-repository-mongodb/gravitee-apim-repository-mongodb-3.9.3.zip</a></p>
 <p>In future versions, others plugins will be renamed. Stay tuned!</p>
-<h1 id="important-alert-engine">Important: Alert Engine</h1>
+<h2 id="important-alert-engine">Important: Alert Engine</h2>
 <p>For users of Gravitee Enterprise Edition with Alert Engine, please check
 your gravitee configuration to ensure that the alert engine feature is
 explictly enable. Starting from this version, the alert engine connector
 is disabled by default if the option <code>alerts.alert-engine-enabled</code> is
 missing from the gravitee.yaml. (see
 <a href="https://docs.gravitee.io/ae/apim_installation.html#configuration">https://docs.gravitee.io/ae/apim_installation.html#configuration</a>)</p>
-<h1 id="warning">Warning</h1>
+<h2 id="warning">Warning</h2>
 <p><strong>For JDBC users only</strong>, please don’t upgrade to 3.9.0 since we detected
 a critical bug in a liquibase script that could lead to data loss.<br/>
 This will be fixed in 3.9.1.<br/>
 We apologize for this inconvenience.</p>
 <p>GitHub issue: <a href="https://github.com/gravitee-io/issues/issues/5711">5711</a></p>
-<h1 id="breaking-changes_23">Breaking changes</h1>
+<h2 id="breaking-changes_23">Breaking changes</h2>
 <p>From this version, in order to propose a better swagger descriptor, all
 enum values <strong>returned</strong> by the APIM API are in uppercase.</p>
 <p>Lowercase and uppercase values are still accepted in incoming requests.</p>
-<h1 id="memory-management">Memory management</h1>
+<h2 id="memory-management">Memory management</h2>
 <p>Starting from this new version, the default Xms and Xmx parameters has
 been fixed to 256m. Previous value was too high and does not reflect
 real memory usage for both the API Gateway and Management API.</p>
@@ -2481,7 +4563,7 @@ real memory usage for both the API Gateway and Management API.</p>
 set the <code>GIO_MIN_MEM</code> and <code>GIO_MAX_MEM</code> environment variables in your
 scripts. Those variables are then "injected" into the JAVA_OPTS during
 bootstrap.</p>
-<h1 id="apim-api-tags-and-tenants">APIM API - Tags and Tenants</h1>
+<h2 id="apim-api-tags-and-tenants">APIM API - Tags and Tenants</h2>
 <p>This version changes permissions' scope from <code>ENVIRONMENT</code> to
 <code>ORGANIZATION</code> for:</p>
 <ul>
@@ -2498,8 +4580,8 @@ bootstrap.</p>
 <p>These permissions are now readonly for the scope <code>ENVIRONMENT</code>. They
 will be deleted on version 3.10. If you are using these permissions,
 please update them for the scope <code>ORGANIZATION</code>.</p>
-<h1 id="repository_3">Repository</h1>
-<h2 id="mongodb_4">Mongodb</h2>
+<h2 id="repository_3">Repository</h2>
+<h3 id="mongodb_4">Mongodb</h3>
 <p>Before running any script, please create a dump of your existing
 database.</p>
 <p><a href="https://raw.githubusercontent.com/gravitee-io/gravitee-api-management/master/gravitee-apim-repository/gravitee-apim-repository-mongodb/src/main/resources/scripts/3.9.0/1-tags-and-tenants-migration.js">/apim/3.x/mongodb/3.9.0/1-tags-and-tenants-migration.js</a><br/>
@@ -2508,7 +4590,7 @@ This script adds referenceId set to <em>DEFAULT</em> and referenceType set to
 <p><a href="https://raw.githubusercontent.com/gravitee-io/gravitee-api-management/master/gravitee-apim-repository/gravitee-apim-repository-mongodb/src/main/resources/scripts/3.9.0/2-events-migration.js">/apim/3.x/mongodb/3.9.0/2-events-migration.js</a><br/>
 This script modifies events, so an event can be linked to more than one
 environment.</p>
-<h1 id="breaking-changes_24">Breaking changes</h1>
+<h2 id="breaking-changes_24">Breaking changes</h2>
 <p>From with this version, the name of some components of Gravitee.io APIM
 changes. As a consequence, the following plugins are renamed :</p>
 <table>
@@ -2552,14 +4634,14 @@ changes. As a consequence, the following plugins are renamed :</p>
 available using this link:</p>
 <p><a href="https://download.gravitee.io/graviteeio-apim/plugins/repositories/gravitee-apim-repository-mongodb/gravitee-apim-repository-mongodb-3.8.6.zip">https://download.gravitee.io/graviteeio-apim/plugins/repositories/gravitee-apim-repository-mongodb/gravitee-apim-repository-mongodb-3.8.6.zip</a></p>
 <p>In future versions, others plugins will be renamed. Stay tuned!</p>
-<h1 id="repository_4">Repository</h1>
-<h2 id="mongodb_5">Mongodb</h2>
+<h2 id="repository_4">Repository</h2>
+<h3 id="mongodb_5">Mongodb</h3>
 <p>Before running any script, please create a dump of your existing
 database.</p>
 <p><a href="https://raw.githubusercontent.com/gravitee-io/gravitee-api-management/master/gravitee-apim-repository/gravitee-apim-repository-mongodb/src/main/resources/scripts/3.8.0/1-page-acl-migration.js">/apim/3.x/mongodb/3.8.0/1-page-acl-migration.js</a><br/>
 This script replaces <strong>excluded_groups</strong> by <strong>visibility</strong>,
 <strong>excludedAccessControls</strong> and <strong>accessControls</strong> collection.</p>
-<h1 id="repository_5">Repository</h1>
+<h2 id="repository_5">Repository</h2>
 <p>Since 3.7, you have the ability to configure a prefix for your tables or
 collections name.</p>
 <p>Rate limit configuration has to be defined in both Gateway and
@@ -2567,12 +4649,12 @@ Management <code>gravitee.yml</code> files.</p>
 <p>With this centralized configuration, you can disable the liquibase phase
 of the gateway, if you do not want it to modify your dbms.</p>
 <p>If you choose to use prefix, follow these instructions.</p>
-<h2 id="mongodb_6">Mongodb</h2>
-<h3 id="new-installation">New installation</h3>
+<h3 id="mongodb_6">Mongodb</h3>
+<h4 id="new-installation">New installation</h4>
 <p>You just have to modify the <code>gravitee.yml</code> files of gateway and console
 to configure <code>management.mongodb.prefix</code> and <code>ratelimit.mongodb.prefix</code>.
 Default value is empty.</p>
-<h3 id="migrate-an-existing-installation">Migrate an existing installation</h3>
+<h4 id="migrate-an-existing-installation">Migrate an existing installation</h4>
 <p>Before running any script, please create a dump of your existing
 database.</p>
 <p>If you want to prefix your collections, you will have to rename them.
@@ -2595,12 +4677,12 @@ You can use the following script.</p>
 <p>Run your instances!</p>
 </li>
 </ol>
-<h2 id="jdbc">JDBC</h2>
-<h3 id="new-installation_1">New installation</h3>
+<h3 id="jdbc">JDBC</h3>
+<h4 id="new-installation_1">New installation</h4>
 <p>You just have to modify the <code>gravitee.yml</code> files of gateway and console
 to configure <code>management.jdbc.prefix</code> and <code>ratelimit.jdbc.prefix</code>.
 Default value is empty.</p>
-<h3 id="migrate-an-existing-installation_1">Migrate an existing installation</h3>
+<h4 id="migrate-an-existing-installation_1">Migrate an existing installation</h4>
 <p>Before running any script, please create a dump of your existing
 database.</p>
 <p>If you want to prefix your tables, you will have to rename them. Check
@@ -2633,10 +4715,10 @@ documentation at
 <p>Run your instances!</p>
 </li>
 </ol>
-<h1 id="elasticsearch">Elasticsearch</h1>
+<h2 id="elasticsearch">Elasticsearch</h2>
 <p>With Elasticsearch version above 7.x, <code>geoip</code> and <code>user_agent</code> plugins
 are automatically enabled.</p>
-<h1 id="apim-api">APIM API</h1>
+<h2 id="apim-api">APIM API</h2>
 <p>Two new configuration keys have been added to the <code>gravitee.yml</code> file,
 they should be set with the URLs of the UI console and the management
 API: ```yml console: ui: url: gravitee_apim_ui_url # TO UPDATE
@@ -2644,8 +4726,8 @@ WITH YOUR OWN URL api: url: gravitee_apim_management_api_url # TO
 UPDATE WITH YOUR OWN URL ```</p>
 <p>NB: <strong>For Gravitee Cockpit to work properly these URLs are mandatory</strong>,
 they will be used by Cockpit to interact with your APIM installation.</p>
-<h1 id="breaking-changes_25">Breaking changes</h1>
-<h2 id="gateway_6">Gateway</h2>
+<h2 id="breaking-changes_25">Breaking changes</h2>
+<h3 id="gateway_6">Gateway</h3>
 <p>From with this version, the name of the APIM Gateway component changes.
 As a consequence:</p>
 <ol>
@@ -2662,8 +4744,8 @@ As a consequence:</p>
     <code>graviteeio-gateway-x.y.z</code></p>
 </li>
 </ol>
-<h1 id="breaking-changes_26">Breaking changes</h1>
-<h2 id="management-web-ui_4">Management Web UI</h2>
+<h2 id="breaking-changes_26">Breaking changes</h2>
+<h3 id="management-web-ui_4">Management Web UI</h3>
 <p>From with this version, the name of the APIM Console component changes.
 As a consequence:</p>
 <ol>
@@ -2680,7 +4762,7 @@ As a consequence:</p>
     <code>graviteeio-management-ui-x.y.z</code></p>
 </li>
 </ol>
-<h2 id="portal-web-ui_4">Portal Web UI</h2>
+<h3 id="portal-web-ui_4">Portal Web UI</h3>
 <p>From with this version, the name of the APIM Portal component changes.
 As a consequence:</p>
 <ol>
@@ -2699,12 +4781,12 @@ As a consequence:</p>
 </ol>
 <p>In future versions, others plugins &amp; components might be renamed. Stay
 tuned!</p>
-<h1 id="breaking-changes_27">Breaking changes</h1>
-<h2 id="threat-protection-policies_1">Threat protection policies</h2>
+<h2 id="breaking-changes_27">Breaking changes</h2>
+<h3 id="threat-protection-policies_1">Threat protection policies</h3>
 <p>From this version, configuration form for JSON Threat Protection Policy
 and XML Threat Protection Policy changes: <code>null</code> is no longer
 authorized, only <code>-1</code> is accepted for a <em>no limit</em> setting.</p>
-<h3 id="impacts_1">Impacts</h3>
+<h4 id="impacts_1">Impacts</h4>
 <ul>
 <li>
 <p>If some fields are set to <code>null</code> in your db, and if you want to edit
@@ -2720,7 +4802,7 @@ authorized, only <code>-1</code> is accepted for a <em>no limit</em> setting.</p
     your request payload.</p>
 </li>
 </ul>
-<h2 id="management-rest-api_1">Management Rest API</h2>
+<h3 id="management-rest-api_1">Management Rest API</h3>
 <p>From with this version, the name of the APIM Rest APIs component
 changes. As a consequence:</p>
 <ol>
@@ -2739,12 +4821,12 @@ changes. As a consequence:</p>
 </ol>
 <p>In future versions, others plugins &amp; components might be renamed. Stay
 tuned!</p>
-<h1 id="improvements">Improvements</h1>
+<h2 id="improvements">Improvements</h2>
 <p>Some performance improvements have been made
 (<a href="https://github.com/gravitee-io/issues/issues/6066">#6066</a>). As a
 consequence, the scheduled service used to automatically close expired
 subscriptions now runs every hour instead of every 5 seconds</p>
-<h1 id="breaking-changes_28">Breaking changes</h1>
+<h2 id="breaking-changes_28">Breaking changes</h2>
 <p>From with this version, the name of some components of Gravitee.io APIM
 changes. As a consequence, the following plugins are renamed :</p>
 <table>
@@ -2788,15 +4870,15 @@ changes. As a consequence, the following plugins are renamed :</p>
 available using this link:</p>
 <p><a href="https://download.gravitee.io/graviteeio-apim/plugins/repositories/gravitee-apim-repository-mongodb/gravitee-apim-repository-mongodb-3.5.18.zip">https://download.gravitee.io/graviteeio-apim/plugins/repositories/gravitee-apim-repository-mongodb/gravitee-apim-repository-mongodb-3.5.18.zip</a></p>
 <p>In future versions, others plugins will be renamed. Stay tuned!</p>
-<h1 id="repository_6">Repository</h1>
-<h2 id="mongodb_7">Mongodb</h2>
+<h2 id="repository_6">Repository</h2>
+<h3 id="mongodb_7">Mongodb</h3>
 <p>Before running any script, please create a dump of your existing
 database.</p>
 <p><a href="https://raw.githubusercontent.com/gravitee-io/gravitee-api-management/master/gravitee-apim-repository/gravitee-apim-repository-mongodb/src/main/resources/scripts/3.5.14/1-fix-cors-env-vars.js">/apim/3.x/mongodb/3.5.14/1-fix-cors-env-vars.js</a><br/>
 This script migrate CORS environment variables for portal and console.
 (See below).</p>
-<h1 id="breaking-changes_29">Breaking Changes</h1>
-<h2 id="environment-variables">Environment variables</h2>
+<h2 id="breaking-changes_29">Breaking Changes</h2>
+<h3 id="environment-variables">Environment variables</h3>
 <p>Some environment variables have been doubled for the portal and the
 console, see correspondence table:</p>
 <table>
@@ -2863,24 +4945,24 @@ console, see correspondence table:</p>
 </tr>
 </tbody>
 </table>
-<h1 id="breaking-changes_30">Breaking Changes</h1>
-<h2 id="management-api_1">Management API</h2>
+<h2 id="breaking-changes_30">Breaking Changes</h2>
+<h3 id="management-api_1">Management API</h3>
 <p>If you are using the REST API directly, please note that now these
 requests need authentication:</p>
 <h2 id="-">-</h2>
 <h2 id="-_1">-</h2>
 <h2 id="-_2">-</h2>
 <h2 id="-_3">-</h2>
-<h1 id="repository_7">Repository</h1>
-<h2 id="mongodb_8">Mongodb</h2>
+<h2 id="repository_7">Repository</h2>
+<h3 id="mongodb_8">Mongodb</h3>
 <p>Before running any script, please create a dump of your existing
 database.</p>
 <p><a href="https://raw.githubusercontent.com/gravitee-io/gravitee-api-management/master/gravitee-apim-repository/gravitee-apim-repository-mongodb/src/main/resources/scripts/3.5.2/1-add-DEFAULT-referenceId-in-memberships.js">/apim/3.x/mongodb/3.5.2/1-add-DEFAULT-referenceId-in-memberships.js</a><br/>
 This script add the "DEFAULT" <code>referenceId</code> for memberships with <code>null</code>
 one. This bug impacts users created when using social authentication
 since version 3.5.0.</p>
-<h1 id="breaking-changes_31">Breaking Changes</h1>
-<h2 id="environment-variables_1">Environment variables</h2>
+<h2 id="breaking-changes_31">Breaking Changes</h2>
+<h3 id="environment-variables_1">Environment variables</h3>
 <p>Some environment variables have been doubled for the portal and the
 console, see correspondence table:</p>
 <table>
@@ -2962,21 +5044,21 @@ console, see correspondence table:</p>
 </tr>
 </tbody>
 </table>
-<h1 id="distribution">Distribution</h1>
+<h2 id="distribution">Distribution</h2>
 <p>From this version, Gravitee.IO APIM is distributed with MongoDB and JDBC
 plugins, as well as Hybrid HTTP plugin (gateway-bridge-http), in the
 <code>full</code> ZIP.<br/>
 You no longer have to choose between the "full" or "full-jdbc" ZIP file.</p>
-<h1 id="repository_8">Repository</h1>
-<h2 id="mongodb_9">Mongodb</h2>
+<h2 id="repository_8">Repository</h2>
+<h3 id="mongodb_9">Mongodb</h3>
 <p>Before running any script, please create a dump of your existing
 database.</p>
 <p><a href="https://raw.githubusercontent.com/gravitee-io/gravitee-api-management/master/gravitee-apim-repository/gravitee-apim-repository-mongodb/src/main/resources/scripts/3.5.0/1-duplicate-some-parameters-for-console.js">/apim/3.x/mongodb/3.5.01-duplicate-some-parameters-for-console.js</a><br/>
 This script duplicates some parameters for the console to have different
 behaviors between portal and console. It also modifies the _id of each
 mongo document to add referenceId and referenceType.</p>
-<h1 id="repository_9">Repository</h1>
-<h2 id="mongodb_10">Mongodb</h2>
+<h2 id="repository_9">Repository</h2>
+<h3 id="mongodb_10">Mongodb</h3>
 <p>Before running any script, please create a dump of your existing
 database.</p>
 <p><a href="https://raw.githubusercontent.com/gravitee-io/gravitee-api-management/master/gravitee-apim-repository/gravitee-apim-repository-mongodb/src/main/resources/scripts/3.4.0/1-update-audit-to-replace-PORTAL-with_ORGANIZATION-and-ENVIRONMENT.js">/apim/3.x/mongodb/3.4.0/1-update-audit-to-replace-PORTAL-with_ORGANIZATION-and-ENVIRONMENT.js</a><br/>
@@ -2984,8 +5066,8 @@ This script convert PORTAL audit into ENVIRONMENT audits or ORGANIZATION
 audits regarding some conditions.</p>
 <p><a href="https://raw.githubusercontent.com/gravitee-io/gravitee-api-management/master/gravitee-apim-repository/gravitee-apim-repository-mongodb/src/main/resources/scripts/3.4.0/2-update-default-role-REVIEWER.js">/apim/3.x/mongodb/3.4.0/2-update-default-role-REVIEWER.js</a><br/>
 This script add new permissions to the default REVIEWER role.</p>
-<h1 id="repository_10">Repository</h1>
-<h2 id="mongodb_11">Mongodb</h2>
+<h2 id="repository_10">Repository</h2>
+<h3 id="mongodb_11">Mongodb</h3>
 <p>Before running any script, please create a dump of your existing
 database.</p>
 <p><a href="https://raw.githubusercontent.com/gravitee-io/gravitee-api-management/master/gravitee-apim-repository/gravitee-apim-repository-mongodb/src/main/resources/scripts/3.3.0/1-update-users-and-identityProviders.js">/apim/3.x/mongodb/3.3.0/1-update-users-and-identityProviders.js</a><br/>
@@ -2995,8 +5077,8 @@ This script replaces <strong>referenceId</strong> and <strong>referenceType</str
 This script replaces <strong>REQUEST</strong> and <strong>RESPONSE</strong> with
 <strong>REQUEST_CONTENT</strong> and <strong>RESPONSE_CONTENT</strong> for json-validation
 policy configuration in <code>apis</code> collections.</p>
-<h1 id="deprecation">Deprecation</h1>
-<h2 id="management-api_2">Management API</h2>
+<h2 id="deprecation">Deprecation</h2>
+<h3 id="management-api_2">Management API</h3>
 <p>Starting with this version, <code>User</code> and <code>IdentityProvider</code> are now linked
 to an organization and not to an environment. As a consequence, the
 Management REST API has been updated. If you are using the REST API
@@ -3133,8 +5215,8 @@ these resources will be tagged as <code>Deprecated</code>.</p>
 </tr>
 </tbody>
 </table>
-<h1 id="breaking-changes_32">Breaking Changes</h1>
-<h2 id="portal-ui">Portal UI</h2>
+<h2 id="breaking-changes_32">Breaking Changes</h2>
+<h3 id="portal-ui">Portal UI</h3>
 <p>The variables css of <code>gv-link</code> component has been modified to improve
 the theme’s customization. Now the component uses :</p>
 <ul>
@@ -3153,19 +5235,19 @@ the theme’s customization. Now the component uses :</p>
 </ul>
 <p>For example, if you has set <code>--gv-link-active--bdbw=3px</code>, now you should
 set <code>--gv-link-active--bdw=0 0 3px 0</code></p>
-<h1 id="docker-images">Docker images</h1>
+<h2 id="docker-images">Docker images</h2>
 <p>All the UI based docker images (APIM Console, APIM Portal) are now using
 HTTP port 8080 and HTTPS port 8443 by default to avoid the need of a
 root account to use 80/443 to improve the security of our platform.</p>
-<h1 id="breaking-changes_33">Breaking Changes</h1>
-<h2 id="management-api_3">Management API</h2>
+<h2 id="breaking-changes_33">Breaking Changes</h2>
+<h3 id="management-api_3">Management API</h3>
 <p>Starting with this version, <code>Apis</code> resources require authentication even
 for the GET method.</p>
 <p>If you are using the REST API directly, please note that you should
 adapt your application.</p>
 <p><code>Apis</code> resources start with the path
 <code>/management/organizations/DEFAULT/environments/DEFAULT/apis/</code></p>
-<h2 id="portal-api_1">Portal API</h2>
+<h3 id="portal-api_1">Portal API</h3>
 <p>Starting with this version, <code>Apis</code>, <code>Pages</code> and <code>Categories</code> resources
 that were public for GET method require authentication if the users have
 to sign in to access the portal. (forceLogin = true)</p>
@@ -3185,7 +5267,7 @@ adapt your application.</p>
     <code>/portal/environments/DEFAULT/categories</code></p>
 </li>
 </ul>
-<h1 id="breaking-changes_34">Breaking changes</h1>
+<h2 id="breaking-changes_34">Breaking changes</h2>
 <p>The <code>portalURL</code> parameter in the gravitee.yml file has been removed. It
 has become useless with this issue
 <a href="https://github.com/gravitee-io/issues/issues/4144">#4144</a>.</p>
@@ -3196,27 +5278,27 @@ in your gravitee.yml. Otherwise, the default value of <code>management.url</code
 is <a href="http://localhost:3000">http://localhost:3000</a></p>
 <p>The <code>portal.url</code> parameter in the console settings will also have a
 default value : <a href="http://localhost:4100">http://localhost:4100</a></p>
-<h1 id="view-renamed-to-categories"><em>View</em> renamed to <em>Categories</em></h1>
+<h2 id="view-renamed-to-categories"><em>View</em> renamed to <em>Categories</em></h2>
 <p>In the new portal, <em>views</em> are called <em>categories</em>. But in the
 management console, they are still called <em>views</em>. To be consistent, the
 term <em>View</em> is replaced by <em>Category</em> in the whole platform.</p>
 <p>Linked to this issue:
 <a href="https://github.com/gravitee-io/issues/issues/3843">#3843</a></p>
-<h2 id="mongodb_12">Mongodb</h2>
+<h3 id="mongodb_12">Mongodb</h3>
 <p>Before running any script, please create a dump of your existing
 database.</p>
 <p><a href="https://raw.githubusercontent.com/gravitee-io/gravitee-api-management/master/gravitee-apim-repository/gravitee-apim-repository-mongodb/src/main/resources/scripts/3.0.2/1-rename-view-in-category.js">upgrades/3.x/3.0.2/mongodb/1-rename-view-in-category.js</a><br/>
 This script renames a field in <em>apis</em> collection, rename <em>views</em>
 collection, change 3 parameters, replace <em>view</em> by <em>category</em> in
 <em>audits</em> collection and convert documentation view LINK to ctagory LINK</p>
-<h1 id="important">Important</h1>
+<h2 id="important">Important</h2>
 <p>If you are using mongoDB, it is <strong>strongly recommended</strong> to run the
 scripts to upgrade your database <strong>before</strong> starting the new version of
 the gravitee REST APIs. Otherwise, you could experience data corruption
 issues.</p>
 <p>Mongo version <strong>MUST</strong> be at least <strong>3.6</strong></p>
-<h1 id="general">General</h1>
-<h2 id="organization-environment">Organization &amp; Environment</h2>
+<h2 id="general">General</h2>
+<h3 id="organization-environment">Organization &amp; Environment</h3>
 <p>In this new version Gravitee comes with a new way of managing your
 environments. By default, Gravitee is configured with a first
 Organization: ``` organization { id: DEFAULT, name: Default
@@ -3225,25 +5307,25 @@ organization } ``` And a first Environment in this Organization:
 organization: DEFAULT } ```</p>
 <p>It will allow you to manage more than one environment for each instance
 of Gravitee.</p>
-<h1 id="breaking-changes_35">Breaking Changes</h1>
-<h2 id="api-key-policy">API-Key policy</h2>
+<h2 id="breaking-changes_35">Breaking Changes</h2>
+<h3 id="api-key-policy">API-Key policy</h3>
 <p>In this new version, if api-keys used to call an API is invalid or has
 expired, the gateway will fail with a <strong>401</strong> (instead of 403 in
 previous versions of Gravitee).</p>
-<h2 id="management-api_4">Management API</h2>
+<h3 id="management-api_4">Management API</h3>
 <p>If you are using the REST API directly, please note that you will have
 to adapt the URL from <code>https://host/management/</code> to
 <code>https://host/management/organizations/DEFAULT/environments/DEFAULT/</code></p>
 <p>The resource <code>/views/default</code> has been deleted since a view does not
 have a <strong>default</strong> field anymore.</p>
-<h2 id="management-ui">Management UI</h2>
+<h3 id="management-ui">Management UI</h3>
 <p>The actual portal has been replaced by a brand new version, with its own
 location. As a consequence, the URL of the management UI has been
 modified to remove the <strong>/management</strong> part.</p>
 <p>For instance, to access the <em>Platform Overview</em> page, you should use
 <code>https://host/\#!/platform</code> instead of
 <code>https://host/#!/management/platform</code></p>
-<h2 id="memberships-roles-and-role-mappings">Memberships, roles and role mappings</h2>
+<h3 id="memberships-roles-and-role-mappings">Memberships, roles and role mappings</h3>
 <p>One major breaking change in this new version is the replacement of
 <strong>MANAGEMENT</strong> and <strong>PORTAL</strong> scopes by <strong>ENVIRONNMENT</strong> and
 <strong>ORGANIZATION</strong> scopes. It’s not just a renaming but a dispatch of
@@ -3416,8 +5498,8 @@ be updated.</p>
 </tr>
 </tbody>
 </table>
-<h1 id="repository_11">Repository</h1>
-<h2 id="mongodb_13">Mongodb</h2>
+<h2 id="repository_11">Repository</h2>
+<h3 id="mongodb_13">Mongodb</h3>
 <p>Before running any script, please create a dump of your existing
 database.</p>
 <p><a href="https://raw.githubusercontent.com/gravitee-io/gravitee-api-management/master/gravitee-apim-repository/gravitee-apim-repository-mongodb/src/main/resources/scripts/3.0.0/1-collections-linked-to-environment-or-organization.js">/apim/3.x/mongodb/3.0.0/1-collections-linked-to-environment-or-organization.js</a><br/>
@@ -3448,8 +5530,8 @@ line 5.</em></p>
 This script removes the <em>All</em> <strong>view</strong>, since the legacy portal has been
 replaced and the new portal does not need this default view anymore. The
 script also updates existing views to remove <strong>defaultView</strong> field.</p>
-<h1 id="upgrader">Upgrader</h1>
-<h2 id="identity-providers">Identity providers</h2>
+<h2 id="upgrader">Upgrader</h2>
+<h3 id="identity-providers">Identity providers</h3>
 <p>Because of the evolution of the roles and their scope, role mappings in
 <strong>Identity Providers</strong> must be updated. To achieve this, a specific
 service has been created and will be launched at APIM startup. As this
@@ -3460,7 +5542,7 @@ disabled with some configuration.</p>
   v3-upgrader:
     enabled: true
 </code></pre></div>
-<h1 id="docker">Docker</h1>
+<h2 id="docker">Docker</h2>
 <p>Docker images for Gravitee.io APIM have been renamed to follow the same
 conventions as the others Gravitee.io modules.</p>
 <p>In the case of Gravitee.io APIM, all the images have been prefixed by
@@ -3525,7 +5607,7 @@ by <code>graviteeio/apim-gateway</code>.</p>
 </main>
 <footer class="md-footer">
 <nav aria-label="Footer" class="md-footer__inner md-grid">
-<a aria-label="Previous: Prerequisite - Install Nginx" class="md-footer__link md-footer__link--prev" href="../amazon-linux/installation-guide-amazon-prerequisite-nginx/" rel="prev">
+<a aria-label="Previous: Installing and updating Plugins" class="md-footer__link md-footer__link--prev" href="../installation-guide-plugins/" rel="prev">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
 </div>
@@ -3534,17 +5616,17 @@ by <code>graviteeio/apim-gateway</code>.</p>
 <span class="md-footer__direction">
                 Previous
               </span>
-              Prerequisite - Install Nginx
+              Installing and updating Plugins
             </div>
 </div>
 </a>
-<a aria-label="Next: Configure" class="md-footer__link md-footer__link--next" href="../configuration/configuration-guide/" rel="next">
+<a aria-label="Next: Introduction" class="md-footer__link md-footer__link--next" href="../../quickstart/quickstart-overview/" rel="next">
 <div class="md-footer__title">
 <div class="md-ellipsis">
 <span class="md-footer__direction">
                 Next
               </span>
-              Configure
+              Introduction
             </div>
 </div>
 <div class="md-footer__button md-icon">
@@ -3566,7 +5648,7 @@ by <code>graviteeio/apim-gateway</code>.</p>
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "content.code.annotate", "navigation.top", "navigation.expand", "navigation.indexes", "toc.follow", "toc.integrate"], "search": "../../../assets/javascripts/workers/search.939a4419.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": {"provider": "mike"}}</script>
+<script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "content.code.annotate", "navigation.top", "navigation.indexes", "toc.follow", "toc.integrate"], "search": "../../../assets/javascripts/workers/search.939a4419.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": {"provider": "mike"}}</script>
 <script src="../../../assets/javascripts/bundle.af94fead.min.js"></script>
 <script src="../../../javascripts/extra.js"></script>
 <script src="../../../assets/js/swagger-ui-bundle.js"></script>

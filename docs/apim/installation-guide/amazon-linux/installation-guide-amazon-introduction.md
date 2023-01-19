@@ -7,7 +7,6 @@ tags:
   - Amazon
 ---
 
-
 # APIM Installation Guide - Amazon Linux
 
 ## Options

@@ -12,10 +12,7 @@ tags:
 
 ## Overview
 
-Amazon Linux instances use the package manager `yum` to manage the
-softwares on the instances. Gravitee provides a repository with the
-major components of the API Manager. Follow below instructions to set up
-the access to that repository.
+Amazon Linux instances use the package manager `yum` to manage the softwares on the instances. Gravitee provides a repository with the major components of the API Manager. Follow below instructions to set up the access to that repository.
 
 ## Instructions
 
@@ -52,6 +49,6 @@ the access to that repository.
         sudo yum -q makecache -y --disablerepo='*' --enablerepo='graviteeio'
   ```
 
-## Next
+## Next steps
 
-Next is [installing a Java 11 jre](installation-guide-amazon-prerequisite-java.md).
+The next step is [installing a Java 11 jre](installation-guide-amazon-prerequisite-java.md).

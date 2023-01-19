@@ -18,6 +18,6 @@ tags:
 
 -   Security Groups : **SSH** access is sufficient for now
 
-## Next
+## Next steps
 
-Next is [setting up the Gravitee YUM repository](installation-guide-amazon-prerequisite-yum.md) or [installing the Gravitee APIM full stack](installation-guide-amazon-stack.md).
+The next steps are [setting up the Gravitee YUM repository](installation-guide-amazon-prerequisite-yum.md) and [installing the Gravitee APIM full stack](installation-guide-amazon-stack.md).
